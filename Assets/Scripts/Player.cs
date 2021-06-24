@@ -39,6 +39,6 @@ public class Player : MonoBehaviour
 
     public void Stop()
     {
-        animator.SetBool("isEnd", true);
+        animator.SetBool("End", true);
     }
 }
