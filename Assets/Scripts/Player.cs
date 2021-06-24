@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
+
     [SerializeField] float jumpVelocity = 10f;
     [SerializeField] float dashVelccity = 2f;
     [SerializeField] float rollingVelocity = 2f;
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
-       // animator = GetComponent<Animator>();
+        // animator = GetComponent<Animator>();
     }
 
     public void Jump()
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     {
         rigidbody2d.velocity = Vector2.right * jumpVelocity;
         animator.SetTrigger("Dash");
-    } 
+    }
 
     public void Rolling()
     {
@@ -44,6 +44,6 @@ public class Player : MonoBehaviour
 
     public void Stop()
     {
-        animator.SetBool("End", true);
+        animator.SetTrigger("Die");
     }
 }
