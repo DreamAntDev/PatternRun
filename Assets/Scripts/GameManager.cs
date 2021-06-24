@@ -50,6 +50,13 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Dash Animation");
                 break;
 
+            case "ADG":
+            case "BEH":
+            case "CFI":
+                player.Sit();
+                Debug.Log("Sit Animation");
+                break;
+
             case "GDA":
             case "HEB":
             case "IFC":
