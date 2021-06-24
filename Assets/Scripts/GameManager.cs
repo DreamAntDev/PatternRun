@@ -32,36 +32,30 @@ public class GameManager : MonoBehaviour
         {
             chainText += x;
         }
-        MoveAnimation(chainText);
+        SetPatten(chainText);
         isTouch = false;
         chainList.Clear();
     }
 
-    public void MoveAnimation(string state)
+    public void SetPatten(string state)
     {
+        Debug.Log(state);
         switch (state)
         {
-            case "AB":
-            case "DC":
+            case "ABC":
+            case "DEF":
+            case "GHI":
                 // Dash
                 player.Dash();
                 Debug.Log("Dash Animation");
                 break;
 
-            case "DA":
-            case "CB":
+            case "GDA":
+            case "HEB":
+            case "IFC":
                 // Jump
                 player.Jump();
                 Debug.Log("Jump Animation");
-                break;
-
-            case "ABCD":
-            case "BCDA":
-            case "CDAB":
-            case "DCBA":
-                // Rolling
-                player.Rolling();
-                Debug.Log("Rolling Animation");
                 break;
         }
         chainText = string.Empty;
