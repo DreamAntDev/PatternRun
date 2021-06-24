@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class Swordman : PlayerController
 {
-
- 
-
     private void Start()
     {
 
         m_CapsulleCollider  = this.transform.GetComponent<CapsuleCollider2D>();
         m_Anim = this.transform.Find("model").GetComponent<Animator>();
         m_rigidbody = this.transform.GetComponent<Rigidbody2D>();
-  
-
     }
 
 
