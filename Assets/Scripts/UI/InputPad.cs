@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Linq;
-public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragHandler
+public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragHandler, IPointerUpHandler
 {
     [System.Serializable]
     public struct Point
@@ -45,8 +45,8 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
-        inputCollider.enabled = false;
-        OnInputComplete();
+        //inputCollider.enabled = false;
+        //OnInputComplete();
     }
 
     public void Input(GameObject obj)
@@ -68,9 +68,16 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
             var inputPoint = this.PointList.Find(point => point.obj.Equals(obj));
             inputString += inputPoint.value;
         }
-        Debug.Log(inputString);
+        GameManager.instance.SetPatten(inputString);
+        
         GameManager.instance.SetPatten(inputString);
         this.lineRenderer.positionCount = 0;
         userInput.Clear();
+    }
+
+    void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
+    {
+        inputCollider.enabled = false;
+        OnInputComplete();
     }
 }

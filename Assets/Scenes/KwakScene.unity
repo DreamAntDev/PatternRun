@@ -649,7 +649,7 @@ Camera:
   m_GameObject: {fileID: 1810344528}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 3
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1124,6 +1124,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2729912652848625705, guid: 62b1dfcbabe74a44c844c0c0d23b77fa, type: 3}
+      propertyPath: m_text
+      value: PATTERN RUN
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729912652848625705, guid: 62b1dfcbabe74a44c844c0c0d23b77fa, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b8c0d208ddc11df44a3985f15b4d2570, type: 2}
+    - target: {fileID: 2729912652848625705, guid: 62b1dfcbabe74a44c844c0c0d23b77fa, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6701202650027900913, guid: b8c0d208ddc11df44a3985f15b4d2570, type: 2}
     - target: {fileID: 3463843184825089875, guid: 62b1dfcbabe74a44c844c0c0d23b77fa, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
