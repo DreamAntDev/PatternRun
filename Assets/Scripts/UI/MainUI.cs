@@ -22,12 +22,17 @@ public class MainUI : MonoBehaviour
 
     public InteractiveMessageBox interactiveMessageBox;
     public SystemMessage systemMessage;
+    public InputPad inputPad;
+
+    private Camera UICamera;
+    List<Vector3> userInput = new List<Vector3>();
 
     private void Awake()
     {
         if(MainUI.instance == null)
         {
             MainUI.instance = this;
+            this.UICamera = GameObject.Find("UICamera").GetComponent<Camera>();
         }
         else
         {
@@ -60,5 +65,26 @@ public class MainUI : MonoBehaviour
     public void OnGameEnd()
     {
         this.systemMessage.SetMessage("YOU DIED", "111111m", 5);
+    }
+
+    //최적화 예정
+    public void AddInputPos(Vector3 pos)
+    {
+        userInput.Add(pos);
+        //lineRenderer.SetPositions(userInput.ToArray());
+    }
+    public void ResetInput()
+    {
+        userInput.Clear();
+        //lineRenderer.SetPositions(userInput.ToArray());
+    }
+    public void UpdateLastInput()
+    {
+        
+    }
+
+    public Camera GetUICamera()
+    {
+        return this.UICamera;
     }
 }
