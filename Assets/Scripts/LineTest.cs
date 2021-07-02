@@ -8,7 +8,6 @@ public class LineTest : MonoBehaviour
     [SerializeField] private LineController line;
     void Start()
     {
-
         line.SetUpLine(points);
     }
 

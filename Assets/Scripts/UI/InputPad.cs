@@ -69,6 +69,7 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
             inputString += inputPoint.value;
         }
         Debug.Log(inputString);
+        GameManager.instance.SetPatten(inputString);
         this.lineRenderer.positionCount = 0;
         userInput.Clear();
     }

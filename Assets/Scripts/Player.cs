@@ -9,13 +9,19 @@ public class Player : MonoBehaviour
     [SerializeField] float dashVelccity = 2f;
     [SerializeField] float rollingVelocity = 2f;
     [SerializeField] private Animator animator;
-    private GameObject player;
     private Rigidbody2D rigidbody2d;
+
+    public Vector3 movePos;
+    // Update is called once per frame
 
     private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
         // animator = GetComponent<Animator>();
+    }
+    public void StartMove()
+    {
+        movePos.x = 5;
     }
 
     public void Jump()
@@ -29,6 +35,11 @@ public class Player : MonoBehaviour
     {
         rigidbody2d.velocity = Vector2.right * jumpVelocity;
         animator.SetTrigger("Dash");
+    }
+
+    public void Attack()
+    {
+        animator.SetTrigger("Attack");
     }
 
     public void Rolling()
@@ -45,5 +56,11 @@ public class Player : MonoBehaviour
     public void Stop()
     {
         animator.SetTrigger("Die");
+        movePos.x = 0;
+    }
+
+    void Update()
+    {
+        this.transform.position += (movePos * Time.deltaTime);
     }
 }

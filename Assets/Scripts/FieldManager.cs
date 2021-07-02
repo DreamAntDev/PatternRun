@@ -10,7 +10,7 @@ public class FieldManager : MonoBehaviour
     Queue<Field> fieldQueue = new Queue<Field>();
     float xSize;
     Vector3 spawnPos = Vector3.zero; //앞으로 생성할 포지션
-    public KwakPlayer player;
+    public Player player;
     public static FieldManager Instance
     {
         get
@@ -48,10 +48,10 @@ public class FieldManager : MonoBehaviour
                 OnInvisibleField(field);
             }
         }
-        if(this.spawnPos.x > 100)
+        if (this.spawnPos.x > 100)
         {
             int queueCount = this.fieldQueue.Count;
-            for(int i=0;i<queueCount;i++)
+            for (int i = 0; i < queueCount; i++)
             {
                 var field = this.fieldQueue.Dequeue();
                 field.transform.position -= this.spawnPos;
@@ -60,6 +60,7 @@ public class FieldManager : MonoBehaviour
             this.player.transform.position -= this.spawnPos;
             this.spawnPos = Vector3.zero;
         }
+        
     }
     public void InitField()
     {

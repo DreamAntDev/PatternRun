@@ -10,8 +10,7 @@ public class LineController : MonoBehaviour
 
     void Start()
     {
-        lr = GetComponent<LineRenderer>();    
-
+        lr = GetComponent<LineRenderer>();   
     }
 
     public void SetUpLine(Transform[] points)
