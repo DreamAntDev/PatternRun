@@ -23,6 +23,7 @@ public class MainUI : MonoBehaviour
     public InteractiveMessageBox interactiveMessageBox;
     public SystemMessage systemMessage;
     public InputPad inputPad;
+    public UserCommand userCommand;
 
     public Button optionButton;
     public GameObject optionPopup;
