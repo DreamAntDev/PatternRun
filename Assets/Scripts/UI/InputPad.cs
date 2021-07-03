@@ -51,6 +51,9 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
 
     public void Input(GameObject obj)
     {
+        if(this.lineRenderer.gameObject.activeInHierarchy == false)
+            this.lineRenderer.gameObject.SetActive(true);
+
         if (userInput.Find(o => obj.Equals(o)) == null)
         {
             userInput.Add(obj);
@@ -63,15 +66,20 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
     public void OnInputComplete()
     {
         string inputString = string.Empty;
+        if (userInput.Count <= 0)
+            return;
+
         foreach(var obj in userInput)
         {
             var inputPoint = this.PointList.Find(point => point.obj.Equals(obj));
             inputString += inputPoint.value;
         }
-        GameManager.instance.SetPatten(inputString);
-        
-        GameManager.instance.SetPatten(inputString);
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.SetPatten(inputString);
+        }
         this.lineRenderer.positionCount = 0;
+        this.lineRenderer.gameObject.SetActive(false);
         userInput.Clear();
     }
 
@@ -79,13 +87,5 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
     {
         inputCollider.enabled = false;
         OnInputComplete();
-    }
-
-    public void SetInputCollisionSize(float value)
-    {
-        foreach(var obj in this.PointList)
-        {
-            obj.obj.GetComponent<BoxCollider2D>().size = new Vector2(value, value);
-        }
     }
 }
