@@ -80,4 +80,12 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
         inputCollider.enabled = false;
         OnInputComplete();
     }
+
+    public void SetInputCollisionSize(float value)
+    {
+        foreach(var obj in this.PointList)
+        {
+            obj.obj.GetComponent<BoxCollider2D>().size = new Vector2(value, value);
+        }
+    }
 }

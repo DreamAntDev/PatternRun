@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class MainUI : MonoBehaviour
 {
     private static MainUI instance;
@@ -24,6 +24,9 @@ public class MainUI : MonoBehaviour
     public SystemMessage systemMessage;
     public InputPad inputPad;
 
+    public Button optionButton;
+    public GameObject optionPopup;
+
     private Camera UICamera;
     List<Vector3> userInput = new List<Vector3>();
 
@@ -42,6 +45,7 @@ public class MainUI : MonoBehaviour
 
     private void Start()
     {
+        this.optionButton.onClick.AddListener(()=>this.optionPopup.SetActive(true));
         OnTitle();
     }
 
@@ -86,5 +90,10 @@ public class MainUI : MonoBehaviour
     public Camera GetUICamera()
     {
         return this.UICamera;
+    }
+
+    public void OnGetItem(Vector3 worldPos)
+    {
+
     }
 }
