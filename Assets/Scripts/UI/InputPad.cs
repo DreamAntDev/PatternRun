@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Linq;
-public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragHandler, IPointerUpHandler
+public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     [System.Serializable]
     public struct Point
@@ -19,11 +19,13 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
     private RectTransform rectTransform;
 
     private List<GameObject> userInput = new List<GameObject>();
+    private int dotPerLine = 3;
     void Awake()
     {
         this.inputCollider.enabled = false;
         this.inputRectTransform = inputCollider.GetComponent<RectTransform>();
         this.rectTransform = GetComponent<RectTransform>();
+        this.dotPerLine = (int)Mathf.Sqrt(this.PointList.Count);
     }
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
@@ -39,8 +41,8 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
-        inputCollider.enabled = true;
-        userInput.Clear();
+        //inputCollider.enabled = true;
+        //userInput.Clear();
     }
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
@@ -51,18 +53,106 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
 
     public void Input(GameObject obj)
     {
-        if(this.lineRenderer.gameObject.activeInHierarchy == false)
-            this.lineRenderer.gameObject.SetActive(true);
+        //if(this.lineRenderer.gameObject.activeInHierarchy == false)
+        //    this.lineRenderer.gameObject.SetActive(true);
+        if(userInput.Count <=0)
+        {
+            userInput.Add(obj);
+            lineRenderer.positionCount = userInput.Count;
+
+            lineRenderer.SetPosition(userInput.Count - 1, obj.transform.position);
+            return;
+        }
 
         if (userInput.Find(o => obj.Equals(o)) == null)
         {
+            var lastInputObject = userInput.Last();
+            var lastInputIndex = this.PointList.FindIndex(o=>lastInputObject.Equals(o.obj));
+            var currentObjectIndex = this.PointList.FindIndex(o => obj.Equals(o.obj));
+
+            List<int> betweenIndexList = GetBetweenObjectList(lastInputIndex, currentObjectIndex);
+            foreach(int idx in betweenIndexList)
+            {
+                if (userInput.Find(o => this.PointList[idx].obj.Equals(o)) != null)
+                    continue;
+
+                userInput.Add(this.PointList[idx].obj);
+                lineRenderer.positionCount = userInput.Count;
+                lineRenderer.SetPosition(userInput.Count - 1, this.PointList[idx].obj.transform.position);
+            }
+
             userInput.Add(obj);
             lineRenderer.positionCount = userInput.Count;
             
             lineRenderer.SetPosition(userInput.Count-1, obj.transform.position);
         }
     }
+    private List<int> GetBetweenObjectList(int beginIndex,int endIndex)
+    {
+        List<int> retList = new List<int>();
 
+        Vector2Int begin = new Vector2Int(beginIndex % this.dotPerLine, (int)beginIndex / (int)this.dotPerLine);
+        Vector2Int end = new Vector2Int(endIndex % this.dotPerLine, (int)endIndex / (int)this.dotPerLine);
+
+        Vector2Int diff = end - begin;
+        if (diff.x == 0 && diff.y == 0)//같은 위치(나올리 없음)
+        {
+            
+        }
+        else if (diff.x == 0 && diff.y != 0) // 세로로 중간값 체크
+        {
+            int moveValue = diff.y > 0 ? 1 : -1;
+            int temp = begin.y;
+            while(true)
+            {
+                temp += moveValue;
+                if (temp == end.y)
+                {
+                    break;
+                }
+                int index = temp * this.dotPerLine + begin.x;
+                retList.Add(index);
+            }
+        }
+        else if(diff.x!=0 && diff.y == 0) // 가로로 중간값 체크
+        {
+            int moveValue = diff.x > 0 ? 1 : -1;
+            int temp = begin.x;
+            while (true)
+            {
+                temp += moveValue;
+                if (temp == end.x)
+                {
+                    break;
+                }
+                int index = begin.y * this.dotPerLine + temp;
+                retList.Add(index);
+            }
+        }
+        else
+        {
+            if(Mathf.Abs(diff.x) == Mathf.Abs(diff.y)) // 대각선 중간값 체크
+            {
+                int moveXValue = diff.x > 0 ? 1 : -1;
+                int moveYValue = diff.y > 0 ? 1 : -1;
+                int tempX = begin.x;
+                int tempY = begin.y;
+                while(true)
+                {
+                    tempX += moveXValue;
+                    tempY += moveYValue;
+                    if(end.x==tempX && end.y==tempY)
+                    {
+                        break;
+                    }
+                    int index = tempY * this.dotPerLine + tempX;
+                    retList.Add(index);
+                }
+            }
+        }
+
+        return retList;
+    }
     public void OnInputComplete()
     {
         string inputString = string.Empty;
@@ -79,7 +169,7 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
             GameManager.instance.SetPatten(inputString);
         }
         this.lineRenderer.positionCount = 0;
-        this.lineRenderer.gameObject.SetActive(false);
+        //this.lineRenderer.gameObject.SetActive(false);
         userInput.Clear();
     }
 
@@ -87,5 +177,14 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
     {
         inputCollider.enabled = false;
         OnInputComplete();
+    }
+    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
+    {
+        Vector2 localPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(this.rectTransform, eventData.position, MainUI.Instance.GetUICamera(), out localPos);
+        this.inputRectTransform.localPosition = localPos;
+
+        inputCollider.enabled = true;
+        userInput.Clear();
     }
 }
