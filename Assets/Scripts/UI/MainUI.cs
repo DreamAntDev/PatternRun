@@ -28,6 +28,8 @@ public class MainUI : MonoBehaviour
     public Button optionButton;
     public GameObject optionPopup;
 
+    public UnityEngine.U2D.SpriteAtlas iconAtlas;
+
     private Camera UICamera;
     List<Vector3> userInput = new List<Vector3>();
 
@@ -65,6 +67,7 @@ public class MainUI : MonoBehaviour
         this.interactiveMessageBox.SetText("", false);
         //this.interactiveMessageBox.ActiveButton(false);
         this.interactiveMessageBox.ActiveButton(true, () => OnGameEnd());
+        //MainUI.instance.OnGetItem(this.transform.position,"magic","pattern");
     }
 
     public void OnGameEnd()
@@ -72,29 +75,13 @@ public class MainUI : MonoBehaviour
         this.systemMessage.SetMessage("YOU DIED", "111111m", 5);
     }
 
-    //최적화 예정
-    public void AddInputPos(Vector3 pos)
-    {
-        userInput.Add(pos);
-        //lineRenderer.SetPositions(userInput.ToArray());
-    }
-    public void ResetInput()
-    {
-        userInput.Clear();
-        //lineRenderer.SetPositions(userInput.ToArray());
-    }
-    public void UpdateLastInput()
-    {
-        
-    }
-
     public Camera GetUICamera()
     {
         return this.UICamera;
     }
 
-    public void OnGetItem(Vector3 worldPos)
+    public void OnGetItem(Vector3 worldPos, string iconName, string patternName)
     {
-
+        this.userCommand.Insert(worldPos, iconName, patternName);
     }
 }

@@ -12,7 +12,6 @@ public class PattenEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             isEnter = true;
             GameManager.instance.ChainTouch(eventData.pointerCurrentRaycast.gameObject.name);
-            MainUI.Instance.AddInputPos(eventData.pointerCurrentRaycast.gameObject.transform.position);
         }
         else
         {
@@ -31,13 +30,11 @@ public class PattenEvent : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void OnPointerUp(PointerEventData eventData)
     {
         GameManager.instance.Reset();
-        MainUI.Instance.ResetInput();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         GameManager.instance.InputStart();
         GameManager.instance.ChainTouch(eventData.pointerCurrentRaycast.gameObject.name);
-        MainUI.Instance.AddInputPos(eventData.pointerCurrentRaycast.gameObject.transform.position);
     }
 }

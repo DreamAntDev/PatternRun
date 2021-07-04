@@ -6923,7 +6923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7270729489686361074}
   - component: {fileID: 5590283198212886544}
-  - component: {fileID: 7884535525025757429}
+  - component: {fileID: 6751657214775695812}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -6958,7 +6958,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7870400510361781122}
   m_CullTransparentMesh: 1
---- !u!114 &7884535525025757429
+--- !u!114 &6751657214775695812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7215,6 +7215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0a86a0e1988db43beb6d4e9da19615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 6751657214775695812}
 --- !u!1 &8645369013143668554
 GameObject:
   m_ObjectHideFlags: 0
@@ -7492,6 +7493,7 @@ MonoBehaviour:
   userCommand: {fileID: 25751372626560662}
   optionButton: {fileID: 8642671789412680626}
   optionPopup: {fileID: 2897008020479315178}
+  iconAtlas: {fileID: 4343727234628468602, guid: 7461ac48fa55f4a4b9794b06049a08cc, type: 2}
 --- !u!1 &9011714693237145731
 GameObject:
   m_ObjectHideFlags: 0
