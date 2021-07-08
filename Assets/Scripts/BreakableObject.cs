@@ -6,10 +6,10 @@ using System.Linq;
 public class BreakableObject : MonoBehaviour
 {
     public int breakCount = 3;
-    private void OnEnable()
-    {
-        
-    }
+    //private void OnEnable()
+    //{
+    //    Break();
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,9 +28,13 @@ public class BreakableObject : MonoBehaviour
         for(int i=0;i<this.breakCount;i++)
         {
             GameObject[] array = null;
+            if (tempObjectArray == null)
+                break;
+
             foreach(var obj in tempObjectArray)
             {
                 Vector3 center = obj.GetComponent<MeshRenderer>().bounds.center;
+                //Vector3 center = obj.GetComponent<BoxCollider2D>().bounds.center;
                 Vector3 slicePlaneVector = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0);
                 var slicedObjectArray = EzySlice.SlicerExtensions.SliceInstantiate(obj, center, slicePlaneVector);
                 if (slicedObjectArray == null)
