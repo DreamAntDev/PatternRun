@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - InputPoint
+  - Ground
+  - Block
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Line
-  - 
-  - 
+  - Map
+  - Trap
   - 
   - 
   - 

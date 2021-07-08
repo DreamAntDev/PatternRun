@@ -9,7 +9,7 @@ public class FieldManager : MonoBehaviour
     public GameObject fieldPrefab;
     Queue<Field> fieldQueue = new Queue<Field>();
     float xSize;
-    Vector3 spawnPos = Vector3.zero; //앞으로 생성할 포지션
+    [SerializeField] Vector3 spawnPos = Vector3.zero; //앞으로 생성할 포지션
     public Player player;
     public static FieldManager Instance
     {
@@ -32,9 +32,10 @@ public class FieldManager : MonoBehaviour
 
     private void Start()
     {
-        this.xSize = this.fieldPrefab.GetComponent<Field>().sprite.size.x;
+        this.xSize = this.fieldPrefab.GetComponent<Field>().sprite.size.x * 5.4f;
         InitField();
     }
+
     private void Update()
     {
         if (this.fieldQueue.Count > 0)
@@ -43,7 +44,7 @@ public class FieldManager : MonoBehaviour
             Vector3 fieldRightPos = field.transform.position;
             fieldRightPos.x += (field.sprite.size.x / 2.0f);
             var viewportPoint = Camera.main.WorldToViewportPoint(fieldRightPos);
-            if (viewportPoint.x < 0.0f)
+            if (viewportPoint.x < -1.0f)
             {
                 OnInvisibleField(field);
             }
@@ -83,6 +84,7 @@ public class FieldManager : MonoBehaviour
     {
         var obj = GameObject.Instantiate(this.fieldPrefab, spawnPos, Quaternion.identity, this.transform);
         this.spawnPos.x += xSize;
+        this.spawnPos.y = -2.5f;
         this.fieldQueue.Enqueue(obj.GetComponent<Field>());
     }
     private void DestroyField()
