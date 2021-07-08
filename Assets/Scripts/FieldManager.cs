@@ -32,7 +32,9 @@ public class FieldManager : MonoBehaviour
 
     private void Start()
     {
-        this.xSize = this.fieldPrefab.GetComponent<Field>().sprite.size.x * 5.4f;
+        var field = this.fieldPrefab.GetComponent<Field>();
+        this.xSize = field.sprite.size.x * field.gameObject.transform.localScale.x;
+        this.spawnPos.y = -2.5f;
         InitField();
     }
 
@@ -55,11 +57,12 @@ public class FieldManager : MonoBehaviour
             for (int i = 0; i < queueCount; i++)
             {
                 var field = this.fieldQueue.Dequeue();
-                field.transform.position -= this.spawnPos;
+                var xPos = field.transform.position.x - this.spawnPos.x;
+                field.transform.position = new Vector3(xPos, field.transform.position.y, field.transform.position.z);
                 this.fieldQueue.Enqueue(field);
             }
-            this.player.transform.position -= this.spawnPos;
-            this.spawnPos = Vector3.zero;
+            this.player.transform.position = new Vector3(this.player.transform.position.x - this.spawnPos.x, this.player.transform.position.y, this.player.transform.position.z);
+            this.spawnPos.x = 0;
         }
         
     }
@@ -84,7 +87,6 @@ public class FieldManager : MonoBehaviour
     {
         var obj = GameObject.Instantiate(this.fieldPrefab, spawnPos, Quaternion.identity, this.transform);
         this.spawnPos.x += xSize;
-        this.spawnPos.y = -2.5f;
         this.fieldQueue.Enqueue(obj.GetComponent<Field>());
     }
     private void DestroyField()
