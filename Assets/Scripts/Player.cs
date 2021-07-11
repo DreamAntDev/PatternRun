@@ -63,4 +63,30 @@ public class Player : MonoBehaviour
     {
         this.transform.position += (movePos * Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (GameManager.instance.gameStart)
+        {
+            if (collision.transform.tag.Equals("Item"))
+            {
+                var item = collision.gameObject.GetComponent<CommandItem>();
+                GameManager.instance.GetCommandItem(item.itemData, collision.gameObject.transform.position);
+                GameObject.Destroy(collision.gameObject);
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (GameManager.instance.gameStart)
+        {
+            if (collision.transform.tag.Equals("Item"))
+            {
+                var item = collision.gameObject.GetComponent<CommandItem>();
+                GameManager.instance.GetCommandItem(item.itemData, collision.gameObject.transform.position);
+                GameObject.Destroy(collision.gameObject);
+            }
+        }
+    }
 }

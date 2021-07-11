@@ -18,8 +18,10 @@ public class UserCommand : MonoBehaviour
     public void Insert(Vector3 worldPos, string iconName, string patternName)
     {
         //fakeItem.gameObject.GetComponent<RectTransform>().anchoredPosition;
+        //var cam = MainUI.Instance.GetUICamera();
+        var cam = Camera.main;
 
-        var screenPos = RectTransformUtility.WorldToScreenPoint(MainUI.Instance.GetUICamera(), worldPos);
+        var screenPos = cam.WorldToScreenPoint(worldPos);
         Vector2 localRectTrans;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(this.rectTransform, screenPos, MainUI.Instance.GetUICamera(), out localRectTrans);
 

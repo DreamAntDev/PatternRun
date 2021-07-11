@@ -493,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2050180696}
+  commandInventory: {fileID: 0}
 --- !u!4 &627600983
 Transform:
   m_ObjectHideFlags: 0
@@ -1108,6 +1109,11 @@ MonoBehaviour:
   fieldPrefab: {fileID: 6101916445924189112, guid: 43cc52116719da94387f87296bd1024a, type: 3}
   spawnPos: {x: -10, y: -2.5, z: 0}
   player: {fileID: 2050180696}
+  itemPrefabList:
+  - {fileID: 3144575894429601864, guid: 3212d18bfeea1bd47b902f3f1e9148c9, type: 3}
+  - {fileID: 6109887485960177378, guid: 7b8b6266fe8c67b4895e1d9b14838c30, type: 3}
+  - {fileID: 5571253557848889491, guid: d1df71dc8c255f2419278b544e26e120, type: 3}
+  - {fileID: 4914239574807148649, guid: 1a52cf7a34d58394487e7c91de94d200, type: 3}
 --- !u!114 &1803971150
 MonoBehaviour:
   m_ObjectHideFlags: 0
