@@ -17,8 +17,8 @@ public class MainUI : MonoBehaviour
         }
     }
 
-    public GameObject titleObject;
-    public GameObject InGameObject;
+    public Title title;
+    public InGameScore inGameScore;
 
     public InteractiveMessageBox interactiveMessageBox;
     public SystemMessage systemMessage;
@@ -31,7 +31,6 @@ public class MainUI : MonoBehaviour
     public UnityEngine.U2D.SpriteAtlas iconAtlas;
 
     private Camera UICamera;
-    List<Vector3> userInput = new List<Vector3>();
 
     private void Awake()
     {
@@ -54,25 +53,26 @@ public class MainUI : MonoBehaviour
 
     public void OnTitle()
     {
-        this.titleObject.SetActive(true);
-        this.InGameObject.SetActive(false);
+        this.title.gameObject.SetActive(true);
+        this.inGameScore.gameObject.SetActive(false);
         this.interactiveMessageBox.SetText("Touch To Start", true);
         this.interactiveMessageBox.ActiveButton(true, () => OnGameStart());
         this.systemMessage.gameObject.SetActive(false);
     }
     public void OnGameStart()
     {
-        this.titleObject.SetActive(false);
-        this.InGameObject.SetActive(true);
+        this.title.gameObject.SetActive(false);
+        this.inGameScore.gameObject.SetActive(true);
         this.interactiveMessageBox.SetText("", false);
         //this.interactiveMessageBox.ActiveButton(false);
-        this.interactiveMessageBox.ActiveButton(true, () => OnGameEnd());
+        
         //MainUI.instance.OnGetItem(this.transform.position,"magic","pattern");
     }
 
     public void OnGameEnd()
     {
-        this.systemMessage.SetMessage("YOU DIED", "111111m", 5);
+        this.interactiveMessageBox.SetText("Touch To ReStart", true);
+        this.interactiveMessageBox.ActiveButton(true, () => GameManager.instance.ReStart());
     }
 
     public Camera GetUICamera()

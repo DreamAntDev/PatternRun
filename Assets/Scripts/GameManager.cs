@@ -14,15 +14,6 @@ public class GameManager : MonoBehaviour
 
 
 
-    [Header("- UI Board")]
-    [SerializeField] protected TextMeshProUGUI scoreText;
-    [SerializeField] protected TextMeshProUGUI bestScoreText;
-    [SerializeField] protected TextMeshProUGUI totalScoreText;
-    [SerializeField] protected GameObject deadUI;
-    [SerializeField] protected TextMeshProUGUI deadScoreText;
-    
-
-
     private bool isTouch = false;
     private List<string> chainList;
     private string chainText;
@@ -53,8 +44,9 @@ public class GameManager : MonoBehaviour
 
     public void Init()
     {
-        bestScoreText.text = previousMaxScore.ToString();
-        totalScoreText.text = totalScore.ToString();
+        var title = MainUI.Instance.title;
+        title.SetBestScore(previousMaxScore);
+        title.SetTotalScore(totalScore);
     }
 
     public void Reset()
@@ -117,11 +109,10 @@ public class GameManager : MonoBehaviour
     public void GameEnd()
     {
         gameStart = false;
-        deadScoreText.text = scoreMeter.ToString();
         player.Stop();
-        deadUI.SetActive(true);
+        MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5);
+        MainUI.Instance.OnGameEnd();
         ScroeTransaction();
-        
     }
 
     public void ReStart()
@@ -164,7 +155,7 @@ public class GameManager : MonoBehaviour
     public void TestMeter()
     {
         scoreMeter += Time.deltaTime;
-        scoreText.text = String.Format("{0} m", scoreMeter.ToString());
+        MainUI.Instance.inGameScore.SetScore(scoreMeter);
     }
     
 
