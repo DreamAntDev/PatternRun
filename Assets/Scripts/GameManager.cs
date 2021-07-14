@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
     public bool gameStart { get; set; }
     [SerializeField] Player player;
 
-
-
     [Header("- UI Board")]
     [SerializeField] protected TextMeshProUGUI scoreText;
     [SerializeField] protected TextMeshProUGUI bestScoreText;
@@ -21,7 +19,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] protected GameObject deadUI;
     [SerializeField] protected TextMeshProUGUI deadScoreText;
     
-
 
     private bool isTouch = false;
     private List<string> chainList;
