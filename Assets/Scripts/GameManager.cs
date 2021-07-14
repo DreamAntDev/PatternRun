@@ -12,22 +12,22 @@ public class GameManager : MonoBehaviour
     public bool gameStart { get; set; }
     [SerializeField] Player player;
 
-<<<<<<< HEAD
     [Header("- UI Board")]
     [SerializeField] protected TextMeshProUGUI scoreText;
     [SerializeField] protected TextMeshProUGUI bestScoreText;
     [SerializeField] protected TextMeshProUGUI totalScoreText;
     [SerializeField] protected GameObject deadUI;
     [SerializeField] protected TextMeshProUGUI deadScoreText;
-    
+
+
+    [Header("- Player")]
+    [SerializeField] CommandInventory commandInventory;
 
     private bool isTouch = false;
     private List<string> chainList;
     private string chainText;
-=======
-    [SerializeField] CommandInventory commandInventory;
 
->>>>>>> a0a6fd09b0c710ae6376feb1257a08c22b195646
+
     private float scoreMeter = 0f;
 
     //Score

@@ -39,11 +39,9 @@ public class FieldManager : MonoBehaviour
     {
         var field = this.fieldPrefab.GetComponent<Field>();
         this.xSize = field.sprite.size.x * field.gameObject.transform.localScale.x;
-<<<<<<< HEAD
-=======
+
         this.spawnPos.y = -2.5f;
         this.generatedCount = 0;
->>>>>>> a0a6fd09b0c710ae6376feb1257a08c22b195646
         InitField();
     }
 
