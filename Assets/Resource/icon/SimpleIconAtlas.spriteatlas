@@ -58,12 +58,12 @@ SpriteAtlas:
   - heart
   - guide_dash
   - jump
-  - down
+  - sit
   - attack
   - guide
   - guide_attack
   - magic
-  - guide_down
+  - guide_sit
   - up
   - dash
   - guide_jump

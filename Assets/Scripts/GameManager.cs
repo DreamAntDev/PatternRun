@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public bool gameStart { get; set; }
     [SerializeField] Player player;
 
+<<<<<<< HEAD
     [Header("- UI Board")]
     [SerializeField] protected TextMeshProUGUI scoreText;
     [SerializeField] protected TextMeshProUGUI bestScoreText;
@@ -23,6 +24,10 @@ public class GameManager : MonoBehaviour
     private bool isTouch = false;
     private List<string> chainList;
     private string chainText;
+=======
+    [SerializeField] CommandInventory commandInventory;
+
+>>>>>>> a0a6fd09b0c710ae6376feb1257a08c22b195646
     private float scoreMeter = 0f;
 
     //Score
@@ -36,12 +41,9 @@ public class GameManager : MonoBehaviour
         instance = this;
 
        //DontDestroyOnLoad(this);
-        chainText = string.Empty;
     }
     private void Start()
     {
-        chainList = new List<string>();
-
         previousMaxScore = PlayerPrefs.GetFloat("MaxScore", 0f);
         totalScore = PlayerPrefs.GetFloat("TotalScore", 0f);
 
@@ -50,75 +52,80 @@ public class GameManager : MonoBehaviour
 
     public void Init()
     {
-        bestScoreText.text = previousMaxScore.ToString();
-        totalScoreText.text = totalScore.ToString();
-    }
-
-    public void Reset()
-    {
-        var distinctList = chainList.Distinct();
-
-        foreach (var x in distinctList)
+        var title = MainUI.Instance.title;
+        title.SetBestScore(previousMaxScore);
+        title.SetTotalScore(totalScore);
+        if(this.commandInventory == null)
         {
-            chainText += x;
+            var obj = new GameObject("CommandInventory");
+            var inventory = obj.AddComponent<CommandInventory>();
+            this.commandInventory = inventory;
         }
-        SetPatten(chainText);
-        isTouch = false;
-        chainList.Clear();
     }
 
     public void SetPatten(string state)
     {
-        Debug.Log(state);
-        switch (state)
+        var actionName = GetEnableActionName(state);
+        if (string.IsNullOrEmpty(actionName) == true)
+            return;
+
+        switch (actionName)
         {
-            case "ABC":
-            case "DEF":
-            case "GHI":
+            case "dash":
                 // Dash
                 player.Dash();
                 Debug.Log("Dash Animation");
                 break;
 
-            case "ADG":
-            case "BEH":
-            case "CFI":
+            case "sit":
                 player.Sit();
                 Debug.Log("Sit Animation");
                 break;
 
-            case "GDA":
-            case "HEB":
-            case "IFC":
+            case "jump":
                 // Jump
                 player.Jump();
                 Debug.Log("Jump Animation");
                 break;
 
-            case "AEI":
+            case "attack":
                 // Attack
                 player.Attack();
                 break;
         }
-        chainText = string.Empty;
     }
 
-    public void ChainTouch(string currentString)
+    private string GetEnableActionName(string inputCommand)
     {
-        if (isTouch)
+        string actionName = string.Empty;
+        foreach (var cmd in commandInventory.enableCommandList)
         {
-            chainList.Add(currentString);
+            foreach (var usingCmd in cmd.usingCommand)
+            {
+                if (usingCmd.Equals(inputCommand) == true)
+                {
+                    actionName = cmd.actionName;
+                    return actionName;
+                }
+            }
         }
+        return actionName;
+    }
+    public void GetCommandItem(NData.Item item,Vector3 worldPos)
+    {
+        if(this.commandInventory.enableCommandList.Contains(item) == false)
+            this.commandInventory.enableCommandList.Add(item);
+
+        MainUI.Instance.OnGetItem(worldPos, item.iconName, item.patternName);
     }
 
     public void GameEnd()
     {
         gameStart = false;
-        deadScoreText.text = scoreMeter.ToString();
         player.Stop();
-        deadUI.SetActive(true);
+        MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5);
+        MainUI.Instance.OnGameEnd();
         ScroeTransaction();
-        
     }
 
     public void ReStart()
@@ -143,12 +150,6 @@ public class GameManager : MonoBehaviour
         player.StartMove();
     }
 
-    public void InputStart()
-    {
-        isTouch = true;
-        Debug.Log("Input Start --------------------");
-    }
-
 
     private void Update()
     {
@@ -161,7 +162,7 @@ public class GameManager : MonoBehaviour
     public void TestMeter()
     {
         scoreMeter += Time.deltaTime;
-        scoreText.text = String.Format("{0} m", scoreMeter.ToString());
+        MainUI.Instance.inGameScore.SetScore(scoreMeter);
     }
     
 
