@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (GameManager.instance.gameStart)
+        if (GameManager.instance.isPlay)
         {
             if (collision.transform.tag.Equals("Item"))
             {
@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (GameManager.instance.gameStart)
+        if (GameManager.instance.isPlay)
         {
             if (collision.transform.tag.Equals("Item"))
             {

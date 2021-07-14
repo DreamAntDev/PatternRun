@@ -6,7 +6,7 @@ public class TrapTrigger : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (GameManager.instance.gameStart)
+        if (GameManager.instance.isPlay)
         {
             if (collision.transform.tag.Equals("Player"))
             {
@@ -17,7 +17,7 @@ public class TrapTrigger : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (GameManager.instance.gameStart)
+        if (GameManager.instance.isPlay)
         {
             if (collision.transform.tag.Equals("Player"))
             {

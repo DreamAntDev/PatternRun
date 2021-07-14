@@ -9,6 +9,6 @@ public class TargetCamera : MonoBehaviour
     public Vector2 offset;
     private void LateUpdate()
     {
-        this.transform.position = new Vector3(target.position.x + offset.x, 0, this.transform.position.z);
+        this.transform.position = new Vector3(target.position.x + offset.x, offset.y, this.transform.position.z);
     }
 }

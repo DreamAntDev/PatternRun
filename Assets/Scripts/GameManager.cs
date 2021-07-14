@@ -18,14 +18,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI totalScoreText;
     [SerializeField] protected GameObject deadUI;
     [SerializeField] protected TextMeshProUGUI deadScoreText;
+    
 
 
     [Header("- Player")]
     [SerializeField] CommandInventory commandInventory;
+    [SerializeField] GameObject[] items;
+
+    [Header("- Trap")]
+    [SerializeField] protected TrapSimulation trapSimulation;
 
     private bool isTouch = false;
     private List<string> chainList;
     private string chainText;
+    public bool isPlay = false;
 
 
     private float scoreMeter = 0f;
@@ -116,12 +122,27 @@ public class GameManager : MonoBehaviour
         if(this.commandInventory.enableCommandList.Contains(item) == false)
             this.commandInventory.enableCommandList.Add(item);
 
+        GetPlayerItem(item.iconName);
+        trapSimulation.GetItem(item.iconName);
         MainUI.Instance.OnGetItem(worldPos, item.iconName, item.patternName);
+    }
+
+    public void GetPlayerItem(string iconName)
+    {
+        switch (iconName)
+        {
+            case "attack":
+                items[0].SetActive(true);
+                break;
+            case "shield":
+                items[1].SetActive(true);
+                break;
+        }
     }
 
     public void GameEnd()
     {
-        gameStart = false;
+        isPlay = false;
         player.Stop();
         MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5);
         MainUI.Instance.OnGameEnd();
@@ -146,14 +167,15 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        gameStart = true;
+        isPlay = true;
         player.StartMove();
+        trapSimulation.OnSimulation();
     }
 
 
     private void Update()
     {
-        if (gameStart)
+        if (isPlay)
         {
             TestMeter();
         }
@@ -163,6 +185,11 @@ public class GameManager : MonoBehaviour
     {
         scoreMeter += Time.deltaTime;
         MainUI.Instance.inGameScore.SetScore(scoreMeter);
+    }
+
+    public Player GetPlayer()
+    {
+        return player;
     }
     
 
