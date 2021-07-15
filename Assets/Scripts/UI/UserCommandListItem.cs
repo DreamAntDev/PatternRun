@@ -7,4 +7,38 @@ public class UserCommandListItem : MonoBehaviour
 {
     public Image command;
     public Image icon;
+
+    public void StartSwitchDisplay()
+    {
+        StartCoroutine(SwitchingCoroutine());
+    }
+    IEnumerator SwitchingCoroutine()
+    {
+        var increaser = command;
+        var decreaser = icon;
+
+        var tempColor = increaser.color;
+        tempColor.a = 0.0f;
+        increaser.color = tempColor;
+        while(true)
+        {
+            var decColor = decreaser.color;
+            decColor.a = Mathf.Lerp(decColor.a, 0.0f, Time.deltaTime*2);
+            decreaser.color = decColor;
+
+            var incColor = increaser.color;
+            incColor.a = 1.0f - decColor.a;
+            increaser.color = incColor;
+
+            yield return null;
+            if(decreaser.color.a<=0.01f && increaser.color.a>=0.99f)
+            {
+                var temp = decreaser;
+                decreaser = increaser;
+                increaser = temp;
+                increaser.GetComponent<Canvas>().sortingOrder = 1;
+                decreaser.GetComponent<Canvas>().sortingOrder = 0;
+            }
+        }
+    }
 }

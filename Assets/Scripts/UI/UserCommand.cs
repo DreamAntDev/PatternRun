@@ -14,6 +14,10 @@ public class UserCommand : MonoBehaviour
     {
         this.fakeItemBeginPos = fakeItem.GetComponent<RectTransform>().anchoredPosition3D;
         this.rectTransform = GetComponent<RectTransform>();
+        foreach(var obj in listItemList)
+        {
+            obj.StartSwitchDisplay();
+        }
     }
     public void Insert(Vector3 worldPos, string iconName, string patternName)
     {
@@ -44,7 +48,9 @@ public class UserCommand : MonoBehaviour
     {
         var listItem = listItemList[currentIndex];
         listItem.icon.sprite = MainUI.Instance.iconAtlas.GetSprite(iconName);
+        listItem.icon.gameObject.SetActive(true);
         listItem.command.sprite = MainUI.Instance.iconAtlas.GetSprite(patternName);
+        listItem.command.gameObject.SetActive(true);
         listItem.gameObject.SetActive(true);
         this.fakeItem.gameObject.SetActive(false);
     }
