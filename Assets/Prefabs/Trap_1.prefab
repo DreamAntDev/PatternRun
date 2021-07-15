@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7830379640556994019}
   - component: {fileID: 7830379640556994018}
   - component: {fileID: -7251395802449390020}
+  - component: {fileID: 2505644361279493659}
   m_Layer: 8
   m_Name: Trap_1
   m_TagString: Untagged
@@ -122,3 +123,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.51}
   m_EdgeRadius: 0
+--- !u!50 &2505644361279493659
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7830379640556994045}
+  m_BodyType: 0
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

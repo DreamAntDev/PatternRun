@@ -8,9 +8,15 @@ public class TrapTrigger : MonoBehaviour
     {
         if (GameManager.instance.isPlay)
         {
+            Debug.Log(collision.transform.name);
             if (collision.transform.tag.Equals("Player"))
             {
                 GameManager.instance.GameEnd();
+            }
+
+            if (collision.transform.tag.Equals("Item"))
+            {
+                Destroy(gameObject);
             }
         }
     }
@@ -22,6 +28,11 @@ public class TrapTrigger : MonoBehaviour
             if (collision.transform.tag.Equals("Player"))
             {
                 GameManager.instance.GameEnd();
+            }
+
+            if (collision.transform.tag.Equals("Item"))
+            {
+                Destroy(gameObject);
             }
         }
     }
