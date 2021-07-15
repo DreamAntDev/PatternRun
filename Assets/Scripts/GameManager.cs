@@ -172,7 +172,10 @@ public class GameManager : MonoBehaviour
     {
         isPlay = true;
         player.StartMove();
-        trapSimulation.OnSimulation();
+        if (!isPlay)
+        {
+            trapSimulation.OnSimulation();
+        }
     }
 
 
