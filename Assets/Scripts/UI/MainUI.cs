@@ -67,8 +67,9 @@ public class MainUI : MonoBehaviour
         this.title.gameObject.SetActive(false);
         this.inGameScore.gameObject.SetActive(true);
         this.interactiveMessageBox.SetText("", false);
+        this.interactiveMessageBox.ActiveButton(false);
         //this.interactiveMessageBox.ActiveButton(false);
-        
+
         //MainUI.instance.OnGetItem(this.transform.position,"magic","pattern");
     }
 
