@@ -8,7 +8,6 @@ public class TrapTrigger : MonoBehaviour
     {
         if (GameManager.instance.isPlay)
         {
-            Debug.Log(collision.transform.name);
             if (collision.transform.tag.Equals("Player"))
             {
                 GameManager.instance.GameEnd();
