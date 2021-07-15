@@ -11,6 +11,7 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
         public GameObject obj;
         public string value;
     }
+
     public List<Point> PointList = new List<Point>();
     public BoxCollider2D inputCollider;
     public LineRenderer lineRenderer;
@@ -26,11 +27,18 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
         this.inputRectTransform = inputCollider.GetComponent<RectTransform>();
         this.rectTransform = GetComponent<RectTransform>();
         this.dotPerLine = (int)Mathf.Sqrt(this.PointList.Count);
+        var rect = this.rectTransform.rect;       
     }
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
         Vector2 localPos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(this.rectTransform, eventData.position, MainUI.Instance.GetUICamera(), out localPos);
+
+        localPos.x = Mathf.Max(localPos.x, this.rectTransform.rect.xMin);
+        localPos.x = Mathf.Min(localPos.x, this.rectTransform.rect.xMax);
+        localPos.y = Mathf.Max(localPos.y, this.rectTransform.rect.yMin);
+        localPos.y = Mathf.Min(localPos.y, this.rectTransform.rect.yMax);
+
         this.inputRectTransform.localPosition = localPos;
         if(userInput.Count > 0)
         {
