@@ -30,6 +30,8 @@ public class MainUI : MonoBehaviour
 
     public UnityEngine.U2D.SpriteAtlas iconAtlas;
 
+    public NData.Language langauge;
+
     private Camera UICamera;
 
     private void Awake()
@@ -74,6 +76,27 @@ public class MainUI : MonoBehaviour
     {
         this.interactiveMessageBox.SetText("Touch To ReStart", true);
         this.interactiveMessageBox.ActiveButton(true, () => GameManager.instance.ReStart());
+    }
+
+    public void OnAttack()
+    {
+        string textValue = this.langauge.GetLanguage("MainUI_Attack");
+        this.interactiveMessageBox.SetText(textValue, false);
+    }
+    public void OnSit()
+    {
+        string textValue = this.langauge.GetLanguage("MainUI_Sit");
+        this.interactiveMessageBox.SetText(textValue, false);
+    }
+    public void OnDamage()
+    {
+        string textValue = this.langauge.GetLanguage("MainUI_Damage");
+        this.interactiveMessageBox.SetText(textValue, false);
+    }
+    public void OnJump()
+    {
+        string textValue = this.langauge.GetLanguage("MainUI_Jump");
+        this.interactiveMessageBox.SetText(textValue, false);
     }
 
     public Camera GetUICamera()

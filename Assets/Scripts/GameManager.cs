@@ -85,18 +85,21 @@ public class GameManager : MonoBehaviour
 
             case "sit":
                 player.Sit();
+                MainUI.Instance.OnSit();
                 Debug.Log("Sit Animation");
                 break;
 
             case "jump":
                 // Jump
                 player.Jump();
+                MainUI.Instance.OnJump();
                 Debug.Log("Jump Animation");
                 break;
 
             case "attack":
                 // Attack
                 player.Attack();
+                MainUI.Instance.OnAttack();
                 break;
         }
     }
