@@ -61,6 +61,7 @@ public class MainUI : MonoBehaviour
     }
     public void OnGameStart()
     {
+        GameManager.instance.GameStart();
         this.title.gameObject.SetActive(false);
         this.inGameScore.gameObject.SetActive(true);
         this.interactiveMessageBox.SetText("", false);
