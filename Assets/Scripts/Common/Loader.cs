@@ -8,9 +8,24 @@ public class Loader : MonoBehaviour
 
     private void Awake()
     {
-        foreach(var obj in loadObjectList)
+        SetCameraSize();
+        foreach (var obj in loadObjectList)
         {
             var newObj = Instantiate(obj);
         }
+        SetUISize();
+    }
+
+    private void SetCameraSize()
+    {
+        if (Camera.main.targetTexture != null)
+            Camera.main.targetTexture.Release();
+
+        Camera.main.targetTexture = new RenderTexture(Screen.width, (int)(Screen.height * 0.6f),16,RenderTextureFormat.ARGB32);
+        Camera.main.targetTexture.Create();
+    }
+    private void SetUISize()
+    {
+        MainUI.Instance.SetMainCameraTexture();
     }
 }
