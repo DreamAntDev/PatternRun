@@ -32,8 +32,6 @@ public class MainUI : MonoBehaviour
 
     public NData.Language langauge;
 
-    public RawImage MainCameraImage;
-
     private Camera UICamera;
 
     private void Awake()
@@ -110,10 +108,5 @@ public class MainUI : MonoBehaviour
     public void OnGetItem(Vector3 worldPos, string iconName, string patternName)
     {
         this.userCommand.Insert(worldPos, iconName, patternName);
-    }
-
-    public void SetMainCameraTexture()
-    {
-        this.MainCameraImage.texture = Camera.main.targetTexture;
     }
 }
