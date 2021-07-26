@@ -71,11 +71,11 @@ public class GameManager : MonoBehaviour
 
     public void SetPatten(string state)
     {
-        var actionName = GetEnableActionName(state);
-        if (string.IsNullOrEmpty(actionName) == true)
+        var item = this.commandInventory.GetCommandItem(state);
+        if (item == null)
             return;
 
-        switch (actionName)
+        switch (item.actionName)
         {
             case "dash":
                 // Dash
@@ -104,30 +104,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private string GetEnableActionName(string inputCommand)
-    {
-        string actionName = string.Empty;
-        foreach (var cmd in commandInventory.enableCommandList)
-        {
-            foreach (var usingCmd in cmd.usingCommand)
-            {
-                if (usingCmd.Equals(inputCommand) == true)
-                {
-                    actionName = cmd.actionName;
-                    return actionName;
-                }
-            }
-        }
-        return actionName;
-    }
     public void GetCommandItem(NData.Item item,Vector3 worldPos)
     {
-        if(this.commandInventory.enableCommandList.Contains(item) == false)
-            this.commandInventory.enableCommandList.Add(item);
-
-        GetPlayerItem(item.iconName);
-        trapSimulation.GetItem(item.iconName);
-        MainUI.Instance.OnGetItem(worldPos, item.iconName, item.patternName);
+        bool success = this.commandInventory.AddItem(item);
+        if (success)
+        {
+            GetPlayerItem(item.iconName);
+            trapSimulation.GetItem(item.iconName);
+        }
     }
 
     public void GetPlayerItem(string iconName)

@@ -106,9 +106,4 @@ public class MainUI : MonoBehaviour
     {
         return this.UICamera;
     }
-
-    public void OnGetItem(Vector3 worldPos, string iconName, string patternName)
-    {
-        this.userCommand.Insert(worldPos, iconName, patternName);
-    }
 }

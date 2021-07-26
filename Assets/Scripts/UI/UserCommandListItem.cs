@@ -7,6 +7,56 @@ public class UserCommandListItem : MonoBehaviour
 {
     public Image command;
     public Image icon;
+    public TMPro.TextMeshProUGUI count;
+
+    public CommandInventory.Item item;
+
+    private Canvas commandCanvas;
+    private Canvas iconCanvas;
+
+    private void Awake()
+    {
+        this.commandCanvas = command.GetComponent<Canvas>();
+        this.iconCanvas = icon.GetComponent<Canvas>();
+    }
+
+    public void SetColorAlpha(float alphaValue,int commandOrder,int iconOrder)
+    {
+        var commandAlpha = alphaValue;
+        var iconAhpha = 1.0f - alphaValue;
+
+        var commandColor = this.command.color;
+        commandColor.a = commandAlpha;
+        this.command.color = commandColor;
+
+        var iconColor = this.icon.color;
+        iconColor.a = iconAhpha;
+        this.icon.color = iconColor;
+
+        this.commandCanvas.sortingOrder = commandOrder;
+        this.iconCanvas.sortingOrder = iconOrder;
+    }
+
+    public void SetItem(CommandInventory.Item item)
+    {
+        if (this.item != item)
+        {
+            this.item = item;
+            this.icon.sprite = MainUI.Instance.iconAtlas.GetSprite(item.itemData.iconName);
+            this.command.sprite = MainUI.Instance.iconAtlas.GetSprite(item.itemData.patternName);
+            this.gameObject.SetActive(true);
+        }
+
+        if (item.itemData.excuteCount > 0)
+        {
+            this.count.SetText(item.itemCount.ToString());
+        }
+        else
+        {
+            this.count.SetText(string.Empty);
+        }
+
+    }
 
     public void StartSwitchDisplay()
     {

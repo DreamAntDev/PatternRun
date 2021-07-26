@@ -1,8 +1,117 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CommandInventory : MonoBehaviour
 {
-    public List<NData.Item> enableCommandList = new List<NData.Item>();
+    public class Item
+    {
+        public NData.Item itemData;
+        public int itemCount = 0;
+        public Item(NData.Item item)
+        {
+            this.itemData = item;
+            this.itemCount = item.excuteCount;
+        }
+    }
+
+    private List<Item> commandItemList = new List<Item>();
+    private List<Item> autoActiveItemList = new List<Item>();
+
+    public bool AddItem(NData.Item item)
+    {
+        if(item.type==NData.Item.Type.Command)
+        {
+            var innerItem = commandItemList.Find(o => o.itemData.Equals(item));
+            if(innerItem == null)
+            {
+                commandItemList.Add(new Item(item));
+            }
+            else
+            {
+                innerItem.itemCount += item.excuteCount;
+            }
+            UpdateUI();
+            return true;
+        }
+        else if(item.type == NData.Item.Type.AutoActive)
+        {
+            var innerItem = autoActiveItemList.Find(o => o.itemData.Equals(item));
+            if (innerItem == null)
+            {
+                autoActiveItemList.Add(new Item(item));
+            }
+            else
+            {
+                innerItem.itemCount += item.excuteCount;
+            }
+            UpdateUI();
+            return true;
+        }
+
+        return false;
+    }
+
+    public NData.Item GetCommandItem(string command)
+    {
+        string actionName = string.Empty;
+        foreach (var item in this.commandItemList)
+        {
+            foreach (var usingCmd in item.itemData.usingCommand)
+            {
+                if (usingCmd.Equals(command) == true)
+                {
+                    return item.itemData;
+                }
+            }
+        }
+        return null;
+    }
+
+    public void UseItem(NData.Item useItem)
+    {
+        List<Item> targetInventoryList = null;
+        Item innerItem = this.commandItemList.Find(o => o.itemData.Equals(useItem));
+        if(innerItem != null)
+        {
+            targetInventoryList = this.commandItemList;
+        }
+        else
+        {
+            innerItem = this.autoActiveItemList.Find(o => o.itemData.Equals(useItem));
+            if(innerItem != null)
+            {
+                targetInventoryList = this.autoActiveItemList;
+            }
+            else
+            {
+                // 인벤에 아이템이 없는데 사용함
+                return;
+            }
+        }
+
+        if (innerItem.itemData.excuteCount > 0)
+        {
+            if (innerItem.itemCount > 0)
+            {
+                innerItem.itemCount--;
+                if(innerItem.itemCount == 0)
+                {
+                    targetInventoryList.Remove(innerItem);
+                }
+            }
+            else // 카운트가 없는데 사용함...
+            {
+                return;
+            }
+        }
+        UpdateUI();
+        return;
+    }
+
+    public void UpdateUI()
+    {
+        MainUI.Instance.userCommand.UpdateList(this.commandItemList);
+    }
 }
