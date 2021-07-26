@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c498df491487e1b4bb7babb01bc162fa, type: 3}
   m_Name: Attack
   m_EditorClassIdentifier: 
+  type: 0
   usingCommand:
   - AEI
   iconName: attack
   patternName: guide_attack
   actionName: attack
+  excuteCount: 0

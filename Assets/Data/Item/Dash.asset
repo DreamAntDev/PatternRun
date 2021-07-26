@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c498df491487e1b4bb7babb01bc162fa, type: 3}
   m_Name: Dash
   m_EditorClassIdentifier: 
+  type: 0
   usingCommand:
   - ABC
   - DEF
@@ -19,3 +20,4 @@ MonoBehaviour:
   iconName: dash
   patternName: guide_dash
   actionName: dash
+  excuteCount: 0
