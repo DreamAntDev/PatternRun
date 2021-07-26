@@ -628,7 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5409299335259481359}
   m_Layer: 5
-  m_Name: TouchToStart
+  m_Name: TextBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2226,12 +2226,12 @@ RectTransform:
   m_Children:
   - {fileID: 9199319271929377654}
   - {fileID: 5552426434832785845}
-  m_Father: {fileID: 2225282519196599746}
-  m_RootOrder: 6
+  m_Father: {fileID: 1261808015044484865}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 157, y: -405}
+  m_AnchoredPosition: {x: 6, y: 219.99988}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &25751372626560662
@@ -8422,7 +8422,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2225282519196599746}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8989,6 +8989,7 @@ RectTransform:
   m_Children:
   - {fileID: 8054276703140169038}
   - {fileID: 5409299335259481359}
+  - {fileID: 2662705632620796344}
   m_Father: {fileID: 2225282519196599746}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9771,8 +9772,8 @@ MonoBehaviour:
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 22, y: 22}
-  m_Constraint: 1
-  m_ConstraintCount: 3
+  m_Constraint: 2
+  m_ConstraintCount: 1
 --- !u!1 &8789663195156282568
 GameObject:
   m_ObjectHideFlags: 0
@@ -9885,7 +9886,6 @@ RectTransform:
   - {fileID: 1261808015044484865}
   - {fileID: 2660617572156732830}
   - {fileID: 3885890367970827119}
-  - {fileID: 2662705632620796344}
   - {fileID: 8392131183542287366}
   m_Father: {fileID: 0}
   m_RootOrder: 0

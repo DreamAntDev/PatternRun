@@ -57,7 +57,8 @@ public class MainUI : MonoBehaviour
     {
         this.title.gameObject.SetActive(true);
         this.inGameScore.gameObject.SetActive(false);
-        this.interactiveMessageBox.SetText("Touch To Start", true);
+        //this.interactiveMessageBox.SetText("Touch To Start", true);
+        this.interactiveMessageBox.SetText("Touch To Start", false);
         this.interactiveMessageBox.ActiveButton(true, () => OnGameStart());
         this.systemMessage.gameObject.SetActive(false);
     }
@@ -75,29 +76,30 @@ public class MainUI : MonoBehaviour
 
     public void OnGameEnd()
     {
-        this.interactiveMessageBox.SetText("Touch To ReStart", true);
+        this.interactiveMessageBox.SetText("Touch To ReStart", false);
         this.interactiveMessageBox.ActiveButton(true, () => GameManager.instance.ReStart());
+        this.userCommand.ClearCommand();
     }
 
     public void OnAttack()
     {
-        string textValue = this.langauge.GetLanguage("MainUI_Attack");
-        this.interactiveMessageBox.SetText(textValue, false);
+        //string textValue = this.langauge.GetLanguage("MainUI_Attack");
+        //this.interactiveMessageBox.SetText(textValue, false);
     }
     public void OnSit()
     {
-        string textValue = this.langauge.GetLanguage("MainUI_Sit");
-        this.interactiveMessageBox.SetText(textValue, false);
+        //string textValue = this.langauge.GetLanguage("MainUI_Sit");
+        //this.interactiveMessageBox.SetText(textValue, false);
     }
     public void OnDamage()
     {
-        string textValue = this.langauge.GetLanguage("MainUI_Damage");
-        this.interactiveMessageBox.SetText(textValue, false);
+        //string textValue = this.langauge.GetLanguage("MainUI_Damage");
+        //this.interactiveMessageBox.SetText(textValue, false);
     }
     public void OnJump()
     {
-        string textValue = this.langauge.GetLanguage("MainUI_Jump");
-        this.interactiveMessageBox.SetText(textValue, false);
+        //string textValue = this.langauge.GetLanguage("MainUI_Jump");
+        //this.interactiveMessageBox.SetText(textValue, false);
     }
 
     public Camera GetUICamera()

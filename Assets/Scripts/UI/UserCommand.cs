@@ -21,6 +21,16 @@ public class UserCommand : MonoBehaviour
     }
     public void Insert(Vector3 worldPos, string iconName, string patternName)
     {
+        if (currentIndex != listItemList.Count - 1)
+            currentIndex++;
+        else // ¸Ô±â ½ÇÆÐ
+            return;
+        //InsertUsingTween(worldPos,iconName,patternName);
+        SetPattern(iconName, patternName);
+    }
+
+    private void InsertUsingTween(Vector3 worldPos, string iconName, string patternName)
+    {
         //fakeItem.gameObject.GetComponent<RectTransform>().anchoredPosition;
         //var cam = MainUI.Instance.GetUICamera();
         var cam = Camera.main;
@@ -34,17 +44,15 @@ public class UserCommand : MonoBehaviour
         fakeItem.GetComponent<RectTransform>().anchoredPosition = localRectTrans;
         //fakeItem.GetComponent<RectTransform>().anchoredPosition3D = this.fakeItemBeginPos;
         var tween = fakeItem.GetComponent<UITween>();
-        if (currentIndex != listItemList.Count-1)
-            currentIndex++;
 
         var listItem = listItemList[currentIndex];
         var targetPos = listItem.GetComponent<RectTransform>().anchoredPosition3D;
         tween.endPos = targetPos;
         tween.CreateClip();
-        tween.AnimPlay(() => TweenAnimEnd(iconName, patternName));
+        tween.AnimPlay(() => SetPattern(iconName, patternName));
     }
 
-    public void TweenAnimEnd(string iconName,string patternName)
+    public void SetPattern(string iconName,string patternName)
     {
         var listItem = listItemList[currentIndex];
         listItem.icon.sprite = MainUI.Instance.iconAtlas.GetSprite(iconName);
@@ -53,5 +61,14 @@ public class UserCommand : MonoBehaviour
         listItem.command.gameObject.SetActive(true);
         listItem.gameObject.SetActive(true);
         this.fakeItem.gameObject.SetActive(false);
+    }
+
+    public void ClearCommand()
+    {
+        this.currentIndex = -1;
+        foreach(var item in listItemList)
+        {
+            item.gameObject.SetActive(false);
+        }
     }
 }
