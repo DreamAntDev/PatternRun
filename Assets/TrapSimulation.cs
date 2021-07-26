@@ -12,10 +12,7 @@ public class TrapSimulation : MonoBehaviour
     private float[] randomY = { 0f, 0f };
 
     // x = +8f, up = +5f
-    private void Start()
-    {
-        
-    }
+
     public void OnSimulation()
     {
         StartCoroutine(StartSimulation());

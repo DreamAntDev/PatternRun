@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Advertisements;
 
 public class GameManager : MonoBehaviour
 {
@@ -66,6 +67,14 @@ public class GameManager : MonoBehaviour
             var obj = new GameObject("CommandInventory");
             var inventory = obj.AddComponent<CommandInventory>();
             this.commandInventory = inventory;
+        }
+    }
+
+    public void ShowAds()
+    {
+        if (Advertisement.IsReady())
+        {
+            Advertisement.Show();
         }
     }
 
@@ -138,6 +147,7 @@ public class GameManager : MonoBehaviour
 
     public void ReStart()
     {
+        AdsManager.instance.AdsShow();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
