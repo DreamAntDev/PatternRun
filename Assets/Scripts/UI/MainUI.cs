@@ -60,7 +60,6 @@ public class MainUI : MonoBehaviour
         //this.interactiveMessageBox.SetText("Touch To Start", true);
         this.interactiveMessageBox.SetText("Touch To Start", false);
         this.interactiveMessageBox.ActiveButton(true, () => OnGameStart());
-        this.interactiveMessageBox.ActiveButton(true, () => AdsManager.instance.AdsShow());
         this.systemMessage.gameObject.SetActive(false);
     }
     public void OnGameStart()
