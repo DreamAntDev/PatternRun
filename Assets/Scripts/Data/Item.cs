@@ -18,5 +18,6 @@ namespace NData
         public string patternName;
         public string actionName;
         public int excuteCount;
+        public List<string> trapCode;
     }
 }
