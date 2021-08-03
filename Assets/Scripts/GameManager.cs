@@ -110,6 +110,9 @@ public class GameManager : MonoBehaviour
                 player.Attack();
                 MainUI.Instance.OnAttack();
                 break;
+            case "arrowShot":
+                player.ArrowShot();
+                break;
         }
     }
 
@@ -118,22 +121,17 @@ public class GameManager : MonoBehaviour
         bool success = this.commandInventory.AddItem(item);
         if (success)
         {
-            GetPlayerItem(item.iconName);
-            trapSimulation.GetItem(item.iconName);
+            if (string.IsNullOrEmpty(item.equipName) == false)
+            {
+                GetPlayerItem(item.actionName);
+            }
+            trapSimulation.GetItem(item.actionName);
         }
     }
 
-    public void GetPlayerItem(string iconName)
+    public void GetPlayerItem(string equipName)
     {
-        switch (iconName)
-        {
-            case "attack":
-                items[0].SetActive(true);
-                break;
-            case "shield":
-                items[1].SetActive(true);
-                break;
-        }
+        player.Equip(equipName);
     }
 
     public void GameEnd()
