@@ -126,7 +126,10 @@ public class GameManager : MonoBehaviour
             {
                 GetPlayerItem(item.actionName);
             }
-            trapSimulation.GetItem(item.actionName);
+            if (item.trapCode != null && item.trapCode.Count > 0)
+            {
+                trapSimulation.SetTrap(item.trapCode.ToArray());
+            }
         }
     }
 

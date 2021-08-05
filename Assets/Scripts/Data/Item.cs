@@ -19,6 +19,6 @@ namespace NData
         public string actionName;
         public string equipName;
         public int excuteCount;
-        public List<string> trapCode;
+        public List<int> trapCode;
     }
 }
