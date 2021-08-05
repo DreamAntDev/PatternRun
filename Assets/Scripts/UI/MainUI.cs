@@ -70,6 +70,7 @@ public class MainUI : MonoBehaviour
         this.inGameScore.gameObject.SetActive(true);
         this.interactiveMessageBox.SetText("", false);
         this.interactiveMessageBox.ActiveButton(false);
+        this.interactiveMessageBox.gameObject.SetActive(false);
         //this.interactiveMessageBox.ActiveButton(false);
 
         //MainUI.instance.OnGetItem(this.transform.position,"magic","pattern");
@@ -77,6 +78,7 @@ public class MainUI : MonoBehaviour
 
     public void OnGameEnd()
     {
+        this.interactiveMessageBox.gameObject.SetActive(true);
         this.interactiveMessageBox.SetText("Touch To ReStart", false);
         this.interactiveMessageBox.ActiveButton(true, () => GameManager.instance.ReStart());
         this.userCommand.ClearCommand();
