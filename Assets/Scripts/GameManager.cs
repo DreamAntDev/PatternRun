@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     //Score
     private float previousMaxScore = 0f;
     private float totalScore = 0f;
-
+    public float weight = 25f;
 
 
     private void Awake()

@@ -411,6 +411,7 @@ MonoBehaviour:
   - {fileID: 1737813633}
   trapSimulation: {fileID: 1427052287}
   isPlay: 0
+  weight: 0
 --- !u!4 &627600983
 Transform:
   m_ObjectHideFlags: 0
@@ -874,11 +875,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps:
-  - {fileID: 7830379640556994045, guid: f077871e5b0c7164498bf47dd38395a6, type: 3}
-  - {fileID: 4062186699706018789, guid: b71f0833de0f3e24f9716cfef70ca342, type: 3}
-  - {fileID: 2068332632012471642, guid: 66ebf914d157b9e4aad7282245b3f9f5, type: 3}
-  - {fileID: 2068332632012471642, guid: 97e6a935d2d921b4d819b8d7de620462, type: 3}
-  - {fileID: 2068332632012471642, guid: 97e6a935d2d921b4d819b8d7de620462, type: 3}
+  - {fileID: 11400000, guid: 30083e30a27f08945b4a499a62535afc, type: 2}
+  - {fileID: 11400000, guid: ea055752857b80449bbe20abaed704e0, type: 2}
+  - {fileID: 11400000, guid: 496969ec1ce89b64282dfe356c7d873d, type: 2}
+  - {fileID: 11400000, guid: 7aa0876588e5c774c81e538b3b16b4bf, type: 2}
+  - {fileID: 11400000, guid: 19344bdb4771f914f8819302e8c650cc, type: 2}
+  - {fileID: 11400000, guid: 1a0f2e39bf7cd2c49a0367cefff08179, type: 2}
+  - {fileID: 11400000, guid: f2d45c58384628b45864aa6ac6998935, type: 2}
   maxTrapCount: 3
   topItemY: 0
 --- !u!1 &1513063928
@@ -1215,10 +1218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0571602e9cf9273488b28021ff170a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  traps:
-  - {fileID: 7830379640556994045, guid: f077871e5b0c7164498bf47dd38395a6, type: 3}
-  - {fileID: 4062186699706018789, guid: b71f0833de0f3e24f9716cfef70ca342, type: 3}
-  - {fileID: 2068332632012471642, guid: 66ebf914d157b9e4aad7282245b3f9f5, type: 3}
+  traps: []
   maxTrapCount: 3
   topItemY: 0
 --- !u!1 &1810344528
@@ -1608,6 +1608,9 @@ MonoBehaviour:
   dashVelccity: 2
   rollingVelocity: 2
   animator: {fileID: 1818555812}
+  equipList: []
+  creatablePrefabList: []
+  shotPos: {fileID: 0}
   movePos: {x: 0, y: 0, z: 0}
 --- !u!1 &2119489215
 GameObject:
