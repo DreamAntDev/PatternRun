@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TrapSimulation : MonoBehaviour
 {
-    protected List<Trap> onGameTraps;
+    protected List<Trap> onGameTraps = new List<Trap>();
 
     [SerializeField] Trap[] traps;
 
     private float[] randomY = { 0f, 0f };
     private float totalTrapWeight;
-    private Queue<GameObject> orderTrapQueue;
+    private Queue<GameObject> orderTrapQueue = new Queue<GameObject>();
     // x = +8f, up = +5f
 
     public void OnSimulation()
@@ -79,25 +79,37 @@ public class TrapSimulation : MonoBehaviour
     IEnumerator CreateTrap()
     {
         orderTrapQueue.Clear();
+        while(true)
+        {
+            if (onGameTraps.Count > 0)
+                break;
+
+            yield return new WaitForEndOfFrame();
+        }
         while (true)
         {
             Trap trap = onGameTraps[Random.Range(0, onGameTraps.Count)];
 
-            if (GameManager.instance.weight - ((5 - orderTrapQueue.Count) * 5f) > totalTrapWeight + trap.weight)
+            //if (GameManager.instance.weight - ((5 - orderTrapQueue.Count) * 5f) > totalTrapWeight + trap.weight)
+            if(orderTrapQueue.Count < 5)
             {
                 GameObject trapobj = GameObject.Instantiate(trap.obj);
+                orderTrapQueue.Enqueue(trapobj);
                 trapobj.SetActive(false);
             }
 
-            if(orderTrapQueue.Count > 5)
+            if(orderTrapQueue.Count >= 5)
             {
                 break;
             }
+            yield return new WaitForEndOfFrame();
         }
 
-        while(orderTrapQueue.Count <= 0)
+        while(orderTrapQueue.Count > 0)
         {
-            orderTrapQueue.Dequeue().transform.position += new Vector3(GameManager.instance.GetPlayer().transform.position.x + 15f, -10f, 0f);
+            var trapobj = orderTrapQueue.Dequeue();
+            trapobj.transform.position += new Vector3(GameManager.instance.GetPlayer().transform.position.x + 15f, -10f, 0f);
+            trapobj.SetActive(true);
             yield return new WaitForSeconds(2.5f);
         }
         

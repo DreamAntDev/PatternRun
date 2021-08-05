@@ -411,7 +411,7 @@ MonoBehaviour:
   - {fileID: 1737813633}
   trapSimulation: {fileID: 1427052287}
   isPlay: 0
-  weight: 0
+  weight: 25
 --- !u!4 &627600983
 Transform:
   m_ObjectHideFlags: 0
@@ -882,8 +882,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 19344bdb4771f914f8819302e8c650cc, type: 2}
   - {fileID: 11400000, guid: 1a0f2e39bf7cd2c49a0367cefff08179, type: 2}
   - {fileID: 11400000, guid: f2d45c58384628b45864aa6ac6998935, type: 2}
-  maxTrapCount: 3
-  topItemY: 0
 --- !u!1 &1513063928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,8 +1217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traps: []
-  maxTrapCount: 3
-  topItemY: 0
 --- !u!1 &1810344528
 GameObject:
   m_ObjectHideFlags: 0

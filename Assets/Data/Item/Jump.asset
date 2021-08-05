@@ -20,4 +20,6 @@ MonoBehaviour:
   iconName: jump
   patternName: guide_jump
   actionName: jump
+  equipName: 
   excuteCount: 0
+  trapCode: 01000000
