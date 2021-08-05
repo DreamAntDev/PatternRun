@@ -89,12 +89,12 @@ public class TrapSimulation : MonoBehaviour
         while (true)
         {
             Trap trap = onGameTraps[Random.Range(0, onGameTraps.Count)];
-
-            //if (GameManager.instance.weight - ((5 - orderTrapQueue.Count) * 5f) > totalTrapWeight + trap.weight)
-            if(orderTrapQueue.Count < 5)
+            Debug.Log(Random.Range(0, onGameTraps.Count));
+            if (GameManager.instance.weight - ((4 - orderTrapQueue.Count) * 5f) >= totalTrapWeight + trap.weight)
             {
                 GameObject trapobj = GameObject.Instantiate(trap.obj);
                 orderTrapQueue.Enqueue(trapobj);
+                totalTrapWeight += trap.weight;
                 trapobj.SetActive(false);
             }
 
@@ -112,6 +112,7 @@ public class TrapSimulation : MonoBehaviour
             trapobj.SetActive(true);
             yield return new WaitForSeconds(2.5f);
         }
-        
+
+        totalTrapWeight = 0;
     }
 }
