@@ -8,6 +8,7 @@ public class UserCommandListItem : MonoBehaviour
     public Image command;
     public Image icon;
     public TMPro.TextMeshProUGUI count;
+    public TMPro.TextMeshProUGUI desc;
 
     public CommandInventory.Item item;
 

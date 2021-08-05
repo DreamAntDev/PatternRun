@@ -32,7 +32,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 378581b760b3daa4fb8bc62a4f901e0c, type: 3}
-    totalSpriteSurfaceArea: 1143272
+    totalSpriteSurfaceArea: 1155560
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -44,12 +44,15 @@ SpriteAtlas:
   - {fileID: 21300000, guid: efa54c42e18b1704b97039d4d9636c95, type: 3}
   - {fileID: 21300000, guid: ac1b1413112967840af37ee60be59653, type: 3}
   - {fileID: 21300000, guid: c44223552c9852a4eaa7a33a459abfba, type: 3}
+  - {fileID: 21300000, guid: 3257b7d5a50be1e48bc91db2cbb4987e, type: 3}
   - {fileID: 21300000, guid: bbc4a826e92ac0f4081573a86e79bc13, type: 3}
   - {fileID: 21300000, guid: d6721e773ae387641a2cf1fa21d6f964, type: 3}
   - {fileID: 21300000, guid: 83e01b388d283c943ac64ce7485c1f13, type: 3}
   - {fileID: 21300000, guid: 35a0e478fa8b748499c063382efbb144, type: 3}
   - {fileID: 21300000, guid: c84925b83de3593419ca1824212a8ea6, type: 3}
   - {fileID: 21300000, guid: b0a182ca16bfaae49af18ae19b1214df, type: 3}
+  - {fileID: 21300000, guid: 01b8d07b3a25c744391aedb8e4cc9271, type: 3}
+  - {fileID: 21300000, guid: e135ce7b80caadc4598a34728843de00, type: 3}
   - {fileID: 21300000, guid: c47928ab27eeb374b899fc7e6d8cec8b, type: 3}
   - {fileID: 21300000, guid: 1fc9c4bb21b7f4f4099205d5903de8b5, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -59,12 +62,15 @@ SpriteAtlas:
   - guide_dash
   - jump
   - sit
+  - pattern
   - attack
   - guide
   - guide_attack
   - magic
   - guide_sit
   - up
+  - refresh
+  - running
   - dash
   - guide_jump
   m_RenderDataMap: {}
