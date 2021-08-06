@@ -17,6 +17,7 @@ MonoBehaviour:
   - GEC
   iconName: arrow
   patternName: guide_arrow
+  textCode: MainUI_Arrow
   actionName: arrowShot
   equipName: bow
   excuteCount: 3

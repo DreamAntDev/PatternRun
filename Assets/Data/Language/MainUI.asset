@@ -16,29 +16,30 @@ MonoBehaviour:
   - key: MainUI_Attack
     languageDictionary:
     - local: 0
-      text: "\uCD5C\uACE0\uC758 \uACF5\uACA9!, \uBCA0\uAE30 \uACF5\uACA9\uC774 \uC81C\uC77C
-        \uC88B\uC544, \uACF5\uACA9\uC740 \uCD5C\uC120\uC758 \uBC29\uC5B4\uB2E4."
+      text: "\uACF5\uACA9"
     - local: 1
-      text: Best Attack!, Slash attack is great, Attack is the best defense.
+      text: Attack
   - key: MainUI_Jump
     languageDictionary:
     - local: 0
-      text: "\uD53C\uD560\uC904\uB3C4 \uC54C\uC544\uC57C\uC9C0, \uC5B8\uC81C\uAE4C\uC9C0
-        \uC810\uD504\uB9CC \uD560\uAEBC\uC57C?, \uC810\uD504! \uC810\uD504! \uC810\uD504!"
+      text: "\uC810\uD504"
     - local: 1
-      text: You should know how to avoid, How long will I just jump?, jump! jump!
-        jump!
+      text: Jump
   - key: MainUI_Sit
     languageDictionary:
     - local: 0
-      text: "\uC218\uADF8\uB824!, \uBA38\uB9AC \uC870\uC2EC\uD574!, \uC798\uD588\uC5B4!"
+      text: "\uC549\uAE30"
     - local: 1
-      text: 
-  - key: MainUI_Damage
+      text: Sit
+  - key: MainUI_Dash
     languageDictionary:
     - local: 0
-      text: "\uC880 \uB354 \uBE68\uB9AC \uD328\uD134 \uB9DE\uCDB0\uBD10!, \uB0A0
-        \uBD10 \uB2E4\uCCE4\uC796\uC544!, \uC5B4\uB51C \uBCF4\uB294\uAC70\uC57C?,
-        \uC190\uAC00\uB77D\uC744 \uC6C0\uC9C1\uC5EC!"
+      text: "\uB300\uC26C"
     - local: 1
-      text: 
+      text: Dash
+  - key: MainUI_Arrow
+    languageDictionary:
+    - local: 0
+      text: "\uD654\uC0B4"
+    - local: 1
+      text: Arrow

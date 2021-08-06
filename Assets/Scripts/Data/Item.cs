@@ -16,6 +16,7 @@ namespace NData
         public List<string> usingCommand;
         public string iconName;
         public string patternName;
+        public string textCode;
         public string actionName;
         public string equipName;
         public int excuteCount;

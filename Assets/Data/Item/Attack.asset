@@ -17,6 +17,7 @@ MonoBehaviour:
   - AEI
   iconName: attack
   patternName: guide_attack
+  textCode: MainUI_Attack
   actionName: attack
   equipName: Weapon-Sword
   excuteCount: 0

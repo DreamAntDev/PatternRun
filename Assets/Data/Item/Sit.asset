@@ -19,5 +19,8 @@ MonoBehaviour:
   - CFI
   iconName: sit
   patternName: guide_sit
+  textCode: MainUI_Sit
   actionName: sit
+  equipName: 
   excuteCount: 0
+  trapCode: 

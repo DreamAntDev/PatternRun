@@ -35,12 +35,12 @@ namespace NData
         public string GetLanguage(string key)
         {
             var findObj = this.LanguagePairList.Find(o => o.key.Equals(key));
-            if(findObj == null)
-                return string.Empty;
+            if (findObj == null)
+                return key;
 
             var localObj = findObj.languageDictionary.Find(o => o.local.Equals(Local.Korea));
             if (localObj == null)
-                return string.Empty;
+                return key;
 
             return localObj.text;
         }

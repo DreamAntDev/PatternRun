@@ -19,6 +19,7 @@ MonoBehaviour:
   - IFC
   iconName: jump
   patternName: guide_jump
+  textCode: MainUI_Jump
   actionName: jump
   equipName: 
   excuteCount: 0

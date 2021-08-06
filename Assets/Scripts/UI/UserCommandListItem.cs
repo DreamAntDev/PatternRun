@@ -46,6 +46,7 @@ public class UserCommandListItem : MonoBehaviour
             this.icon.sprite = MainUI.Instance.iconAtlas.GetSprite(item.itemData.iconName);
             this.command.sprite = MainUI.Instance.iconAtlas.GetSprite(item.itemData.patternName);
             this.gameObject.SetActive(true);
+            this.desc.SetText(MainUI.Instance.langauge.GetLanguage(item.itemData.textCode));
         }
 
         if (item.itemData.excuteCount > 0)

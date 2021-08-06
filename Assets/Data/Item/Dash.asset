@@ -19,5 +19,8 @@ MonoBehaviour:
   - GHI
   iconName: dash
   patternName: guide_dash
+  textCode: MainUI_Dash
   actionName: dash
+  equipName: 
   excuteCount: 0
+  trapCode: 
