@@ -18,4 +18,6 @@ MonoBehaviour:
   iconName: attack
   patternName: guide_attack
   actionName: attack
+  equipName: Weapon-Sword
   excuteCount: 0
+  trapCode: 

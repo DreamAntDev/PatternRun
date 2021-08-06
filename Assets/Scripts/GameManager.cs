@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
         {
             if (string.IsNullOrEmpty(item.equipName) == false)
             {
-                GetPlayerItem(item.actionName);
+                GetPlayerItem(item.equipName);
             }
             if (item.trapCode != null && item.trapCode.Count > 0)
             {
