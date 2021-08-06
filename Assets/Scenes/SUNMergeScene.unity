@@ -1286,7 +1286,7 @@ MonoBehaviour:
   - {fileID: 3144575894429601864, guid: 3212d18bfeea1bd47b902f3f1e9148c9, type: 3}
   - {fileID: 6109887485960177378, guid: 7b8b6266fe8c67b4895e1d9b14838c30, type: 3}
   - {fileID: 4914239574807148649, guid: 1a52cf7a34d58394487e7c91de94d200, type: 3}
-  - {fileID: 5571253557848889491, guid: d1df71dc8c255f2419278b544e26e120, type: 3}
+  - {fileID: 738322424626506843, guid: 781e07080c648f9459a2445b2c61fff1, type: 3}
 --- !u!114 &1803971150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1690,9 +1690,10 @@ MonoBehaviour:
   equipList:
   - {fileID: 2023909756}
   - {fileID: 1737813633}
+  - {fileID: 515895028}
   creatablePrefabList:
   - {fileID: 677825856586391260, guid: 75866baaaa9ff4b44a06e79196ab18fc, type: 3}
-  shotPos: {fileID: 0}
+  shotPos: {fileID: 515895029}
   movePos: {x: 0, y: 0, z: 0}
 --- !u!1 &2119489215
 GameObject:

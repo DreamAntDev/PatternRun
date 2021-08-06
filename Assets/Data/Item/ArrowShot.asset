@@ -15,9 +15,9 @@ MonoBehaviour:
   type: 0
   usingCommand:
   - GEC
-  iconName: 
-  patternName: 
+  iconName: arrow
+  patternName: guide_arrow
   actionName: arrowShot
-  equipName: 
+  equipName: bow
   excuteCount: 3
-  trapCode: []
+  trapCode: 

@@ -9,7 +9,7 @@ public class ArrowMove : MonoBehaviour
     void Start()
     {
         this.rigidBody = GetComponent<Rigidbody2D>();
-        this.rigidBody.AddForce((new Vector2(1, 1)).normalized*10, ForceMode2D.Impulse);
+        this.rigidBody.AddForce((new Vector2(1, 1)).normalized*12, ForceMode2D.Impulse);
     }
 
     // Update is called once per frame

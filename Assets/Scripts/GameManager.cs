@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
         if (item == null)
             return;
 
+        bool useSuccess = true;
         switch (item.actionName)
         {
             case "dash":
@@ -114,6 +115,22 @@ public class GameManager : MonoBehaviour
             case "arrowShot":
                 player.ArrowShot();
                 break;
+            default:
+                useSuccess = false;
+                break;
+        }
+
+        if (useSuccess)
+        {
+            this.commandInventory.UseItem(item);
+            if(string.IsNullOrEmpty(item.equipName) == false)
+            {
+                // 장착아이템 다 쓴 경우
+                if(this.commandInventory.isEnableItem(item) == false)
+                {
+                    this.player.UnEquip(item.equipName);
+                }
+            }
         }
     }
 
@@ -142,7 +159,7 @@ public class GameManager : MonoBehaviour
     {
         isPlay = false;
         player.Stop();
-        MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5);
+        MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ReStart);
         MainUI.Instance.OnGameEnd();
         ScroeTransaction();
     }

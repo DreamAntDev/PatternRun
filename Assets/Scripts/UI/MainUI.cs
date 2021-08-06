@@ -77,9 +77,9 @@ public class MainUI : MonoBehaviour
 
     public void OnGameEnd()
     {
-        this.interactiveMessageBox.gameObject.SetActive(true);
-        this.interactiveMessageBox.SetText("Touch To ReStart", false);
-        this.interactiveMessageBox.ActiveButton(true, () => GameManager.instance.ReStart());
+        //this.interactiveMessageBox.gameObject.SetActive(true);
+        //this.interactiveMessageBox.SetText("Touch To ReStart", false);
+        //this.interactiveMessageBox.ActiveButton(true, () => GameManager.instance.ReStart());
         this.userCommand.ClearCommand();
     }
 

@@ -89,6 +89,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void UnEquip(string equipName)
+    {
+        var idx = equipList.FindIndex(o => o.name.Equals(equipName));
+        if (idx != -1)
+        {
+            equipList[idx].SetActive(false);
+        }
+    }
+
     void Update()
     {
         this.transform.position += (movePos * Time.deltaTime);

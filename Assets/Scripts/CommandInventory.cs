@@ -110,6 +110,21 @@ public class CommandInventory : MonoBehaviour
         return;
     }
 
+    public bool isEnableItem(NData.Item item)
+    {
+        if(this.commandItemList.Find(o=>o.itemData.Equals(item)) != null)
+        {
+            return true;
+        }
+
+        if (this.autoActiveItemList.Find(o => o.itemData.Equals(item)) != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public void UpdateUI()
     {
         MainUI.Instance.userCommand.UpdateList(this.commandItemList);
