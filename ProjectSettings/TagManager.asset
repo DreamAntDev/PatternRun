@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Block
   - Item
+  - HitSensor
   layers:
   - Default
   - TransparentFX

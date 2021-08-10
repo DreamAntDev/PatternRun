@@ -102,9 +102,12 @@ public class GameManager : MonoBehaviour
 
             case "jump":
                 // Jump
-                player.Jump();
-                MainUI.Instance.OnJump();
-                Debug.Log("Jump Animation");
+                if (player.IsJumping() == false)
+                {
+                    player.Jump();
+                    MainUI.Instance.OnJump();
+                    Debug.Log("Jump Animation");
+                }
                 break;
 
             case "attack":
@@ -157,11 +160,11 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
-        isPlay = false;
-        player.Stop();
-        MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ReStart);
-        MainUI.Instance.OnGameEnd();
-        ScroeTransaction();
+        //isPlay = false;
+        //player.Stop();
+        //MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ReStart);
+        //MainUI.Instance.OnGameEnd();
+        //ScroeTransaction();
     }
 
     public void ReStart()

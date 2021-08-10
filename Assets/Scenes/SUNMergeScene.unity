@@ -1284,7 +1284,7 @@ MonoBehaviour:
   player: {fileID: 2050180696}
   itemPrefabList:
   - {fileID: 3144575894429601864, guid: 3212d18bfeea1bd47b902f3f1e9148c9, type: 3}
-  - {fileID: 6109887485960177378, guid: 7b8b6266fe8c67b4895e1d9b14838c30, type: 3}
+  - {fileID: 5571253557848889491, guid: d1df71dc8c255f2419278b544e26e120, type: 3}
   - {fileID: 4914239574807148649, guid: 1a52cf7a34d58394487e7c91de94d200, type: 3}
   - {fileID: 738322424626506843, guid: 781e07080c648f9459a2445b2c61fff1, type: 3}
 --- !u!114 &1803971150
@@ -1408,6 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1818555813}
   - component: {fileID: 1818555812}
+  - component: {fileID: 1818555814}
   m_Layer: 3
   m_Name: model
   m_TagString: Untagged
@@ -1451,6 +1452,18 @@ Transform:
   m_Father: {fileID: 2050180695}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1818555814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818555811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb47179927e0c854499ae20732480499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1920845134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,9 +1540,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2023909757}
   - component: {fileID: 2023909758}
+  - component: {fileID: 2023909759}
+  - component: {fileID: 2023909760}
   m_Layer: 3
   m_Name: Weapon-Sword
-  m_TagString: Untagged
+  m_TagString: HitSensor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1599,6 +1614,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2023909759
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023909756}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.002013579, y: 0.41881752}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5064954, y: 0.11925681}
+    oldSize: {x: 0.31, y: 1.1}
+    newSize: {x: 0.31, y: 1.1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.31, y: 1.1}
+  m_EdgeRadius: 0
+--- !u!50 &2023909760
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023909756}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2050180691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,6 +1756,7 @@ MonoBehaviour:
   creatablePrefabList:
   - {fileID: 677825856586391260, guid: 75866baaaa9ff4b44a06e79196ab18fc, type: 3}
   shotPos: {fileID: 515895029}
+  swordCollider: {fileID: 2023909759}
   movePos: {x: 0, y: 0, z: 0}
 --- !u!1 &2119489215
 GameObject:

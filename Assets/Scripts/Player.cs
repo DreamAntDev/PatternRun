@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private List<GameObject> creatablePrefabList = new List<GameObject>();
     private Dictionary<string, GameObject> creatablePrefabTree;
     [SerializeField] private Transform shotPos;
+    [SerializeField] private BoxCollider2D swordCollider;
 
     private Rigidbody2D rigidbody2d;
 
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
         creatablePrefabTree = creatablePrefabList.ToDictionary(o => o.name);
         // animator = GetComponent<Animator>();
     }
+
     public void StartMove()
     {
         movePos.x = 5;
@@ -78,6 +80,19 @@ public class Player : MonoBehaviour
         {
             GameObject.Instantiate(arrowObj, this.shotPos.position,Quaternion.identity);
         }
+    }
+
+    public bool IsJumping()
+    {
+        if (this.rigidbody2d.velocity.sqrMagnitude <= 0.001f)
+            return false;
+
+        return true;
+    }
+
+    public void SwordColliderOn(bool active)
+    {
+        this.swordCollider.enabled = active;
     }
 
     public void Equip(string equipName)

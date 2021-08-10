@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TrapTrigger : MonoBehaviour
 {
+    private void Awake()
+    {
+        var breakableObj = this.gameObject.AddComponent<BreakableObject>();
+        breakableObj.TrapToBreakableObject(this.gameObject);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (GameManager.instance.isPlay)
