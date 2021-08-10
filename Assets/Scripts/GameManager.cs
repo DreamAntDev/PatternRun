@@ -160,11 +160,11 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
-        //isPlay = false;
-        //player.Stop();
-        //MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ReStart);
-        //MainUI.Instance.OnGameEnd();
-        //ScroeTransaction();
+        isPlay = false;
+        player.Stop();
+        MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ReStart);
+        MainUI.Instance.OnGameEnd();
+        ScroeTransaction();
     }
 
     public void ReStart()
