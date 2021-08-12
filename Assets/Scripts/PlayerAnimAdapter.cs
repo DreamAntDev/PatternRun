@@ -25,7 +25,7 @@ public class PlayerAnimAdapter : MonoBehaviour
         {
             var clip = this.animator.runtimeAnimatorController.animationClips.First(o => o.name.Equals("Attack"));
             AnimationEvent beginEvt = new AnimationEvent();
-            beginEvt.time = 0.23f;
+            beginEvt.time = 0.1f;
             beginEvt.functionName = "OnAttackEvent";
             beginEvt.intParameter = 1;
 
