@@ -90,8 +90,11 @@ public class BreakableObject : MonoBehaviour
         meshRenderer.sharedMaterial = tempMaterial;
         meshRenderer.sortingLayerID = tempSortingLayerID;
 
-        float width = tempTexture.width / 100.0f;
-        float height = tempTexture.height / 100.0f;
+        //float width = tempTexture.width / 100.0f;
+        //float height = tempTexture.height / 100.0f;
+
+        float xSize = (tempTexture.width / 100.0f) / 2.0f;
+        float ySize = (tempTexture.height / 100.0f) / 2.0f;
 
         MeshFilter meshFilter = trap.AddComponent<MeshFilter>();
 
@@ -99,10 +102,14 @@ public class BreakableObject : MonoBehaviour
 
         Vector3[] vertices = new Vector3[4]
         {
-            new Vector3(0, 0, 0),
-            new Vector3(width, 0, 0),
-            new Vector3(0, height, 0),
-            new Vector3(width, height, 0),
+            new Vector3(-xSize,-ySize,0),
+            new Vector3(xSize,-ySize,0),
+            new Vector3(-xSize,ySize,0),
+            new Vector3(xSize,ySize,0),
+            //new Vector3(0, 0, 0),
+            //new Vector3(width, 0, 0),
+            //new Vector3(0, height, 0),
+            //new Vector3(width, height, 0),
             //new Vector3(0, 0, 1),
             //new Vector3(width, 0, 1),
             //new Vector3(0, height, 1),
@@ -165,7 +172,8 @@ public class BreakableObject : MonoBehaviour
         meshFilter.mesh = mesh;
 
         var col = trap.GetComponent<BoxCollider2D>();
-        col.size = new Vector3(width, height, 1);
+        //col.size = new Vector3(width, height, 1);
+        col.size = new Vector3(xSize * 2, ySize * 2);
         col.isTrigger = false;
 
         //trap.AddComponent<BreakableObject>();
