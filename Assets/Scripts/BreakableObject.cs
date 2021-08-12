@@ -81,7 +81,7 @@ public class BreakableObject : MonoBehaviour
         //    return;
         //}
         var tempTexture = sprite.sprite.texture;
-        var tempMaterial = sprite.sharedMaterial;
+        var tempMaterial = new Material(sprite.sharedMaterial);
         tempMaterial.mainTexture = tempTexture;
         var tempSortingLayerID = sprite.sortingLayerID;
         DestroyImmediate(sprite);

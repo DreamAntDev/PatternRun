@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec397b746aae7e745a52a269275b678d, type: 3}
   m_Name: Sound
   m_EditorClassIdentifier: 
-  soundList: []
+  soundList:
+  - type: 0
+    path: 
+  - type: 1
+    path: 
+  - type: 2
+    path: 
