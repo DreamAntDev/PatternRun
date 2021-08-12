@@ -90,7 +90,6 @@ public class TrapSimulation : MonoBehaviour
         while (true)
         {
             Trap trap = onGameTraps[Random.Range(0, onGameTraps.Count)];
-            Debug.Log(Random.Range(0, onGameTraps.Count));
             if (GameManager.instance.weight - ((4 - orderTrapQueue.Count) * 5f) >= totalTrapWeight + trap.weight)
             {
                 GameObject trapobj = GameObject.Instantiate(trap.obj);

@@ -9,6 +9,11 @@ public class TrapTrigger : MonoBehaviour
         var breakableObj = this.gameObject.AddComponent<BreakableObject>();
         breakableObj.TrapToBreakableObject(this.gameObject);
     }
+
+    private void Start()
+    {
+        StartCoroutine(DestroyTime());
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (GameManager.instance.isPlay)
@@ -40,4 +45,12 @@ public class TrapTrigger : MonoBehaviour
             }
         }
     }
+
+
+    IEnumerator DestroyTime()
+    {
+        yield return new WaitForSeconds(10f);
+        Destroy(gameObject);
+    }
+
 }
