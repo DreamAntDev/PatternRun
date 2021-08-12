@@ -142,6 +142,7 @@ public class GameManager : MonoBehaviour
         bool success = this.commandInventory.AddItem(item);
         if (success)
         {
+            Debug.Log("Item Success: " + item.name);
             if (string.IsNullOrEmpty(item.equipName) == false)
             {
                 GetPlayerItem(item.equipName);
@@ -207,6 +208,11 @@ public class GameManager : MonoBehaviour
     public void TestMeter()
     {
         scoreMeter += Time.deltaTime;
+        //Sample
+        if(scoreMeter >= 30)
+        {
+            weight = scoreMeter;
+        }
         MainUI.Instance.inGameScore.SetScore(scoreMeter);
     }
 

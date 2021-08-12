@@ -23,4 +23,4 @@ MonoBehaviour:
   actionName: jump
   equipName: 
   excuteCount: 0
-  trapCode: 01000000
+  trapCode: 010000000200000003000000

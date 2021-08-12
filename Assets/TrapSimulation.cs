@@ -7,6 +7,7 @@ public class TrapSimulation : MonoBehaviour
     protected List<Trap> onGameTraps = new List<Trap>();
 
     [SerializeField] Trap[] traps;
+    [SerializeField] GameObject parent;
 
     private float[] randomY = { 0f, 0f };
     private float totalTrapWeight;
@@ -109,6 +110,7 @@ public class TrapSimulation : MonoBehaviour
         {
             var trapobj = orderTrapQueue.Dequeue();
             trapobj.transform.position += new Vector3(GameManager.instance.GetPlayer().transform.position.x + 15f, -10f, 0f);
+            trapobj.transform.parent = parent.transform;
             trapobj.SetActive(true);
             yield return new WaitForSeconds(2.5f);
         }

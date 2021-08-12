@@ -9,18 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c498df491487e1b4bb7babb01bc162fa, type: 3}
-  m_Name: Dash
+  m_Script: {fileID: 11500000, guid: 5d97d62c5f90008459cc922e0e03be17, type: 3}
+  m_Name: Trap4
   m_EditorClassIdentifier: 
+  id: 4
+  weight: 5
   type: 0
-  usingCommand:
-  - ABC
-  - DEF
-  - GHI
-  iconName: dash
-  patternName: guide_dash
-  textCode: MainUI_Dash
-  actionName: dash
-  equipName: 
-  excuteCount: 0
-  trapCode: 05000000060000000700000008000000
+  obj: {fileID: 2068332632012471642, guid: 97e6a935d2d921b4d819b8d7de620462, type: 3}
