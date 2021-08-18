@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1017689272640399555}
   - component: {fileID: 7531983523725200735}
   - component: {fileID: 7313922483183982123}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: HitSensor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7038635238960884346}
   - component: {fileID: 7308626796004857640}
   - component: {fileID: 1908723253168100885}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: arrow
   m_TagString: HitSensor
   m_Icon: {fileID: 0}
