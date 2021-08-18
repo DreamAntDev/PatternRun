@@ -19,10 +19,10 @@ public class SoundManager : MonoBehaviour
     }
 
     public NData.Sound soundData;
-    AudioSource audioSource;
-    AudioSource bgAudioSource;
-
     Dictionary<SoundType, string> soundDictionary = new Dictionary<SoundType, string>();
+
+    Dictionary<long, AudioSource> audioSourcePool = new Dictionary<long, AudioSource>();
+    
     public enum SoundType
     {
         BG_Base,
@@ -32,18 +32,19 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         if (SoundManager.instance != null)
+        {
+            Destroy(this);
             return;
+        }
 
         SoundManager.instance = this;
         foreach(var data in soundData.soundList)
         {
             soundDictionary.Add(data.type, data.path);
         }
-        this.audioSource = new AudioSource();
-        this.bgAudioSource = new AudioSource();
     }
 
-    public void PlaySound(SoundType type)
+    public void PlaySound(SoundType type, bool loop)
     {
         string path = string.Empty;
         if (soundDictionary.TryGetValue(type, out path) == false)
@@ -51,23 +52,31 @@ public class SoundManager : MonoBehaviour
             var clip = Resources.Load<AudioClip>(path);
             if (clip != null)
             {
-                audioSource.PlayOneShot(clip);
+                var audioSource = new AudioSource();
+                this.audioSourcePool.Add(audioSource.GetHashCode(), audioSource);
+                if (loop == false)
+                {
+                    audioSource.PlayOneShot(clip);
+                    StartCoroutine(DestroyAudioSource(clip.length, audioSource.GetHashCode()));
+                }
+                else
+                {
+                    audioSource.clip = clip;
+                    audioSource.loop = true;
+                    audioSource.Play();
+                }
             }
         }
     }
 
-    public void PlayBGSound(SoundType type)
+    private IEnumerator DestroyAudioSource(float time, int hash)
     {
-        string path = string.Empty;
-        if (soundDictionary.TryGetValue(type, out path) == false)
+        yield return new WaitForSeconds(time);
+        AudioSource audioSource;
+        if(this.audioSourcePool.TryGetValue(hash, out audioSource) == true)
         {
-            var clip = Resources.Load<AudioClip>(path);
-            if (clip != null)
-            {
-                bgAudioSource.clip = clip;
-                bgAudioSource.loop = true;
-                bgAudioSource.Play();
-            }
+            this.audioSourcePool.Remove(hash);
+            Destroy(audioSource);
         }
     }
 }
