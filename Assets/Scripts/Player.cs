@@ -10,12 +10,12 @@ public class Player : MonoBehaviour
     [SerializeField] float dashVelccity = 2f;
     [SerializeField] float rollingVelocity = 2f;
     [SerializeField] private Animator animator;
-    [SerializeField] private List<GameObject> equipList = new List<GameObject>();
-    private Dictionary<string, GameObject> equipTree;
     [SerializeField] private List<GameObject> creatablePrefabList = new List<GameObject>();
     private Dictionary<string, GameObject> creatablePrefabTree;
     [SerializeField] private Transform shotPos;
     [SerializeField] private BoxCollider2D swordCollider;
+
+    [SerializeField] private Equipment equipment;
 
     private Rigidbody2D rigidbody2d;
 
@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
-        equipTree = equipList.ToDictionary(o => o.name);
         creatablePrefabTree = creatablePrefabList.ToDictionary(o => o.name);
         // animator = GetComponent<Animator>();
     }
@@ -97,20 +96,25 @@ public class Player : MonoBehaviour
 
     public void Equip(string equipName)
     {
-        var idx = equipList.FindIndex(o => o.name.Equals(equipName));
-        if(idx != -1)
-        {
-            equipList[idx].SetActive(true);
-        }
+        this.equipment.Equip(equipName);
     }
 
     public void UnEquip(string equipName)
     {
-        var idx = equipList.FindIndex(o => o.name.Equals(equipName));
-        if (idx != -1)
-        {
-            equipList[idx].SetActive(false);
-        }
+        this.equipment.UnEquip(equipName);
+    }
+
+    public void UnEquipOnAnimEnd(string equipName)
+    {
+        StartCoroutine(UnEquipCoroutine(equipName));
+    }
+
+    IEnumerator UnEquipCoroutine(string equipName)
+    {
+        while (this.animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+            yield return null;
+
+        UnEquip(equipName);
     }
 
     void Update()

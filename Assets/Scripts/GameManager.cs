@@ -128,10 +128,11 @@ public class GameManager : MonoBehaviour
             this.commandInventory.UseItem(item);
             if(string.IsNullOrEmpty(item.equipName) == false)
             {
+                this.player.Equip(item.equipName);
                 // 장착아이템 다 쓴 경우
                 if(this.commandInventory.isEnableItem(item) == false)
                 {
-                    this.player.UnEquip(item.equipName);
+                    this.player.UnEquipOnAnimEnd(item.equipName);
                 }
             }
         }
