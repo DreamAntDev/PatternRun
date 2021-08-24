@@ -65,6 +65,8 @@ public class MainUI : MonoBehaviour
     public void OnGameStart()
     {
         GameManager.instance.GameStart();
+        SoundManager.Instance.PlaySound(SoundManager.SoundType.Touch_To_Start);
+        SoundManager.Instance.PlaySound(SoundManager.SoundType.BG_Base, true, SoundManager.SoundLayer.BGM);
         this.title.gameObject.SetActive(false);
         this.inGameScore.gameObject.SetActive(true);
         this.interactiveMessageBox.SetText("", false);

@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         totalScore = PlayerPrefs.GetFloat("TotalScore", 0f);
 
         Init();
-        SoundManager.Instance.PlaySound(SoundManager.SoundType.BG_Base, true);
+        SoundManager.Instance.PlaySound(SoundManager.SoundType.BG_Lobby, true,SoundManager.SoundLayer.BGM);
     }
 
     public void Init()

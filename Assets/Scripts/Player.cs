@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     public void Attack()
     {
         animator.SetTrigger("Attack");
+        SoundManager.Instance.PlaySound(SoundManager.SoundType.Sword_Attack);
     }
 
     public void Rolling()

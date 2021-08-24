@@ -19,6 +19,8 @@ public class BreakableObject : MonoBehaviour
 
     public void Break()
     {
+        SoundManager.Instance.PlaySound(SoundManager.SoundType.Crash_Trap);
+
         GameObject[] tempObjectArray = { this.gameObject };
         var tempMeshRender = this.gameObject.GetComponent<MeshRenderer>();
         var sortingLayerID = tempMeshRender.sortingLayerID;

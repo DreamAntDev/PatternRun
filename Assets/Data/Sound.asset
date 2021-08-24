@@ -14,8 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - type: 0
-    path: Sound/testLoop
+    path: Sound/ingame
   - type: 1
-    path: 
+    path: Sound/lobby
   - type: 2
-    path: Sound/testOnece
+    path: Sound/getSkill
+  - type: 3
+    path: Sound/patternTouch
+  - type: 4
+    path: Sound/TouchToStart
+  - type: 5
+    path: Sound/crash
+  - type: 6
+    path: Sound/sword
