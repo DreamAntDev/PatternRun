@@ -63,12 +63,14 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
     {
         //if(this.lineRenderer.gameObject.activeInHierarchy == false)
         //    this.lineRenderer.gameObject.SetActive(true);
+
         if(userInput.Count <=0)
         {
             userInput.Add(obj);
             lineRenderer.positionCount = userInput.Count;
 
             lineRenderer.SetPosition(userInput.Count - 1, obj.transform.position);
+            SoundManager.Instance.PlaySound(SoundManager.SoundType.On_Point);
             return;
         }
 
@@ -93,6 +95,7 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
             lineRenderer.positionCount = userInput.Count;
             
             lineRenderer.SetPosition(userInput.Count-1, obj.transform.position);
+            SoundManager.Instance.PlaySound(SoundManager.SoundType.On_Point);
         }
     }
     private List<int> GetBetweenObjectList(int beginIndex,int endIndex)

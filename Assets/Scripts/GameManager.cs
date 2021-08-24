@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
         totalScore = PlayerPrefs.GetFloat("TotalScore", 0f);
 
         Init();
+        SoundManager.Instance.PlaySound(SoundManager.SoundType.BG_Base, true);
     }
 
     public void Init()
@@ -152,6 +153,7 @@ public class GameManager : MonoBehaviour
             {
                 trapSimulation.SetTrap(item.trapCode.ToArray());
             }
+            SoundManager.Instance.PlaySound(SoundManager.SoundType.Get_Item);
         }
     }
 

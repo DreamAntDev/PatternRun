@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundList:
   - type: 0
-    path: 
+    path: Sound/testLoop
   - type: 1
     path: 
   - type: 2
-    path: 
+    path: Sound/testOnece

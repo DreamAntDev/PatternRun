@@ -21,8 +21,9 @@ public class SoundManager : MonoBehaviour
     public NData.Sound soundData;
     Dictionary<SoundType, string> soundDictionary = new Dictionary<SoundType, string>();
 
-    Dictionary<long, AudioSource> audioSourcePool = new Dictionary<long, AudioSource>();
-    
+    //Dictionary<long, AudioSource> audioSourcePool = new Dictionary<long, AudioSource>();
+    Dictionary<long, GameObject> audioSourcePool = new Dictionary<long, GameObject>();
+
     public enum SoundType
     {
         BG_Base,
@@ -44,20 +45,21 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(SoundType type, bool loop)
+    public void PlaySound(SoundType type, bool loop = false)
     {
         string path = string.Empty;
-        if (soundDictionary.TryGetValue(type, out path) == false)
+        if (soundDictionary.TryGetValue(type, out path) == true)
         {
             var clip = Resources.Load<AudioClip>(path);
             if (clip != null)
             {
-                var audioSource = new AudioSource();
-                this.audioSourcePool.Add(audioSource.GetHashCode(), audioSource);
+                var tempObj = new GameObject();
+                var audioSource = tempObj.AddComponent<AudioSource>();
+                this.audioSourcePool.Add(tempObj.GetHashCode(), tempObj);
                 if (loop == false)
                 {
                     audioSource.PlayOneShot(clip);
-                    StartCoroutine(DestroyAudioSource(clip.length, audioSource.GetHashCode()));
+                    StartCoroutine(DestroyAudioSource(clip.length, tempObj.GetHashCode()));
                 }
                 else
                 {
@@ -65,6 +67,19 @@ public class SoundManager : MonoBehaviour
                     audioSource.loop = true;
                     audioSource.Play();
                 }
+                //var audioSource = new AudioSource();
+                //this.audioSourcePool.Add(audioSource.GetHashCode(), audioSource);
+                //if (loop == false)
+                //{
+                //    audioSource.PlayOneShot(clip);
+                //    StartCoroutine(DestroyAudioSource(clip.length, audioSource.GetHashCode()));
+                //}
+                //else
+                //{
+                //    audioSource.clip = clip;
+                //    audioSource.loop = true;
+                //    audioSource.Play();
+                //}
             }
         }
     }
@@ -72,8 +87,9 @@ public class SoundManager : MonoBehaviour
     private IEnumerator DestroyAudioSource(float time, int hash)
     {
         yield return new WaitForSeconds(time);
-        AudioSource audioSource;
-        if(this.audioSourcePool.TryGetValue(hash, out audioSource) == true)
+        //AudioSource audioSource;
+        GameObject audioSource;
+        if (this.audioSourcePool.TryGetValue(hash, out audioSource) == true)
         {
             this.audioSourcePool.Remove(hash);
             Destroy(audioSource);
