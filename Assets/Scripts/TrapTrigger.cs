@@ -20,7 +20,7 @@ public class TrapTrigger : MonoBehaviour
         {
             if (collision.transform.tag.Equals("Player"))
             {
-                GameManager.instance.GameEnd();
+                // GameManager.instance.GameEnd();
             }
 
             if (collision.transform.tag.Equals("Item"))
