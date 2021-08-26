@@ -9,7 +9,7 @@ public class TrapSimulation : MonoBehaviour
     [SerializeField] Trap[] traps;
     [SerializeField] GameObject parent;
 
-    private float[] randomY = { 0f, 0f };
+    //private float[] randomY = { 0f, 0f };
     private float totalTrapWeight;
     private Queue<GameObject> orderTrapQueue = new Queue<GameObject>();
     // x = +8f, up = +5f
@@ -17,19 +17,7 @@ public class TrapSimulation : MonoBehaviour
     public void OnSimulation()
     {
         StartCoroutine(StartSimulation());
-        randomY[0] = GameManager.instance.GetPlayer().transform.position.y;
-    }
-
-    public void GetItem(string icon)
-    {
-        switch (icon)
-        {
-            case "sit":
-                break;
-
-            case "attack":
-                break;
-        }
+       // randomY[0] = GameManager.instance.GetPlayer().transform.position.y;
     }
 
     public void SetTrap(int[] ids)
