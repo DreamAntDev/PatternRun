@@ -18,8 +18,21 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    class SoundCache
+    {
+        string path;
+        public AudioClip clip;
+
+        public SoundCache(string path, AudioClip clip)
+        {
+            this.path = path;
+            this.clip = clip;
+        }
+    }
+
+
     public NData.Sound soundData;
-    Dictionary<SoundType, string> soundDictionary = new Dictionary<SoundType, string>();
+    Dictionary<SoundType, SoundCache> soundDictionary = new Dictionary<SoundType, SoundCache>();
 
     //Dictionary<long, AudioSource> audioSourcePool = new Dictionary<long, AudioSource>();
     Dictionary<int, GameObject> audioSourcePool = new Dictionary<int, GameObject>();
@@ -52,16 +65,30 @@ public class SoundManager : MonoBehaviour
         SoundManager.instance = this;
         foreach(var data in soundData.soundList)
         {
-            soundDictionary.Add(data.type, data.path);
+            if (data.requirePreload == true)
+            {
+                soundDictionary.Add(data.type, new SoundCache(data.path, Resources.Load<AudioClip>(data.path)));
+            }
+            else
+            {
+                soundDictionary.Add(data.type, new SoundCache(data.path, null));
+            }
         }
     }
 
     public void PlaySound(SoundType type, bool loop = false, SoundLayer layer = SoundLayer.None)
     {
         string path = string.Empty;
-        if (soundDictionary.TryGetValue(type, out path) == true)
+        SoundCache soundCache;
+        if (soundDictionary.TryGetValue(type, out soundCache) == true)
         {
-            var clip = Resources.Load<AudioClip>(path);
+            AudioClip clip = soundCache.clip;
+
+            if (clip == null)
+            {
+                clip = Resources.Load<AudioClip>(path);
+                soundCache.clip = clip;
+            }
             if (clip != null)
             {
                 var tempObj = new GameObject();

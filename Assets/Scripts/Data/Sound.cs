@@ -12,6 +12,7 @@ namespace NData
         {
             public SoundManager.SoundType type;
             public string path;
+            public bool requirePreload;
         }
         public List<SoundPair> soundList;
     }
