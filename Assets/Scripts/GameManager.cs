@@ -223,6 +223,11 @@ public class GameManager : MonoBehaviour
         MainUI.Instance.inGameScore.SetScore(scoreMeter);
     }
 
+    public float GetMeter()
+    {
+        return scoreMeter;
+    }
+
     public Player GetPlayer()
     {
         return player;

@@ -12,10 +12,11 @@ public class FieldManager : MonoBehaviour
     [SerializeField] Vector3 spawnPos = Vector3.zero; //앞으로 생성할 포지션
     public Player player;
 
+    private Field currentField;
     //임시 코드
-    [SerializeField] List<CommandItem> itemPrefabList;
+   /* [SerializeField] List<CommandItem> itemPrefabList;
+    private int generatedCount = 0;*/
 
-    private int generatedCount = 0;
     public static FieldManager Instance
     {
         get
@@ -41,7 +42,7 @@ public class FieldManager : MonoBehaviour
         this.xSize = field.sprite.size.x * field.gameObject.transform.localScale.x;
 
        // this.spawnPos.y = -2.5f;
-        this.generatedCount = 0;
+        //this.generatedCount = 0;
         InitField();
     }
 
@@ -69,6 +70,7 @@ public class FieldManager : MonoBehaviour
                 this.fieldQueue.Enqueue(field);
             }
             this.player.transform.position = new Vector3(this.player.transform.position.x - this.spawnPos.x, this.player.transform.position.y, this.player.transform.position.z);
+            
             this.spawnPos.x = 0;
         }
         
@@ -96,7 +98,7 @@ public class FieldManager : MonoBehaviour
         this.spawnPos.x += xSize;
         var field = obj.GetComponent<Field>();
         this.fieldQueue.Enqueue(field);
-        generatedCount++;
+       /* generatedCount++;
 
         // 임시 코드
         if(generatedCount <= 4)
@@ -104,11 +106,17 @@ public class FieldManager : MonoBehaviour
             var item = GameObject.Instantiate(this.itemPrefabList[generatedCount-1]);
             item.transform.parent = field.transform;
             item.transform.localPosition = new Vector3(2.0f, -1.8f, 0);
-        }
+        }*/
     }
     private void DestroyField()
     {
         var field = this.fieldQueue.Dequeue();
         GameObject.Destroy(field.gameObject);
     }
+
+    private Field GetCurrentField()
+    {
+        return currentField;
+    }
+
 }

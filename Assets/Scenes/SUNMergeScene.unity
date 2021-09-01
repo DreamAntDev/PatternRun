@@ -1034,6 +1034,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f2d45c58384628b45864aa6ac6998935, type: 2}
   - {fileID: 11400000, guid: 1db6fdc1dc2b7134fb8e5d6810d6c4bd, type: 2}
   parent: {fileID: 287479420}
+  itemPrefabList:
+  - {fileID: 3144575894429601864, guid: 3212d18bfeea1bd47b902f3f1e9148c9, type: 3}
+  - {fileID: 5571253557848889491, guid: d1df71dc8c255f2419278b544e26e120, type: 3}
+  - {fileID: 4914239574807148649, guid: 1a52cf7a34d58394487e7c91de94d200, type: 3}
+  - {fileID: 6109887485960177378, guid: 7b8b6266fe8c67b4895e1d9b14838c30, type: 3}
+  - {fileID: 738322424626506843, guid: 781e07080c648f9459a2445b2c61fff1, type: 3}
 --- !u!1 &1513063928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1320,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1803971148}
   - component: {fileID: 1803971149}
-  - component: {fileID: 1803971150}
   m_Layer: 0
   m_Name: FieldManager
   m_TagString: Untagged
@@ -1351,25 +1356,6 @@ MonoBehaviour:
   fieldPrefab: {fileID: 6101916445924189112, guid: 43cc52116719da94387f87296bd1024a, type: 3}
   spawnPos: {x: -10, y: -2.5, z: 0}
   player: {fileID: 2050180696}
-  itemPrefabList:
-  - {fileID: 3144575894429601864, guid: 3212d18bfeea1bd47b902f3f1e9148c9, type: 3}
-  - {fileID: 5571253557848889491, guid: d1df71dc8c255f2419278b544e26e120, type: 3}
-  - {fileID: 4914239574807148649, guid: 1a52cf7a34d58394487e7c91de94d200, type: 3}
-  - {fileID: 738322424626506843, guid: 781e07080c648f9459a2445b2c61fff1, type: 3}
---- !u!114 &1803971150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803971147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0571602e9cf9273488b28021ff170a67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  traps: []
-  parent: {fileID: 0}
 --- !u!1 &1810344528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,7 +1885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3934611048426175938, guid: cee3961d2b2907a45b10ab4a9713c3db, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3934611048426175941, guid: cee3961d2b2907a45b10ab4a9713c3db, type: 3}
       propertyPath: m_RootOrder
