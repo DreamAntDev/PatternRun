@@ -10,9 +10,24 @@ public class OptionPopup : MonoBehaviour
     public Text inputPadColliderSizeText;
 
     public Toggle inputPadColliderToggle;
+
+#if DEBUG
+    public Toggle powerOverwhelmingToggle;
+#endif
+
     // Start is called before the first frame update
     void Start()
     {
+#if DEBUG
+        LoadOption(powerOverwhelmingToggle);
+        PlayOption.PowerOverwhelming = powerOverwhelmingToggle.isOn;
+        this.powerOverwhelmingToggle.onValueChanged.AddListener((bool b) => 
+        {
+            PlayOption.PowerOverwhelming = b;
+            SaveOption(this.powerOverwhelmingToggle);
+        });
+#endif
+
         this.closeButton.onClick.AddListener(() => this.gameObject.SetActive(false));
         this.inputPadColliderSizeSlider.onValueChanged.AddListener(SetInputColliderSize);
         this.inputPadColliderToggle.onValueChanged.AddListener(SetInputColliderDisplay);
@@ -69,6 +84,33 @@ public class OptionPopup : MonoBehaviour
                 //Vector3[] posArray = { new Vector3(-xP, xP, 0), new Vector3(xP, xP, 0), new Vector3(xP, -xP, 0), new Vector3(-xP, -xP, 0) };
                 //renderer.SetPositions(posArray);
             }
+        }
+    }
+
+    void SaveOption(Object optionObj)
+    {
+        if(optionObj is Toggle)
+        {
+            var toggle = optionObj as Toggle;
+            PlayerPrefs.SetString(toggle.name, toggle.isOn.ToString());
+        }
+        else if(optionObj is Slider)
+        {
+
+        }
+    }
+
+    void LoadOption(Object optionObj)
+    {
+        if (optionObj is Toggle)
+        {
+            var toggle = optionObj as Toggle;
+            string saveOption = PlayerPrefs.GetString(toggle.name, "false");
+            toggle.isOn = bool.Parse(saveOption);
+        }
+        else if (optionObj is Slider)
+        {
+
         }
     }
 }

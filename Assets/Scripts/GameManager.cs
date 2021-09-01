@@ -164,6 +164,10 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
+#if DEBUG
+        if (PlayOption.PowerOverwhelming == true)
+            return;
+#endif
         isPlay = false;
         player.Stop();
         MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ReStart);

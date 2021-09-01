@@ -15,15 +15,22 @@ MonoBehaviour:
   soundList:
   - type: 0
     path: Sound/ingame
+    requirePreload: 1
   - type: 1
     path: Sound/lobby
+    requirePreload: 1
   - type: 2
     path: Sound/getSkill
+    requirePreload: 0
   - type: 3
     path: Sound/patternTouch
+    requirePreload: 0
   - type: 4
     path: Sound/TouchToStart
+    requirePreload: 0
   - type: 5
     path: Sound/crash
+    requirePreload: 0
   - type: 6
     path: Sound/sword
+    requirePreload: 0
