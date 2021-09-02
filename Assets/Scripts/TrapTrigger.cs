@@ -20,7 +20,15 @@ public class TrapTrigger : MonoBehaviour
         {
             if (collision.transform.tag.Equals("Player"))
             {
-                GameManager.instance.GameEnd();
+                if (GameManager.instance.PlayerCollision(this) == true)
+                {
+                    var breakableObject = this.GetComponent<BreakableObject>();
+                    breakableObject?.Break();
+                }
+                else
+                {
+                    GameManager.instance.GameEnd();
+                }
             }
 
             if (collision.transform.tag.Equals("Item"))
@@ -36,7 +44,15 @@ public class TrapTrigger : MonoBehaviour
         {
             if (collision.transform.tag.Equals("Player"))
             {
-                GameManager.instance.GameEnd();
+                if (GameManager.instance.PlayerCollision(this) == true)
+                {
+                    var breakableObject = this.GetComponent<BreakableObject>();
+                    breakableObject?.Break();
+                }
+                else
+                {
+                    GameManager.instance.GameEnd();
+                }
             }
 
             if (collision.transform.tag.Equals("Item"))
