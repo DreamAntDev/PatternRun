@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 2992940}
   m_Layer: 3
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,8 +216,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2992937}
-  m_BodyType: 1
-  m_Simulated: 0
+  m_BodyType: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -228,7 +228,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &2992941
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.41
+  m_Radius: 0.3
 --- !u!1 &96746005
 GameObject:
   m_ObjectHideFlags: 0

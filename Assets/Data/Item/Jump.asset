@@ -21,6 +21,8 @@ MonoBehaviour:
   patternName: guide_jump
   textCode: MainUI_Jump
   actionName: jump
+  triggerName: 
   equipName: 
   excuteCount: 0
-  trapCode: 010000000200000003000000
+  stackable: 0
+  trapCode: 04000000
