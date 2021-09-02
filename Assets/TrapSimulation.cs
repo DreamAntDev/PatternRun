@@ -119,14 +119,8 @@ public class TrapSimulation : MonoBehaviour
             var trapobj = orderTrapQueue.Dequeue();
             Vector3 position = new Vector3(GameManager.instance.GetPlayer().transform.position.x + 15f, -10f, 0f);
             trapobj.transform.position += position;
-            if (parentMap != null)
-            {
-                trapobj.transform.parent = parentMap;
-            }
-            else
-            {
-                trapobj.transform.parent = parent.transform;
-            }
+            trapobj.transform.parent = parentMap;
+            
             trapobj.SetActive(true);
             yield return new WaitForSeconds(2.5f);
         }
@@ -169,11 +163,14 @@ public class TrapSimulation : MonoBehaviour
     {
         if (isMapChecker)
         {
-            Debug.DrawRay(cam.transform.position, cam.transform.forward * 11f, Color.yellow);
-            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity))
+            Debug.DrawRay(cam.transform.position + new Vector3(15f, 0, 0), cam.transform.forward * 11f, Color.yellow);
+            if (Physics.Raycast(cam.transform.position + new Vector3(15f,0,0), cam.transform.forward, out hit, Mathf.Infinity))
             {
-                if(hit.transform != parentMap)
+                if (hit.transform != parentMap)
+                {
                     parentMap = hit.transform;
+                    Debug.Log("Map : " + parentMap.name);
+                }
             }
         }
     }
