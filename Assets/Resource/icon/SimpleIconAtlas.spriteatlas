@@ -32,7 +32,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 378581b760b3daa4fb8bc62a4f901e0c, type: 3}
-    totalSpriteSurfaceArea: 1155560
+    totalSpriteSurfaceArea: 1182460
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -50,11 +50,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 83e01b388d283c943ac64ce7485c1f13, type: 3}
   - {fileID: 21300000, guid: 35a0e478fa8b748499c063382efbb144, type: 3}
   - {fileID: 21300000, guid: c84925b83de3593419ca1824212a8ea6, type: 3}
+  - {fileID: 21300000, guid: eff8cf496131681409dc750e22dfaae6, type: 3}
   - {fileID: 21300000, guid: b0a182ca16bfaae49af18ae19b1214df, type: 3}
   - {fileID: 21300000, guid: 01b8d07b3a25c744391aedb8e4cc9271, type: 3}
   - {fileID: 21300000, guid: e135ce7b80caadc4598a34728843de00, type: 3}
   - {fileID: 21300000, guid: c47928ab27eeb374b899fc7e6d8cec8b, type: 3}
   - {fileID: 21300000, guid: 1fc9c4bb21b7f4f4099205d5903de8b5, type: 3}
+  - {fileID: 21300000, guid: 619d827d262063b4e8f365d33bd2c0d1, type: 3}
   m_PackedSpriteNamesToIndex:
   - settings
   - swords
@@ -68,11 +70,13 @@ SpriteAtlas:
   - guide_attack
   - magic
   - guide_sit
+  - guide_bow
   - up
   - refresh
   - running
   - dash
   - guide_jump
+  - bow
   m_RenderDataMap: {}
   m_Tag: SimpleIconAtlas
   m_IsVariant: 0

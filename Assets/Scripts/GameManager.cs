@@ -139,6 +139,33 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool PlayerCollision(TrapTrigger trap)
+    {
+        var findItem = this.commandInventory.GetAutoActiveItem("Collision");
+        if (findItem == null)
+            return false;
+
+        switch (findItem.actionName)
+        {
+            case "Guard":
+                {
+                    this.commandInventory.UseItem(findItem);
+                    if (string.IsNullOrEmpty(findItem.equipName) == false)
+                    {
+                        this.player.Equip(findItem.equipName);
+                        // 장착아이템 다 쓴 경우
+                        if (this.commandInventory.isEnableItem(findItem) == false)
+                        {
+                            this.player.UnEquip(findItem.equipName);
+                        }
+                    }
+                    return true;
+                }
+        }
+        
+        return false;
+    }
+
     public void GetCommandItem(NData.Item item,Vector3 worldPos)
     {
         bool success = this.commandInventory.AddItem(item);

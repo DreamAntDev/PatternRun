@@ -30,7 +30,10 @@ public class CommandInventory : MonoBehaviour
             }
             else
             {
-                innerItem.itemCount += item.excuteCount;
+                if (item.stackable == true)
+                {
+                    innerItem.itemCount += item.excuteCount;
+                }
             }
             UpdateUI();
             return true;
@@ -44,7 +47,10 @@ public class CommandInventory : MonoBehaviour
             }
             else
             {
-                innerItem.itemCount += item.excuteCount;
+                if (item.stackable == true)
+                {
+                    innerItem.itemCount += item.excuteCount;
+                }
             }
             UpdateUI();
             return true;
@@ -67,6 +73,15 @@ public class CommandInventory : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public NData.Item GetAutoActiveItem(string triggerName)
+    {
+        var findItem = this.autoActiveItemList.Find(o => o.itemData.triggerName.Equals(triggerName));
+        if (findItem == null)
+            return null;
+
+        return findItem.itemData;
     }
 
     public void UseItem(NData.Item useItem)

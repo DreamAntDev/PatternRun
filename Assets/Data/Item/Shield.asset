@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c498df491487e1b4bb7babb01bc162fa, type: 3}
-  m_Name: ArrowShot
+  m_Name: Shield
   m_EditorClassIdentifier: 
-  type: 0
-  usingCommand:
-  - GEC
-  iconName: bow
-  patternName: guide_bow
-  textCode: MainUI_Arrow
-  actionName: arrowShot
-  triggerName: 
-  equipName: bow
-  excuteCount: 3
-  stackable: 1
+  type: 1
+  usingCommand: []
+  iconName: 
+  patternName: 
+  textCode: 
+  actionName: Guard
+  triggerName: Collision
+  equipName: Shield
+  excuteCount: 1
+  stackable: 0
   trapCode: 
