@@ -18,8 +18,10 @@ namespace NData
         public string patternName;
         public string textCode;
         public string actionName;
+        public string triggerName;
         public string equipName;
         public int excuteCount;
+        public bool stackable;
         public List<int> trapCode;
     }
 }
