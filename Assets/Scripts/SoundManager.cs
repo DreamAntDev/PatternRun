@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
 
     class SoundCache
     {
-        string path;
+        public string path { get; private set; }
         public AudioClip clip;
 
         public SoundCache(string path, AudioClip clip)
@@ -78,7 +78,6 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(SoundType type, bool loop = false, SoundLayer layer = SoundLayer.None)
     {
-        string path = string.Empty;
         SoundCache soundCache;
         if (soundDictionary.TryGetValue(type, out soundCache) == true)
         {
@@ -86,7 +85,7 @@ public class SoundManager : MonoBehaviour
 
             if (clip == null)
             {
-                clip = Resources.Load<AudioClip>(path);
+                clip = Resources.Load<AudioClip>(soundCache.path);
                 soundCache.clip = clip;
             }
             if (clip != null)
