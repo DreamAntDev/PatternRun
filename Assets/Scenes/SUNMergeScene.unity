@@ -1075,9 +1075,9 @@ MonoBehaviour:
   parent: {fileID: 287479420}
   itemPrefabList:
   - {fileID: 3144575894429601864, guid: 3212d18bfeea1bd47b902f3f1e9148c9, type: 3}
-  - {fileID: 5571253557848889491, guid: d1df71dc8c255f2419278b544e26e120, type: 3}
-  - {fileID: 4914239574807148649, guid: 1a52cf7a34d58394487e7c91de94d200, type: 3}
   - {fileID: 6109887485960177378, guid: 7b8b6266fe8c67b4895e1d9b14838c30, type: 3}
+  - {fileID: 4914239574807148649, guid: 1a52cf7a34d58394487e7c91de94d200, type: 3}
+  - {fileID: 5571253557848889491, guid: d1df71dc8c255f2419278b544e26e120, type: 3}
   - {fileID: 738322424626506843, guid: 781e07080c648f9459a2445b2c61fff1, type: 3}
   - {fileID: 9035618360786373423, guid: 39811620d84d90e47ae13a7c647642b3, type: 3}
 --- !u!1 &1513063928
@@ -1859,8 +1859,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpVelocity: 15
-  dashVelccity: 2
-  rollingVelocity: 2
+  dashVelccity: 10
+  rollingVelocity: 5
   animator: {fileID: 1818555812}
   creatablePrefabList:
   - {fileID: 677825856586391260, guid: 75866baaaa9ff4b44a06e79196ab18fc, type: 3}
@@ -1868,6 +1868,8 @@ MonoBehaviour:
   swordCollider: {fileID: 2023909759}
   equipment: {fileID: 2050180692}
   movePos: {x: 0, y: 0, z: 0}
+  speed: 1
+  eventValue: 0
 --- !u!1 &2119489215
 GameObject:
   m_ObjectHideFlags: 0

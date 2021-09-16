@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidbody2d;
 
     public Vector3 movePos;
+    public float speed = 1;
     // Update is called once per frame
 
     private void Awake()
@@ -43,8 +44,11 @@ public class Player : MonoBehaviour
 
     public void Dash()
     {
-        rigidbody2d.velocity = Vector2.right * jumpVelocity;
+        
+        rigidbody2d.velocity = Vector2.right * dashVelccity;
+        StartCoroutine(EventValue());
         animator.SetTrigger("Dash");
+        
     }
 
     public void Attack()
@@ -117,10 +121,17 @@ public class Player : MonoBehaviour
 
         UnEquip(equipName);
     }
-
+    IEnumerator EventValue()
+    {
+        while(rigidbody2d.velocity.x > 0)
+        {
+            GameManager.instance.eventValue = rigidbody2d.velocity.x;
+            yield return new WaitForEndOfFrame();
+        }
+    }
     void Update()
     {
-        this.transform.position += (movePos * Time.deltaTime);
+        this.transform.position += (movePos * Time.deltaTime * speed);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

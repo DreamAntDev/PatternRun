@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     private string chainText;
     public bool isPlay = false;
 
-
+    float skillEventValue = 0;
     private float scoreMeter = 0f;
 
     //Score
@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     public float weight = 25f;
 
+    public float eventValue = 0;
 
     private void Awake()
     {
@@ -171,7 +172,6 @@ public class GameManager : MonoBehaviour
         bool success = this.commandInventory.AddItem(item);
         if (success)
         {
-            Debug.Log("Item Success: " + item.name);
             if (string.IsNullOrEmpty(item.equipName) == false)
             {
                 GetPlayerItem(item.equipName);
@@ -241,11 +241,19 @@ public class GameManager : MonoBehaviour
 
     public void TestMeter()
     {
-        scoreMeter += Time.deltaTime;
+        scoreMeter += Time.deltaTime * player.speed * (1 + eventValue);
         //Sample
         if(scoreMeter >= 30)
         {
             weight = scoreMeter;
+            float value = 0.05f;
+            float speed = 0;
+            Debug.Log(scoreMeter / 30);
+            for(int i = 0; i < (int)(scoreMeter / 30); i++)
+            {
+                speed += value;
+            }
+            player.speed = 1+speed;
         }
         MainUI.Instance.inGameScore.SetScore(scoreMeter);
     }
