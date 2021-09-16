@@ -25,4 +25,4 @@ MonoBehaviour:
   equipName: 
   excuteCount: 0
   stackable: 0
-  trapCode: 04000000
+  trapCode: 010000000200000003000000
