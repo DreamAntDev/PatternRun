@@ -39,7 +39,7 @@ public class FieldManager : MonoBehaviour
     private void Start()
     {
         var field = this.fieldPrefab.GetComponent<Field>();
-        this.xSize = field.sprite.size.x * field.gameObject.transform.localScale.x;
+        this.xSize = field.sprite.bounds.size.x /** field.gameObject.transform.localScale.x*/;
 
        // this.spawnPos.y = -2.5f;
         //this.generatedCount = 0;
@@ -52,27 +52,28 @@ public class FieldManager : MonoBehaviour
         {
             var field = this.fieldQueue.Peek();
             Vector3 fieldRightPos = field.transform.position;
-            fieldRightPos.x += (field.sprite.size.x / 2.0f);
+            fieldRightPos.x += (field.sprite.bounds.size.x / 2.0f);
+            
             var viewportPoint = Camera.main.WorldToViewportPoint(fieldRightPos);
             if (viewportPoint.x < -1.0f)
             {
                 OnInvisibleField(field);
             }
         }
-        if (this.spawnPos.x > 100)
-        {
-            int queueCount = this.fieldQueue.Count;
-            for (int i = 0; i < queueCount; i++)
-            {
-                var field = this.fieldQueue.Dequeue();
-                var xPos = field.transform.position.x - this.spawnPos.x;
-                field.transform.position = new Vector3(xPos, field.transform.position.y, field.transform.position.z);
-                this.fieldQueue.Enqueue(field);
-            }
-            this.player.transform.position = new Vector3(this.player.transform.position.x - this.spawnPos.x, this.player.transform.position.y, this.player.transform.position.z);
+        //if (this.spawnPos.x > 100)
+        //{
+        //    int queueCount = this.fieldQueue.Count;
+        //    for (int i = 0; i < queueCount; i++)
+        //    {
+        //        var field = this.fieldQueue.Dequeue();
+        //        var xPos = field.transform.position.x - this.spawnPos.x;
+        //        field.transform.position = new Vector3(xPos, field.transform.position.y, field.transform.position.z);
+        //        this.fieldQueue.Enqueue(field);
+        //    }
+        //    this.player.transform.position = new Vector3(this.player.transform.position.x - this.spawnPos.x, this.player.transform.position.y, this.player.transform.position.z);
             
-            this.spawnPos.x = 0;
-        }
+        //    this.spawnPos.x = 0;
+        //}
         
     }
     public void InitField()

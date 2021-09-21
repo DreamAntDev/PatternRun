@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Advertisements;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,6 +46,9 @@ public class GameManager : MonoBehaviour
 
     public float eventValue = 0;
 
+
+    private float playerStartPosX;
+    Coroutine playerScoreCoroutine = null;
     private void Awake()
     {
         instance = this;
@@ -195,6 +199,7 @@ public class GameManager : MonoBehaviour
         if (PlayOption.PowerOverwhelming == true)
             return;
 #endif
+        StopCoroutine(playerScoreCoroutine);
         isPlay = false;
         player.Stop();
         MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ReStart);
@@ -226,22 +231,33 @@ public class GameManager : MonoBehaviour
             isPlay = true;
             player.StartMove();
             trapSimulation.OnSimulation();
+            this.playerStartPosX = player.transform.position.x;
+            this.playerScoreCoroutine = StartCoroutine(ScoreUpdateCoroutine());
         }
 
     }
 
+    IEnumerator ScoreUpdateCoroutine()
+    {
+        while(true)
+        {
+            TestMeter();
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 
     private void Update()
     {
-        if (isPlay)
-        {
-            TestMeter();
-        }
+        //if (isPlay)
+        //{
+        //    TestMeter();
+        //}
     }
 
     public void TestMeter()
     {
-        scoreMeter += Time.deltaTime * player.speed * (1 + eventValue);
+        scoreMeter = player.transform.position.x - this.playerStartPosX;
+        //scoreMeter += Time.deltaTime * player.speed * (1 + eventValue);
         //Sample
         if(scoreMeter >= 30)
         {
