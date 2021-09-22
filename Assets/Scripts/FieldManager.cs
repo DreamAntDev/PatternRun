@@ -5,12 +5,21 @@ using UnityEngine;
 
 public class FieldManager : MonoBehaviour
 {
+    [System.Serializable]
+    public class FieldGenerateData
+    {
+        public GameObject fieldPrefab;
+        public int count;
+    }
+
     private static FieldManager instance;
-    public GameObject fieldPrefab;
+    FieldGenerateData currentFieldGenerateData;
+    int currentFieldGenerateDataIndex = 0;
     Queue<Field> fieldQueue = new Queue<Field>();
     float xSize;
     [SerializeField] Vector3 spawnPos = Vector3.zero; //앞으로 생성할 포지션
     public Player player;
+    public List<FieldGenerateData> fieldGenerateDatas = new List<FieldGenerateData>();
 
     private Field currentField;
     //임시 코드
@@ -38,12 +47,21 @@ public class FieldManager : MonoBehaviour
 
     private void Start()
     {
-        var field = this.fieldPrefab.GetComponent<Field>();
-        this.xSize = field.sprite.bounds.size.x /** field.gameObject.transform.localScale.x*/;
+        SetCurrentFieldData(currentFieldGenerateDataIndex);
+         /** field.gameObject.transform.localScale.x*/;
 
        // this.spawnPos.y = -2.5f;
         //this.generatedCount = 0;
         InitField();
+    }
+
+    private void SetCurrentFieldData(int idx)
+    {
+        var index = Mathf.Min(this.fieldGenerateDatas.Count - 1, idx);
+        this.currentFieldGenerateData = this.fieldGenerateDatas[index];
+        this.currentFieldGenerateDataIndex = index;
+        var field = this.currentFieldGenerateData.fieldPrefab.GetComponent<Field>();
+        this.xSize = field.sprite.bounds.size.x;
     }
 
     private void Update()
@@ -95,10 +113,16 @@ public class FieldManager : MonoBehaviour
     }
     private void CreateField()
     {
-        var obj = GameObject.Instantiate(this.fieldPrefab, spawnPos, Quaternion.identity, this.transform);
+        var obj = GameObject.Instantiate(this.currentFieldGenerateData.fieldPrefab, spawnPos, Quaternion.identity, this.transform);
         this.spawnPos.x += xSize;
         var field = obj.GetComponent<Field>();
         this.fieldQueue.Enqueue(field);
+        this.currentFieldGenerateData.count--;
+        if(this.currentFieldGenerateData.count <= 0)
+        {
+            this.currentFieldGenerateDataIndex++;
+            SetCurrentFieldData(this.currentFieldGenerateDataIndex);
+        }
        /* generatedCount++;
 
         // 임시 코드
