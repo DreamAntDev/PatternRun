@@ -38,7 +38,7 @@ namespace NData
             if (findObj == null)
                 return key;
 
-            var localObj = findObj.languageDictionary.Find(o => o.local.Equals(Local.Korea));
+            var localObj = findObj.languageDictionary.Find(o => o.local.Equals(Local.English));
             if (localObj == null)
                 return key;
 
