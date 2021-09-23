@@ -11,14 +11,14 @@ public class OptionPopup : MonoBehaviour
 
     public Toggle inputPadColliderToggle;
 
-#if DEBUG
     public Toggle powerOverwhelmingToggle;
-#endif
 
     // Start is called before the first frame update
     void Start()
     {
+        powerOverwhelmingToggle.gameObject.SetActive(false);
 #if DEBUG
+        powerOverwhelmingToggle.gameObject.SetActive(true);
         LoadOption(powerOverwhelmingToggle);
         PlayOption.PowerOverwhelming = powerOverwhelmingToggle.isOn;
         this.powerOverwhelmingToggle.onValueChanged.AddListener((bool b) => 
