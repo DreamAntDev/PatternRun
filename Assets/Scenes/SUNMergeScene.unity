@@ -599,6 +599,7 @@ MonoBehaviour:
   trapSimulation: {fileID: 1427052287}
   isPlay: 0
   weight: 25
+  eventValue: 0
 --- !u!4 &627600983
 Transform:
   m_ObjectHideFlags: 0
@@ -1393,9 +1394,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f6889ba5bf6af4b8561fa2bc321642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldPrefab: {fileID: 6101916445924189112, guid: 43cc52116719da94387f87296bd1024a, type: 3}
   spawnPos: {x: -10, y: -2.5, z: 0}
   player: {fileID: 2050180696}
+  fieldGenerateDatas:
+  - fieldPrefab: {fileID: 6101916445924189112, guid: 43cc52116719da94387f87296bd1024a, type: 3}
+    count: 5
 --- !u!1 &1810344528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,7 +1872,6 @@ MonoBehaviour:
   equipment: {fileID: 2050180692}
   movePos: {x: 0, y: 0, z: 0}
   speed: 1
-  eventValue: 0
 --- !u!1 &2119489215
 GameObject:
   m_ObjectHideFlags: 0

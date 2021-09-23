@@ -70,6 +70,7 @@ public class BreakableObject : MonoBehaviour
             rigidBody.AddForceAtPosition(new Vector3(2, 0, 0), new Vector3(-1, 0, 0),ForceMode.VelocityChange);
 
             obj.transform.position = this.transform.position;
+            obj.transform.parent = this.transform.parent;
         }
     }
 

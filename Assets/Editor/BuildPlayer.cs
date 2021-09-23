@@ -10,6 +10,7 @@ public class BuildPlayer : MonoBehaviour
     public static void BuildSetting()
     {
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
-        buildPlayerOptions.options = BuildOptions.Development;
+        buildPlayerOptions.options = BuildOptions.AutoRunPlayer | BuildOptions.Development | BuildOptions.ConnectWithProfiler | BuildOptions.AllowDebugging;
+        BuildPipeline.BuildPlayer(buildPlayerOptions);
     }
 }

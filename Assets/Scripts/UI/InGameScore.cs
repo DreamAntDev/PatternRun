@@ -8,7 +8,7 @@ public class InGameScore : MonoBehaviour
     
     public void SetScore(float score)
     {
-        text.SetText(string.Format("{0} m", score));
+        text.SetText(string.Format("{0} m", score.ToString("F3")));
     }
 
 }
