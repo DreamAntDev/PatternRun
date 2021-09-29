@@ -18,7 +18,7 @@ namespace Patten.Ads
 
         public void InitializeAds()
         {
-            Advertisement.Initialize(Config.GameId, Config.IsTestAds);
+            Advertisement.Initialize(Config.GameId, false);
         }
 
         private void OnDestroy()
