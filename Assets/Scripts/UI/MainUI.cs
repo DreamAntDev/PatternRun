@@ -49,6 +49,10 @@ public class MainUI : MonoBehaviour
 
     private void Start()
     {
+        this.optionPopup.SetActive(false);
+        var optionPopup = this.optionPopup.GetComponent<OptionPopup>();
+        optionPopup.Initialize();
+
         this.optionButton.onClick.AddListener(()=>this.optionPopup.SetActive(true));
         OnTitle();
     }

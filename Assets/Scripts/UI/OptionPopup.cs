@@ -14,7 +14,7 @@ public class OptionPopup : MonoBehaviour
     public Toggle powerOverwhelmingToggle;
 
     // Start is called before the first frame update
-    void Start()
+    public void Initialize()
     {
         powerOverwhelmingToggle.gameObject.SetActive(false);
 #if DEBUG
@@ -28,14 +28,38 @@ public class OptionPopup : MonoBehaviour
         });
 #endif
 
+        //Load
+        if (HasSavedOption(this.inputPadColliderSizeSlider))
+        {
+            LoadOption(this.inputPadColliderSizeSlider);
+        }
+        if (this.inputPadColliderToggle)
+        {
+            LoadOption(this.inputPadColliderToggle);
+        }
+
+        //SetListner
         this.closeButton.onClick.AddListener(() => this.gameObject.SetActive(false));
-        this.inputPadColliderSizeSlider.onValueChanged.AddListener(SetInputColliderSize);
-        this.inputPadColliderToggle.onValueChanged.AddListener(SetInputColliderDisplay);
+        this.inputPadColliderSizeSlider.onValueChanged.AddListener((float f)=>
+        {
+            SetInputColliderSize(f);
+            SaveOption(this.inputPadColliderSizeSlider);
+
+        });
+        this.inputPadColliderToggle.onValueChanged.AddListener((bool b) =>
+        {
+            SetInputColliderDisplay(b);
+            SaveOption(this.inputPadColliderToggle);
+        });
+
+        //applyOption
+        SetInputColliderSize(this.inputPadColliderSizeSlider.value);
+        SetInputColliderDisplay(this.inputPadColliderToggle.isOn);
     }
 
     void SetInputColliderSize(float value)
     {
-        PlayOption.InputPadCollisionSize = 200 * value;
+        PlayOption.InputPadCollisionSize = 100 * value;
         inputPadColliderSizeText.text = ((int)(PlayOption.InputPadCollisionSize)).ToString();
         foreach (var obj in MainUI.Instance.inputPad.PointList)
         {
@@ -96,7 +120,8 @@ public class OptionPopup : MonoBehaviour
         }
         else if(optionObj is Slider)
         {
-
+            var slider = optionObj as Slider;
+            PlayerPrefs.SetFloat(slider.name, slider.value);
         }
     }
 
@@ -110,7 +135,24 @@ public class OptionPopup : MonoBehaviour
         }
         else if (optionObj is Slider)
         {
-
+            var slider = optionObj as Slider;
+            float val = PlayerPrefs.GetFloat(slider.name);
+            slider.value = val;
         }
+    }
+
+    bool HasSavedOption(Object optionObj)
+    {
+        if (optionObj is Toggle)
+        {
+            var toggle = optionObj as Toggle;
+            return PlayerPrefs.HasKey(toggle.name);
+        }
+        else if (optionObj is Slider)
+        {
+            var slider = optionObj as Slider;
+            return PlayerPrefs.HasKey(slider.name);
+        }
+        return PlayerPrefs.HasKey(optionObj.name);
     }
 }
