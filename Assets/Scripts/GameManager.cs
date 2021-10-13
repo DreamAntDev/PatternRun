@@ -46,7 +46,8 @@ public class GameManager : MonoBehaviour
 
     public float eventValue = 0;
 
-    private bool isStop = false;
+    public bool isStop = false;
+    private string currentPatten;
 
 
     private float playerStartPosX;
@@ -130,6 +131,8 @@ public class GameManager : MonoBehaviour
                 useSuccess = false;
                 break;
         }
+        currentPatten = item.actionName;
+
 
         if (useSuccess)
         {
@@ -193,9 +196,16 @@ public class GameManager : MonoBehaviour
     IEnumerator ItemCommandTutorial(NData.Item item)
     {
         Stop();
+        currentPatten = string.Empty;
+
+        while (!item.actionName.Equals(currentPatten))
+        {
+            Debug.Log("SetPatten Plz");
+            yield return new WaitForSeconds(0.5f);
+        }
 
         yield return new WaitForSeconds(1f);
-
+        Run();
 
         trapSimulation.SetTrap(item.trapCode.ToArray());
     }
@@ -285,7 +295,6 @@ public class GameManager : MonoBehaviour
             weight = scoreMeter;
             float value = 0.05f;
             float speed = 0;
-            Debug.Log(scoreMeter / 30);
             for(int i = 0; i < (int)(scoreMeter / 30); i++)
             {
                 speed += value;

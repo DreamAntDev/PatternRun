@@ -18,22 +18,30 @@ public class TrapSimulation : MonoBehaviour
     // x = +8f, up = +5f
 
     private int trapCount = 0;
+
+    private Coroutine simulation;
     private void Awake()
     {
         instance = this;
     }
     private void Start()
     {
-        cam = Camera.main;
+        cam = Camera.main; 
+
+        for (int i = 0; i < 3; i++)
+        {
+            onGameTraps.Add(traps[SearchTrap(i + 1)]);
+        }
     }
 
     public void OnSimulation()
     {
-        for(int i= 0; i < 3; i++)
-        {
-            onGameTraps.Add(traps[SearchTrap(i + 1)]);
-        }
-        StartCoroutine(StartSimulation());
+        simulation = StartCoroutine(StartSimulation());
+    }
+
+    public void StopSimulation()
+    {
+        StopCoroutine(simulation);
     }
 
     public void SetTrap(int[] ids)
@@ -70,30 +78,25 @@ public class TrapSimulation : MonoBehaviour
 
     IEnumerator StartSimulation()
     {
-        for (; ;)
-        {
-            StartCoroutine(CreateTrap());
-            if (!GameManager.instance.isPlay)
-            {
-                break;
-            }
-            yield return new WaitForSeconds(13f);
-        }
-    }
-
-    IEnumerator CreateTrap()
-    {
-        orderTrapQueue.Clear();
-        totalTrapWeight = 0;
-        Debug.Log(++trapCount);
         while (true)
         {
-            if (onGameTraps.Count > 0)
+            if (onGameTraps.Count > 0 && orderTrapQueue.Count == 0 && GameManager.instance.isPlay)
+            {
+                Debug.Log("Ready Count : " + orderTrapQueue.Count);
                 break;
+            }
 
             yield return new WaitForEndOfFrame();
         }
 
+        StartCoroutine(CreateTrap());
+    }
+
+    IEnumerator CreateTrap()
+    {
+        //orderTrapQueue.Clear();
+        totalTrapWeight = 0;
+        Debug.Log(++trapCount);
         CreateItem();
 
         while (true)
@@ -116,16 +119,29 @@ public class TrapSimulation : MonoBehaviour
         isMapChecker = true;
         while(orderTrapQueue.Count > 0)
         {
-            var trapobj = orderTrapQueue.Dequeue();
-            Vector3 position = new Vector3(GameManager.instance.GetPlayer().transform.position.x + 15f, -10f, 0f);
-            trapobj.transform.position += position;
-            trapobj.transform.parent = parentMap;
-            
-            trapobj.SetActive(true);
-            yield return new WaitForSeconds(2.5f);
+            if (GameManager.instance.isStop)
+            {
+                Debug.Log("Count " + orderTrapQueue.Count);
+                yield return new WaitForSeconds(0.1f);
+                continue;
+            }
+            else
+            {
+                Debug.Log("Count " + orderTrapQueue.Count);
+                var trapobj = orderTrapQueue.Dequeue();
+                Vector3 position = new Vector3(GameManager.instance.GetPlayer().transform.position.x + 15f, -10f, 0f);
+                trapobj.transform.position += position;
+                trapobj.transform.parent = parentMap;
+
+                trapobj.SetActive(true);
+                yield return new WaitForSeconds(2.5f);
+            }
         }
+
         isMapChecker = false;
 
+
+        StartCoroutine(CreateTrap());
     }
 
     private void CreateItem()
