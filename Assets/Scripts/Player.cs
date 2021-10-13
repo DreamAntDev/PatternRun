@@ -68,11 +68,18 @@ public class Player : MonoBehaviour
         animator.SetTrigger("Sit");
     }
 
-    public void Stop()
+    public void Die()
     {
         animator.SetTrigger("Die");
         movePos.x = 0;
     }
+
+    public void Stop()
+    {
+        movePos.x = 0;
+    }
+
+    
 
     public void ArrowShot()
     {

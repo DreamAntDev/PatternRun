@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
 
     public float eventValue = 0;
 
+    private bool isStop = false;
+
 
     private float playerStartPosX;
     Coroutine playerScoreCoroutine = null;
@@ -182,10 +184,20 @@ public class GameManager : MonoBehaviour
             }
             if (item.trapCode != null && item.trapCode.Count > 0)
             {
-                trapSimulation.SetTrap(item.trapCode.ToArray());
+                StartCoroutine(ItemCommandTutorial(item));
             }
             SoundManager.Instance.PlaySound(SoundManager.SoundType.Get_Item);
         }
+    }
+
+    IEnumerator ItemCommandTutorial(NData.Item item)
+    {
+        Stop();
+
+        yield return new WaitForSeconds(1f);
+
+
+        trapSimulation.SetTrap(item.trapCode.ToArray());
     }
 
     public void GetPlayerItem(string equipName)
@@ -201,10 +213,22 @@ public class GameManager : MonoBehaviour
 #endif
         StopCoroutine(playerScoreCoroutine);
         isPlay = false;
-        player.Stop();
+        player.Die();
         MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ReStart);
         MainUI.Instance.OnGameEnd();
         ScroeTransaction();
+    }
+
+    public void Stop()
+    {
+        player.Stop();
+        isStop = true;
+    }
+
+    public void Run()
+    {
+        player.StartMove();
+        isStop = false;
     }
 
     public void ReStart()
@@ -246,16 +270,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        //if (isPlay)
-        //{
-        //    TestMeter();
-        //}
-    }
-
     public void TestMeter()
     {
+        if (isStop)
+        {
+            return;
+        }
+
         scoreMeter = player.transform.position.x - this.playerStartPosX;
         //scoreMeter += Time.deltaTime * player.speed * (1 + eventValue);
         //Sample
