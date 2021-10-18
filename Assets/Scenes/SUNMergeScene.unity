@@ -587,19 +587,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2050180696}
-  scoreText: {fileID: 0}
-  bestScoreText: {fileID: 0}
-  totalScoreText: {fileID: 0}
-  deadUI: {fileID: 0}
-  deadScoreText: {fileID: 0}
-  commandInventory: {fileID: 0}
-  items:
-  - {fileID: 866144806}
-  - {fileID: 1737813633}
+  continueCount: 3
+  continuePopup: {fileID: 7698719479933673632, guid: 61b49c49108aa504f93262b8f3d52991, type: 3}
   trapSimulation: {fileID: 1427052287}
   isPlay: 0
   weight: 25
   eventValue: 0
+  isStop: 0
 --- !u!4 &627600983
 Transform:
   m_ObjectHideFlags: 0

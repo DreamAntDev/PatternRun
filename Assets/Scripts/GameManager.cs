@@ -14,18 +14,21 @@ public class GameManager : MonoBehaviour
     public bool gameStart { get; set; }
     [SerializeField] Player player;
 
-    [Header("- UI Board")]
-    [SerializeField] protected TextMeshProUGUI scoreText;
-    [SerializeField] protected TextMeshProUGUI bestScoreText;
-    [SerializeField] protected TextMeshProUGUI totalScoreText;
-    [SerializeField] protected GameObject deadUI;
-    [SerializeField] protected TextMeshProUGUI deadScoreText;
-    
+
+    //[Header("- UI Board")]
+    //[SerializeField] protected TextMeshProUGUI scoreText;
+    //[SerializeField] protected TextMeshProUGUI bestScoreText;
+    //[SerializeField] protected TextMeshProUGUI totalScoreText;
+    //[SerializeField] protected GameObject deadUI;
+    //[SerializeField] protected TextMeshProUGUI deadScoreText;
 
 
     [Header("- Player")]
-    [SerializeField] CommandInventory commandInventory;
-    [SerializeField] GameObject[] items;
+    /*[SerializeField] */CommandInventory commandInventory;
+    [SerializeField] int continueCount;
+    private int remainContinueCount;
+    [SerializeField] GameObject continuePopup;
+    //[SerializeField] GameObject[] items;
 
     [Header("- Trap")]
     [SerializeField] protected TrapSimulation trapSimulation;
@@ -78,6 +81,7 @@ public class GameManager : MonoBehaviour
             var inventory = obj.AddComponent<CommandInventory>();
             this.commandInventory = inventory;
         }
+        this.remainContinueCount = this.continueCount;
     }
 
     public void ShowAds()
@@ -224,9 +228,8 @@ public class GameManager : MonoBehaviour
         StopCoroutine(playerScoreCoroutine);
         isPlay = false;
         player.Die();
-        MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ReStart);
-        MainUI.Instance.OnGameEnd();
-        ScroeTransaction();
+        MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ShowContinuePopup);
+        //MainUI.Instance.OnGameEnd();
     }
 
     public void Stop()
@@ -241,9 +244,40 @@ public class GameManager : MonoBehaviour
         isStop = false;
     }
 
+    public void ShowContinuePopup()
+    {
+        var obj = Instantiate(this.continuePopup);
+        var continuePopup = obj.GetComponent<ContinuePopup>();
+        continuePopup.Initialize(this.remainContinueCount);
+        continuePopup.continueButton.onClick.AddListener(() =>
+        {
+            this.Continue();
+            GameObject.Destroy(continuePopup.gameObject);
+        });
+        continuePopup.LobbyButton.onClick.AddListener(()=>
+        {
+            this.ReStart();
+            GameObject.Destroy(continuePopup.gameObject);
+        });
+    }
+    public void Continue()
+    {
+        if (this.remainContinueCount > 0)
+        {
+            remainContinueCount--;
+            AdsManager.instance.AdsShow();
+        }
+    }
+    public void ContinueAdComplete()
+    {
+        isPlay = true;
+        this.player.ContinueRun();
+        this.playerScoreCoroutine = StartCoroutine(ScoreUpdateCoroutine());
+    }
     public void ReStart()
     {
-        AdsManager.instance.AdsShow();
+        MainUI.Instance.OnGameEnd();
+        ScroeTransaction();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

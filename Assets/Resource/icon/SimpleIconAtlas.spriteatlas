@@ -32,7 +32,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 378581b760b3daa4fb8bc62a4f901e0c, type: 3}
-    totalSpriteSurfaceArea: 1444604
+    totalSpriteSurfaceArea: 1448700
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -58,6 +58,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 1fc9c4bb21b7f4f4099205d5903de8b5, type: 3}
   - {fileID: 21300000, guid: 619d827d262063b4e8f365d33bd2c0d1, type: 3}
   - {fileID: 21300000, guid: a4ed9b8d7eb3641f6a060b21accc49e2, type: 3}
+  - {fileID: 21300000, guid: e6540e4e8a177ba44a8273daa26693ab, type: 3}
   m_PackedSpriteNamesToIndex:
   - settings
   - swords
@@ -79,6 +80,7 @@ SpriteAtlas:
   - guide_jump
   - bow
   - sordman_appicon
+  - ad
   m_RenderDataMap: {}
   m_Tag: SimpleIconAtlas
   m_IsVariant: 0

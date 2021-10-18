@@ -5,7 +5,7 @@ using UnityEngine.Advertisements;
 
 namespace Patten.Ads
 {
-    public class InterstitialAds : MonoBehaviour
+    public class InterstitialAds : MonoBehaviour, IUnityAdsListener
     {
         const string mySurfacingId = "interstitial";
 
@@ -19,6 +19,7 @@ namespace Patten.Ads
         public void InitializeAds()
         {
             Advertisement.Initialize(Config.GameId, false);
+            Advertisement.AddListener(this);
         }
 
         private void OnDestroy()
@@ -27,6 +28,7 @@ namespace Patten.Ads
             {
                 StopCoroutine(_coroutine);
             }
+            Advertisement.RemoveListener(this);
         }
 
         public void Show()
@@ -48,6 +50,26 @@ namespace Patten.Ads
                 yield return wait;
             }
             Advertisement.Show();
+        }
+
+        void IUnityAdsListener.OnUnityAdsReady(string placementId)
+        {
+
+        }
+
+        void IUnityAdsListener.OnUnityAdsDidError(string message)
+        {
+
+        }
+
+        void IUnityAdsListener.OnUnityAdsDidStart(string placementId)
+        {
+
+        }
+
+        void IUnityAdsListener.OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+        {
+            GameManager.instance.ContinueAdComplete();
         }
     }
 }

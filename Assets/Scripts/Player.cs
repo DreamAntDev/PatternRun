@@ -73,7 +73,11 @@ public class Player : MonoBehaviour
         animator.SetTrigger("Die");
         movePos.x = 0;
     }
-
+    public void ContinueRun()
+    {
+        animator.SetTrigger("DieToRun");
+        StartMove();
+    }
     public void Stop()
     {
         movePos.x = 0;

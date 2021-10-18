@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbce58cc096cae4987a9e0d86673e0c, type: 3}
+  m_Name: ContinuePopup
+  m_EditorClassIdentifier: 
+  LanguagePairList:
+  - key: ContinuePopup_Continue
+    languageDictionary:
+    - local: 0
+      text: "\uC774\uC5B4\uD558\uAE30"
+    - local: 1
+      text: Continue
+  - key: ContinuePopup_Lobby
+    languageDictionary:
+    - local: 0
+      text: "\uB85C\uBE44"
+    - local: 1
+      text: Lobby
+  - key: ContinuePopup_RemainCount
+    languageDictionary:
+    - local: 0
+      text: "\uC774\uC5B4\uD558\uAE30 \uAC00\uB2A5 \uD69F\uC218 : {0}"
+    - local: 1
+      text: '{0} remain chances'
