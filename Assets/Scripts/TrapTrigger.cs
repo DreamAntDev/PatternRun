@@ -10,10 +10,6 @@ public class TrapTrigger : MonoBehaviour
         breakableObj.TrapToBreakableObject(this.gameObject);
     }
 
-    private void Start()
-    {
-        StartCoroutine(DestroyTime());
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (GameManager.instance.isPlay)
@@ -61,14 +57,6 @@ public class TrapTrigger : MonoBehaviour
             }
         }
     }
-
-
-    IEnumerator DestroyTime()
-    {
-        yield return new WaitForSeconds(5f);
-        Destroy(gameObject);
-    }
-
     public void SetPosition(Vector3 v)
     {
         transform.position = new Vector3(v.x + 15f, -10f, 0f);

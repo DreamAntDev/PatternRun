@@ -19,6 +19,8 @@ MonoBehaviour:
   patternName: guide_attack
   textCode: MainUI_Attack
   actionName: attack
+  triggerName: 
   equipName: Weapon-Sword
   excuteCount: 0
-  trapCode: 
+  stackable: 0
+  trapCode: 00000000

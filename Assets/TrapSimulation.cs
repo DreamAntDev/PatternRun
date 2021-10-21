@@ -60,6 +60,39 @@ public class TrapSimulation : MonoBehaviour
         }
     }
 
+    public void TutorialTrap(string itemName)
+    {
+        Trap trap = onGameTraps[0];
+        float length = 1.5f;
+        Debug.Log(itemName);
+        switch (itemName)
+        {
+            case "Dash":
+                trap = traps[7];
+                length = 2.5f;
+                break;
+            case "Sit":
+                trap = traps[3];
+                break;
+            
+            case "bow":
+                break;
+            case "Jump":
+                trap = traps[0];
+                break;
+            case "Attack":
+                trap = traps[0];
+                break;
+            default:
+                trap = traps[0];
+                break;
+        }
+        GameObject trapobj = Instantiate(trap.obj); 
+        Vector3 position = new Vector3(GameManager.instance.GetPlayer().transform.position.x + length, -10f, 0f);
+        trapobj.transform.position += position;
+        trapobj.transform.parent = parentMap;
+    }
+
     public int SearchTrap(int id)
     {
         int findidx = -1;

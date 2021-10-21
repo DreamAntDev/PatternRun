@@ -189,6 +189,7 @@ public class InputPad : MonoBehaviour, IBeginDragHandler, IDragHandler,IEndDragH
         inputCollider.enabled = false;
         OnInputComplete();
     }
+
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
         Vector2 localPos;

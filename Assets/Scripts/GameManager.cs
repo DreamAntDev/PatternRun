@@ -189,9 +189,12 @@ public class GameManager : MonoBehaviour
             {
                 GetPlayerItem(item.equipName);
             }
-            if (item.trapCode != null && item.trapCode.Count > 0)
+            if (item.trapCode != null && item.trapCode.Count > 0 )
             {
-                StartCoroutine(ItemCommandTutorial(item));
+#if !UNITY_EDITOR
+                if (!Convert.ToBoolean(PlayerPrefs.GetInt("Tutorial_"+item.name, 0)))
+#endif
+                    StartCoroutine(ItemCommandTutorial(item));
             }
             SoundManager.Instance.PlaySound(SoundManager.SoundType.Get_Item);
         }
@@ -200,15 +203,15 @@ public class GameManager : MonoBehaviour
     IEnumerator ItemCommandTutorial(NData.Item item)
     {
         Stop();
+        trapSimulation.TutorialTrap(item.name);
         currentPatten = string.Empty;
 
         while (!item.actionName.Equals(currentPatten))
         {
-            Debug.Log("SetPatten Plz");
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
         }
 
-        yield return new WaitForSeconds(1f);
+        PlayerPrefs.SetInt("Tutorial_" + item.name, 1);
         Run();
 
         trapSimulation.SetTrap(item.trapCode.ToArray());
