@@ -4542,6 +4542,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6731c3bcded74af45ad1ef6b7beefd39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commands:
+  - {fileID: 4266357682129866970}
+  - {fileID: 4266357682506781639}
+  - {fileID: 4266357682244086246}
+  - {fileID: 4266357682203748508}
+  - {fileID: 4266357682319314699}
+  - {fileID: 4266357682769719834}
+  - {fileID: 4266357681893180463}
+  - {fileID: 4266357682034872172}
+  - {fileID: 4266357683095288356}
   PointList:
   - obj: {fileID: 4266357682129866970}
     value: A

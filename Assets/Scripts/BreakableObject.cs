@@ -90,7 +90,8 @@ public class BreakableObject : MonoBehaviour
         DestroyImmediate(sprite);
 
         MeshRenderer meshRenderer = trap.AddComponent<MeshRenderer>();
-        meshRenderer.sharedMaterial = tempMaterial;
+        if(tempMaterial != null || meshRenderer.sharedMaterial != null)
+            meshRenderer.sharedMaterial = tempMaterial;
         meshRenderer.sortingLayerID = tempSortingLayerID;
 
         //float width = tempTexture.width / 100.0f;

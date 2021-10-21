@@ -52,6 +52,9 @@ public class GameManager : MonoBehaviour
     public bool isStop = false;
     private string currentPatten;
 
+    private Action<String> starttutorialLineAction;
+    private Action endLineAction;
+
 
     private float playerStartPosX;
     Coroutine playerScoreCoroutine = null;
@@ -90,6 +93,13 @@ public class GameManager : MonoBehaviour
         {
             Advertisement.Show();
         }
+    }
+
+    public void TutorialLineAction(Action<String> action, Action action2)
+    {
+        starttutorialLineAction = action;
+        endLineAction = action2;
+
     }
 
     public void SetPatten(string state)
@@ -203,6 +213,7 @@ public class GameManager : MonoBehaviour
     IEnumerator ItemCommandTutorial(NData.Item item)
     {
         Stop();
+        starttutorialLineAction(item.name);
         trapSimulation.TutorialTrap(item.name);
         currentPatten = string.Empty;
 
@@ -212,6 +223,7 @@ public class GameManager : MonoBehaviour
         }
 
         PlayerPrefs.SetInt("Tutorial_" + item.name, 1);
+        endLineAction();
         Run();
 
         trapSimulation.SetTrap(item.trapCode.ToArray());

@@ -154,13 +154,11 @@ public class TrapSimulation : MonoBehaviour
         {
             if (GameManager.instance.isStop)
             {
-                Debug.Log("Count " + orderTrapQueue.Count);
                 yield return new WaitForSeconds(0.1f);
                 continue;
             }
             else
             {
-                Debug.Log("Count " + orderTrapQueue.Count);
                 var trapobj = orderTrapQueue.Dequeue();
                 Vector3 position = new Vector3(GameManager.instance.GetPlayer().transform.position.x + 15f, -10f, 0f);
                 trapobj.transform.position += position;
