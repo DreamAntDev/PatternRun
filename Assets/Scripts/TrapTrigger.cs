@@ -6,6 +6,11 @@ public class TrapTrigger : MonoBehaviour
 {
     private void Awake()
     {
+
+    }
+
+    private void Start()
+    {
         var breakableObj = this.gameObject.AddComponent<BreakableObject>();
         breakableObj.TrapToBreakableObject(this.gameObject);
     }
@@ -19,10 +24,11 @@ public class TrapTrigger : MonoBehaviour
                 if (GameManager.instance.PlayerCollision(this) == true)
                 {
                     var breakableObject = this.GetComponent<BreakableObject>();
-                    breakableObject?.Break();
+                    breakableObject.Break();
                 }
                 else
                 {
+                    this.gameObject.SetActive(false);
                     GameManager.instance.GameEnd();
                 }
             }
@@ -43,10 +49,11 @@ public class TrapTrigger : MonoBehaviour
                 if (GameManager.instance.PlayerCollision(this) == true)
                 {
                     var breakableObject = this.GetComponent<BreakableObject>();
-                    breakableObject?.Break();
+                    breakableObject.Break();
                 }
                 else
                 {
+                    this.gameObject.SetActive(false);
                     GameManager.instance.GameEnd();
                 }
             }

@@ -243,6 +243,7 @@ public class GameManager : MonoBehaviour
         StopCoroutine(playerScoreCoroutine);
         isPlay = false;
         player.Die();
+        Stop();
         MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ShowContinuePopup);
         //MainUI.Instance.OnGameEnd();
     }
@@ -287,6 +288,7 @@ public class GameManager : MonoBehaviour
     {
         isPlay = true;
         this.player.ContinueRun();
+        this.Run();
         this.playerScoreCoroutine = StartCoroutine(ScoreUpdateCoroutine());
     }
     public void ReStart()
