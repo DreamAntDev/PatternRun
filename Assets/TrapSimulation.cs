@@ -178,29 +178,29 @@ public class TrapSimulation : MonoBehaviour
     private void CreateItem()
     {
         //1 = 10m
+        CommandItem itemPrefab = null;
         switch (trapCount)
         {
             case 1:
-                orderTrapQueue.Enqueue(GameObject.Instantiate(this.itemPrefabList[0]).gameObject);
+                itemPrefab = this.itemPrefabList[0];
                 break;
-
             case 2:
-                orderTrapQueue.Enqueue(GameObject.Instantiate(this.itemPrefabList[1]).gameObject);
+                itemPrefab = this.itemPrefabList[1];
                 break;
-
             case 3:
-                orderTrapQueue.Enqueue(GameObject.Instantiate(this.itemPrefabList[2]).gameObject);
+                itemPrefab = this.itemPrefabList[2];
                 break;
-
             case 4:
-                orderTrapQueue.Enqueue(GameObject.Instantiate(this.itemPrefabList[3]).gameObject);
+                itemPrefab = this.itemPrefabList[3];
                 break;
-
             case 5:
-                orderTrapQueue.Enqueue(GameObject.Instantiate(this.itemPrefabList[4]).gameObject);
+                itemPrefab = this.itemPrefabList[4];
                 break;
         }
-       // GameManager.instance.GetMeter();
+        var obj = GameObject.Instantiate(itemPrefab.gameObject);
+        obj.SetActive(false);
+        orderTrapQueue.Enqueue(obj);
+        // GameManager.instance.GetMeter();
     }
 
     RaycastHit hit;
