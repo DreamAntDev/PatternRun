@@ -9,16 +9,18 @@ public class UserCommandListItem : MonoBehaviour
     public Image icon;
     public TMPro.TextMeshProUGUI count;
     public TMPro.TextMeshProUGUI desc;
+    public Transform top;
+    public Transform bottom;
 
     public CommandInventory.Item item;
 
-    private Canvas commandCanvas;
-    private Canvas iconCanvas;
+    //private Canvas commandCanvas;
+    //private Canvas iconCanvas;
 
     private void Awake()
     {
-        this.commandCanvas = command.GetComponent<Canvas>();
-        this.iconCanvas = icon.GetComponent<Canvas>();
+        //this.commandCanvas = command.GetComponent<Canvas>();
+        //this.iconCanvas = icon.GetComponent<Canvas>();
     }
 
     public void SetColorAlpha(float alphaValue,int commandOrder,int iconOrder)
@@ -34,8 +36,19 @@ public class UserCommandListItem : MonoBehaviour
         iconColor.a = iconAhpha;
         this.icon.color = iconColor;
 
-        this.commandCanvas.sortingOrder = commandOrder;
-        this.iconCanvas.sortingOrder = iconOrder;
+        if (commandOrder > iconOrder)
+        {
+            command.gameObject.transform.SetParent(top);
+            icon.gameObject.transform.SetParent(bottom);
+        }
+        else
+        {
+            command.gameObject.transform.SetParent(bottom);
+            icon.gameObject.transform.SetParent(top);
+        }
+
+        //this.commandCanvas.sortingOrder = commandOrder;
+        //this.iconCanvas.sortingOrder = iconOrder;
     }
 
     public void SetItem(CommandInventory.Item item)
@@ -88,8 +101,8 @@ public class UserCommandListItem : MonoBehaviour
                 var temp = decreaser;
                 decreaser = increaser;
                 increaser = temp;
-                increaser.GetComponent<Canvas>().sortingOrder = 1;
-                decreaser.GetComponent<Canvas>().sortingOrder = 0;
+                increaser.gameObject.transform.SetParent(top);/* GetComponent<Canvas>().sortingOrder = 1;*/
+                decreaser.gameObject.transform.SetParent(bottom);
             }
         }
     }
