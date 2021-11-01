@@ -1534,6 +1534,12 @@ MonoBehaviour:
   fieldGenerateDatas:
   - fieldPrefab: {fileID: 6101916445924189112, guid: 43cc52116719da94387f87296bd1024a, type: 3}
     count: 5
+  - fieldPrefab: {fileID: 6101916445924189112, guid: 6303eb201c0e345f39575ceab5bf07f7, type: 3}
+    count: 8
+  - fieldPrefab: {fileID: 6101916445924189112, guid: 6a15f85992f504e38b2cdd44be31ac65, type: 3}
+    count: 10
+  - fieldPrefab: {fileID: 6101916445924189112, guid: d2e1bc3077e6e4a22beb58f9deac83aa, type: 3}
+    count: 100
 --- !u!1 &1810344528
 GameObject:
   m_ObjectHideFlags: 0
