@@ -197,6 +197,11 @@ public class TrapSimulation : MonoBehaviour
                 itemPrefab = this.itemPrefabList[4];
                 break;
         }
+
+        if(itemPrefab == null)
+        {
+            return;
+        }
         var obj = GameObject.Instantiate(itemPrefab.gameObject);
         obj.SetActive(false);
         orderTrapQueue.Enqueue(obj);
