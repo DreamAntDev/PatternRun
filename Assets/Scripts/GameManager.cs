@@ -364,6 +364,11 @@ public class GameManager : MonoBehaviour
     {
         return player;
     }
+
+    public float GetSpeed()
+    {
+        return player.speed;
+    }
     
 
     

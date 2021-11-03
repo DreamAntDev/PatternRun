@@ -19,6 +19,9 @@ public class TrapSimulation : MonoBehaviour
 
     private int trapCount = 0;
 
+    private float currentMeter = 0;
+    private float createMeterRagne = 15;
+
     private Coroutine simulation;
     private void Awake()
     {
@@ -127,9 +130,8 @@ public class TrapSimulation : MonoBehaviour
 
     IEnumerator CreateTrap()
     {
-        //orderTrapQueue.Clear();
         totalTrapWeight = 0;
-        Debug.Log(++trapCount);
+        ++trapCount;
         CreateItem();
 
         while (true)
@@ -147,9 +149,12 @@ public class TrapSimulation : MonoBehaviour
             {
                 break;
             }
+
             yield return new WaitForEndOfFrame();
         }
+
         isMapChecker = true;
+
         while(orderTrapQueue.Count > 0)
         {
             if (GameManager.instance.isStop)
@@ -159,13 +164,19 @@ public class TrapSimulation : MonoBehaviour
             }
             else
             {
+                while(currentMeter + createMeterRagne > GameManager.instance.GetMeter())
+                {
+                    yield return new WaitForSeconds(0.1f);
+                }
                 var trapobj = orderTrapQueue.Dequeue();
                 Vector3 position = new Vector3(GameManager.instance.GetPlayer().transform.position.x + 15f, -10f, 0f);
                 trapobj.transform.position += position;
                 trapobj.transform.parent = parentMap;
 
                 trapobj.SetActive(true);
-                yield return new WaitForSeconds(2.5f);
+                currentMeter = GameManager.instance.GetMeter();
+                createMeterRagne = 15f * GameManager.instance.GetSpeed();
+                Debug.Log("Active Trap : " + trapobj.name);
             }
         }
 
@@ -202,6 +213,7 @@ public class TrapSimulation : MonoBehaviour
         {
             return;
         }
+
         var obj = GameObject.Instantiate(itemPrefab.gameObject);
         obj.SetActive(false);
         orderTrapQueue.Enqueue(obj);
