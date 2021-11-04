@@ -77,7 +77,7 @@ public class TrapSimulation : MonoBehaviour
             case "Sit":
                 trap = traps[3];
 
-                length = 2.5f;
+                length = 3.5f;
                 break;
             
             case "bow":
