@@ -50,7 +50,9 @@ public class GameManager : MonoBehaviour
     public float eventValue = 0;
 
     public bool isStop = false;
+    private bool isTutorial = false;
     private string currentPatten;
+    private string tutorialItemName;
 
     private Action<String> starttutorialLineAction;
     private Action endLineAction;
@@ -105,8 +107,15 @@ public class GameManager : MonoBehaviour
     public void SetPatten(string state)
     {
         var item = this.commandInventory.GetCommandItem(state);
+
         if (item == null)
             return;
+
+        currentPatten = item.actionName;
+        if (isTutorial && (!tutorialItemName.Equals(currentPatten)))
+        {
+            return;
+        }
 
         bool useSuccess = true;
         switch (item.actionName)
@@ -145,7 +154,6 @@ public class GameManager : MonoBehaviour
                 useSuccess = false;
                 break;
         }
-        currentPatten = item.actionName;
 
 
         if (useSuccess)
@@ -212,16 +220,18 @@ public class GameManager : MonoBehaviour
 
     IEnumerator ItemCommandTutorial(NData.Item item)
     {
+        isTutorial = true;
         Stop();
         starttutorialLineAction(item.name);
         trapSimulation.TutorialTrap(item.name);
         currentPatten = string.Empty;
-
-        while (!item.actionName.Equals(currentPatten))
+        tutorialItemName = item.actionName;
+        while (!tutorialItemName.Equals(currentPatten))
         {
             yield return new WaitForSeconds(0.1f);
         }
 
+        isTutorial = false;
         PlayerPrefs.SetInt("Tutorial_" + item.name, 1);
         endLineAction();
         Run();

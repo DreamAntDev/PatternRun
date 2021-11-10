@@ -1208,6 +1208,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1a0f2e39bf7cd2c49a0367cefff08179, type: 2}
   - {fileID: 11400000, guid: f2d45c58384628b45864aa6ac6998935, type: 2}
   - {fileID: 11400000, guid: 1db6fdc1dc2b7134fb8e5d6810d6c4bd, type: 2}
+  - {fileID: 11400000, guid: efaa27b18eea0544381a3e0761687017, type: 2}
   parent: {fileID: 287479420}
   itemPrefabList:
   - {fileID: 3144575894429601864, guid: 3212d18bfeea1bd47b902f3f1e9148c9, type: 3}

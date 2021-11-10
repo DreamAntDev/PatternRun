@@ -23,4 +23,4 @@ MonoBehaviour:
   equipName: Weapon-Sword
   excuteCount: 0
   stackable: 0
-  trapCode: 00000000
+  trapCode: 09000000
