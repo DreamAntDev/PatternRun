@@ -14,12 +14,15 @@ public class BreakableObject : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "HitSensor")
+        {
             Break();
+        }
     }
 
     public void Break()
     {
         SoundManager.Instance.PlaySound(SoundManager.SoundType.Crash_Trap);
+
 
         GameObject[] tempObjectArray = { this.gameObject };
         var tempMeshRender = this.gameObject.GetComponent<MeshRenderer>();

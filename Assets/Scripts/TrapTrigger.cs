@@ -33,10 +33,11 @@ public class TrapTrigger : MonoBehaviour
                 }
             }
 
-            if (collision.transform.tag.Equals("Item"))
+           /* if (collision.transform.tag.Equals("Item"))
             {
+                Debug.Log("Item Destory");
                 Destroy(gameObject);
-            }
+            }*/
         }
     }
 

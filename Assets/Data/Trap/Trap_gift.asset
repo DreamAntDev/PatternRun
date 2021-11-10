@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d97d62c5f90008459cc922e0e03be17, type: 3}
-  m_Name: Trap_GIf
+  m_Name: Trap_gift
   m_EditorClassIdentifier: 
-  id: 100
-  weight: 10
+  id: 9
+  weight: 20
   type: 1
-  obj: {fileID: 3099598236157821831, guid: 28d3355aa351c3840894089ef67fd668, type: 3}
+  obj: {fileID: 1115594572668124027, guid: db18f08ce7e6ba346b46a61894fbf816, type: 3}

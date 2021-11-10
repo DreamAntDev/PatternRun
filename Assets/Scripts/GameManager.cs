@@ -379,8 +379,6 @@ public class GameManager : MonoBehaviour
     {
         return player.speed;
     }
-    
 
-    
 
 }
