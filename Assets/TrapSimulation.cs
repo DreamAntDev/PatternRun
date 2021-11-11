@@ -29,7 +29,7 @@ public class TrapSimulation : MonoBehaviour
     }
     private void Start()
     {
-        cam = Camera.main; 
+        cam = Camera.main;
 
         for (int i = 0; i < 3; i++)
         {
@@ -79,7 +79,7 @@ public class TrapSimulation : MonoBehaviour
 
                 length = 3.5f;
                 break;
-            
+
             case "bow":
                 break;
             case "Jump":
@@ -93,7 +93,7 @@ public class TrapSimulation : MonoBehaviour
                 trap = traps[0];
                 break;
         }
-        GameObject trapobj = Instantiate(trap.obj); 
+        GameObject trapobj = Instantiate(trap.obj);
         Vector3 position = new Vector3(GameManager.instance.GetPlayer().transform.position.x + length, -10f, 0f);
         trapobj.transform.position += position;
         trapobj.transform.parent = parentMap;
@@ -172,13 +172,13 @@ public class TrapSimulation : MonoBehaviour
                     yield return new WaitForSeconds(0.1f);
                 }
                 var trapobj = orderTrapQueue.Dequeue();
-                Vector3 position = new Vector3(GameManager.instance.GetPlayer().transform.position.x + 15f, -10f, 0f);
+                Vector3 position = new Vector3(GameManager.instance.GetPlayer().transform.position.x + 20f, -10f, 0f);
                 trapobj.transform.position += position;
                 trapobj.transform.parent = parentMap;
 
                 trapobj.SetActive(true);
                 currentMeter = GameManager.instance.GetMeter();
-                createMeterRagne = 15f * GameManager.instance.GetSpeed();
+                createMeterRagne = 20f * GameManager.instance.GetSpeed();
                 Debug.Log("Active Trap : " + trapobj.name);
             }
         }
@@ -230,8 +230,8 @@ public class TrapSimulation : MonoBehaviour
     {
         if (isMapChecker)
         {
-            Debug.DrawRay(cam.transform.position + new Vector3(15f, 0, 0), cam.transform.forward * 11f, Color.yellow);
-            if (Physics.Raycast(cam.transform.position + new Vector3(15f,0,0), cam.transform.forward, out hit, Mathf.Infinity))
+            Debug.DrawRay(cam.transform.position + new Vector3(20f, 0, 0), cam.transform.forward * 11f, Color.yellow);
+            if (Physics.Raycast(cam.transform.position + new Vector3(20f,0,0), cam.transform.forward, out hit, Mathf.Infinity))
             {
                 if (hit.transform != parentMap)
                 {
@@ -241,7 +241,7 @@ public class TrapSimulation : MonoBehaviour
             }
         }
     }
-    
+
 
     public void ResetTrapPosition()
     {
