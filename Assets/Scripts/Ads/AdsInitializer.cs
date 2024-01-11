@@ -1,13 +1,15 @@
+using System.Net.Mime;
+using Patten.Ads;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
 public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 {
-    [SerializeField] string _androidGameId;
-    [SerializeField] string _iOsGameId;
-    [SerializeField] bool _testMode = true;
-    [SerializeField] bool _enablePerPlacementMode = true;
-    private string _gameId;
+    [SerializeField] string androidGameId;
+    [SerializeField] string iOSGameId;
+    [SerializeField] bool testMode = true;
+    [SerializeField] bool enablePerPlacementMode = true;
+    private string _GameId;
 
     void Awake()
     {
@@ -16,10 +18,10 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 
     public void InitializeAds()
     {
-        _gameId = (Application.platform == RuntimePlatform.IPhonePlayer)
-            ? _iOsGameId
-            : _androidGameId;
-        Advertisement.Initialize(_gameId, _testMode, _enablePerPlacementMode, this);
+        _GameId = (Application.platform == RuntimePlatform.IPhonePlayer)
+            ? iOSGameId
+            : androidGameId;
+        Advertisement.Initialize(_GameId, testMode, new RewardedAds());
     }
 
     public void OnInitializationComplete()

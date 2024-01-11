@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 namespace Patten.Ads
 {
-    public class RewardedAds : MonoBehaviour, IUnityAdsListener
+    public class RewardedAds : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsShowListener, IUnityAdsLoadListener
     {
         const string mySurfacingId = "rewardedVideo";
 
@@ -17,58 +17,56 @@ namespace Patten.Ads
         {
             _rewardButton.enabled = false;
 
-            Advertisement.AddListener(this);
             Advertisement.Initialize(Config.GameId, Config.IsTestAds);
         }
-
-        public void Show()
+        
+        private void AdsLoad()
         {
-            // Check if UnityAds ready before calling Show method:
-            if (Advertisement.IsReady(mySurfacingId))
-            {
-                Advertisement.Show(mySurfacingId);
-            }
-            else
-            {
-                Debug.Log("Rewarded video is not ready at the moment! Please try again later!");
-            }
+            Advertisement.Load(Config.RewardedVideoId,this);
         }
 
-        // Implement IUnityAdsListener interface methods:
-        public void OnUnityAdsDidFinish(string surfacingId, ShowResult showResult)
+        public void OnInitializationComplete()
         {
-            if (surfacingId == mySurfacingId)
-            {
-                Debug.Log("# OnUnityAdsDidFinish : " + surfacingId + " : " + showResult.ToString());
-            }
+            Debug.Log("OnInitializationComplete");
+            Advertisement.Show(Config.RewardedVideoId, this);
         }
 
-        public void OnUnityAdsReady(string surfacingId)
+        public void OnInitializationFailed(UnityAdsInitializationError error, string message)
         {
-            if (surfacingId == mySurfacingId)
-            {
-                _rewardButton.enabled = true;
-                Debug.Log("# OnUnityAdsReady : " + surfacingId);
-            }
+            Debug.LogFormat("OnInitializationFailed : error: {0}, message: {1}", error, message);
         }
-
-        public void OnUnityAdsDidError(string message)
+        
+        public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
         {
-            Debug.Log("# OnUnityAdsDidError : " + message);
+            GameManager.instance.ContinueAdComplete();
         }
-
-        public void OnUnityAdsDidStart(string surfacingId)
+        
+        //광고 show클릭되었을때
+        public void OnUnityAdsShowClick(string placementId)
         {
-            if (surfacingId == mySurfacingId)
-            {
-                Debug.Log("# OnUnityAdsDidStart : " + surfacingId);
-            }
+            Debug.Log("OnUnityAdsShowClick: " + placementId);
+            AdsLoad();
         }
-
-        // When the object that subscribes to ad events is destroyed, remove the listener:
-        public void OnDestroy()
+        
+        public void OnUnityAdsAdLoaded(string placementId)
         {
-            Advertisement.RemoveListener(this);
+            Debug.Log("OnUnityAdsAdLoaded" + placementId);
+        }
+        
+        //광고 로드 실패시
+        public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
+        {
+            Debug.Log("OnUnityAdsFailedToLoaded" + placementId + error+message);
+        }
+        //광고 show 실패시
+        public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
+        {
+            Debug.LogFormat("onunityAdsShowFailure: {0}, {1},{2}",placementId,error,message);
+        }
+        // 광고 show 시작시
+        public void OnUnityAdsShowStart(string placementId)
+        {
+            Debug.Log("OnUnityAdsShowStart: " + placementId);
         }
     }
 }

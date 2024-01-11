@@ -20,6 +20,20 @@ namespace Patten.Ads
             }
         }
 
+        public static string RewardedVideoId
+        {
+            get
+            {
+#if UNITY_EDITOR
+                return "Rewarded_Android";
+#elif UNITY_ANDROID
+                return "Rewarded_Android";
+#else // UNITY_IOS
+                return "";
+#endif 
+            }
+        }
+
         public static bool IsTestAds
         {
             get

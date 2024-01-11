@@ -52,10 +52,21 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
+/Build/
 *.apk
 *.unitypackage
 
 # Crashlytics generated file
 crashlytics-build.properties
 
-TestBuild/
+# Server
+/Server/node_modules/
+/Server/client/
+
+# VS
+.vsconfig
+
+# Not UploadFolder
+/Assets/Art/Font/
+/Assets/StreamingAssets/
+/Assets/PayLibrary/

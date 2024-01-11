@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,71 +6,70 @@ using UnityEngine.Advertisements;
 
 namespace Patten.Ads
 {
-    public class InterstitialAds : MonoBehaviour, IUnityAdsListener
+    public class InterstitialAds : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsShowListener, IUnityAdsLoadListener
     {
-        const string mySurfacingId = "interstitial";
-
-        private Coroutine _coroutine;
-
-        void Awake()
+        private void Awake()
         {
             InitializeAds();
         }
-
+        
         public void InitializeAds()
         {
             Advertisement.Initialize(Config.GameId, false);
-            Advertisement.AddListener(this);
         }
 
-        private void OnDestroy()
+        public void AdsShow()
         {
-            if (_coroutine != null)
-            {
-                StopCoroutine(_coroutine);
-            }
-            Advertisement.RemoveListener(this);
+            Advertisement.Show(Config.RewardedVideoId, this);
         }
 
-        public void Show()
+        private void AdsLoad()
         {
-            if (_coroutine != null)
-            {
-                StopCoroutine(_coroutine);
-            }
-
-            _coroutine = StartCoroutine(ShowInterstitialWhenInitialized());
+            Advertisement.Load(Config.RewardedVideoId,this);
         }
-
-        IEnumerator ShowInterstitialWhenInitialized()
+        
+        public void OnInitializationComplete()
         {
-            WaitForSeconds wait = new WaitForSeconds(0.5f);
-
-            while (!Advertisement.isInitialized || !Advertisement.IsReady())
-            {
-                yield return wait;
-            }
-            Advertisement.Show();
+            Debug.Log("# OnInitializationComplete");
+            AdsShow();
         }
 
-        void IUnityAdsListener.OnUnityAdsReady(string placementId)
+        public void OnInitializationFailed(UnityAdsInitializationError error, string message)
         {
-
+            Debug.LogFormat("# OnInitializationFailed : error: {0}, message: {1}", error, message);
         }
-
-        void IUnityAdsListener.OnUnityAdsDidError(string message)
-        {
-
-        }
-
-        void IUnityAdsListener.OnUnityAdsDidStart(string placementId)
-        {
-
-        }
-
-        void IUnityAdsListener.OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+        
+        public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
         {
             GameManager.instance.ContinueAdComplete();
+        }
+        
+        //광고 show클릭되었을때
+        public void OnUnityAdsShowClick(string placementId)
+        {
+            Debug.Log("# OnUnityAdsShowClick: " + placementId);
+            AdsLoad();
+        }
+        
+        public void OnUnityAdsAdLoaded(string placementId)
+        {
+            Debug.Log("# OnUnityAdsAdLoaded" + placementId);
+        }
+        
+        //광고 로드 실패시
+        public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
+        {
+            Debug.Log("# OnUnityAdsFailedToLoaded" + placementId + error+message);
+        }
+        //광고 show 실패시
+        public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
+        {
+            Debug.LogFormat("# OnunityAdsShowFailure: {0}, {1},{2}",placementId,error,message);
+        }
+        // 광고 show 시작시
+        public void OnUnityAdsShowStart(string placementId)
+        {
+            Debug.Log("# OnUnityAdsShowStart: " + placementId);
         }
     }
 }

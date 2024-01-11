@@ -89,13 +89,6 @@ public class GameManager : MonoBehaviour
         this.remainContinueCount = this.continueCount;
     }
 
-    public void ShowAds()
-    {
-        if (Advertisement.IsReady())
-        {
-            Advertisement.Show();
-        }
-    }
 
     public void TutorialLineAction(Action<String> action, Action action2)
     {
@@ -162,7 +155,7 @@ public class GameManager : MonoBehaviour
             if(string.IsNullOrEmpty(item.equipName) == false)
             {
                 this.player.Equip(item.equipName);
-                // ÀåÂø¾ÆÀÌÅÛ ´Ù ¾´ °æ¿ì
+                // ì¥ì°©ì•„ì´í…œ ë‹¤ ì“´ ê²½ìš°
                 if(this.commandInventory.isEnableItem(item) == false)
                 {
                     this.player.UnEquipOnAnimEnd(item.equipName);
@@ -185,7 +178,7 @@ public class GameManager : MonoBehaviour
                     if (string.IsNullOrEmpty(findItem.equipName) == false)
                     {
                         this.player.Equip(findItem.equipName);
-                        // ÀåÂø¾ÆÀÌÅÛ ´Ù ¾´ °æ¿ì
+                        // ì¥ì°©ì•„ì´í…œ ë‹¤ ì“´ ê²½ìš°
                         if (this.commandInventory.isEnableItem(findItem) == false)
                         {
                             this.player.UnEquip(findItem.equipName);

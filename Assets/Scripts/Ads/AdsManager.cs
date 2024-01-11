@@ -17,7 +17,7 @@ public class AdsManager : MonoBehaviour
 
     public void AdsShow()
     {
-        interstitialAds.Show();
+        interstitialAds.AdsShow();
     }
 
 }

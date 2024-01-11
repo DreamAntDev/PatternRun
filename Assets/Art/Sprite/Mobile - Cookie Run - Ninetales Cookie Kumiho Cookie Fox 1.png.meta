@@ -1,0 +1,1816 @@
+fileFormatVersion: 2
+guid: 7731cd44da802ca4cbd79cc1854aa6b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -599028149266693810
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_0
+  - first:
+      213: -7201259524046810828
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_1
+  - first:
+      213: 7692312071659994307
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_2
+  - first:
+      213: 2760723987348171120
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_3
+  - first:
+      213: -7082161151591328550
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_4
+  - first:
+      213: 4674290147351676391
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_5
+  - first:
+      213: 4795885963508809795
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_6
+  - first:
+      213: 3988647935406057906
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_7
+  - first:
+      213: -5757955868265531629
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_8
+  - first:
+      213: 8874662226700991312
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_9
+  - first:
+      213: -4938093962223532566
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_10
+  - first:
+      213: 4529746132807702971
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_11
+  - first:
+      213: 6533216146529453742
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_12
+  - first:
+      213: -796780608998603810
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_13
+  - first:
+      213: 1550722668718390475
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_14
+  - first:
+      213: 5321125817010459282
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_15
+  - first:
+      213: 6855366979427498928
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_16
+  - first:
+      213: 6419237857073632822
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_17
+  - first:
+      213: -7073521027900865460
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_18
+  - first:
+      213: -4609094664408583661
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_19
+  - first:
+      213: -3350775015729612196
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_20
+  - first:
+      213: 3597272727573919430
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_21
+  - first:
+      213: 3869121721811257744
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_22
+  - first:
+      213: 9035569937278036545
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_23
+  - first:
+      213: -3431053215321407833
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_24
+  - first:
+      213: -6549734841567315614
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_25
+  - first:
+      213: -2668806510498014837
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_26
+  - first:
+      213: 3888822641804922053
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_27
+  - first:
+      213: -7205846585633410219
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_28
+  - first:
+      213: 8216935000955660196
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_29
+  - first:
+      213: 7142939869480746358
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_30
+  - first:
+      213: -40432947461752495
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_31
+  - first:
+      213: 5009012879631222514
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_32
+  - first:
+      213: 5182394746171115788
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_33
+  - first:
+      213: -8703602663572454570
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_34
+  - first:
+      213: 8838274088120290575
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_35
+  - first:
+      213: -4146126634429763474
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_36
+  - first:
+      213: -4664637484986692270
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_37
+  - first:
+      213: 7764021825809926281
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_38
+  - first:
+      213: 7656532380486367
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_39
+  - first:
+      213: 842365189976471637
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_40
+  - first:
+      213: 3001629348305404935
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_41
+  - first:
+      213: 8540322363111493998
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_42
+  - first:
+      213: 369177249176184155
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_43
+  - first:
+      213: -2139407212012546153
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_44
+  - first:
+      213: -4382607162732355884
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_45
+  - first:
+      213: -1032934632182495086
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_46
+  - first:
+      213: -4525185031092355116
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_47
+  - first:
+      213: 5712503808061867368
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_48
+  - first:
+      213: 4444689123806724022
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_49
+  - first:
+      213: -6490945942482456517
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_50
+  - first:
+      213: -1195291792603944495
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_51
+  - first:
+      213: 7914871734246212620
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_52
+  - first:
+      213: -6070304096102103509
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_53
+  - first:
+      213: 5135895938988306239
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_54
+  - first:
+      213: -8160005851752969509
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_55
+  - first:
+      213: -3221346468546645335
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_56
+  - first:
+      213: 4460042729993450054
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_57
+  - first:
+      213: 3823373169678684229
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_58
+  - first:
+      213: -26188383668307167
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_59
+  - first:
+      213: 1617189641986302846
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_60
+  - first:
+      213: -4990283078322054082
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_61
+  - first:
+      213: -4983525860572299800
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_62
+  - first:
+      213: 2107213992271985763
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_63
+  - first:
+      213: -1202491518011312820
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_64
+  - first:
+      213: 5553645491667479122
+    second: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_65
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41cf707213dfa7f0800000000000000
+      internalID: -599028149266693810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_1
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4319ac5ed9cff0c90800000000000000
+      internalID: -7201259524046810828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_2
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc3eb4d21590ca60800000000000000
+      internalID: 7692312071659994307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_3
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079a9cce6df005620800000000000000
+      internalID: 2760723987348171120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_4
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad4d35d94fb17bd90800000000000000
+      internalID: -7082161151591328550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_5
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e54102af1a6ed040800000000000000
+      internalID: 4674290147351676391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_6
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3408936cfd86e8240800000000000000
+      internalID: 4795885963508809795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_7
+      rect:
+        serializedVersion: 2
+        x: 2562
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b929fb1a268a5730800000000000000
+      internalID: 3988647935406057906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_8
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31738af05a1a710b0800000000000000
+      internalID: -5757955868265531629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_9
+      rect:
+        serializedVersion: 2
+        x: 3294
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05bf6147642292b70800000000000000
+      internalID: 8874662226700991312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_10
+      rect:
+        serializedVersion: 2
+        x: 3660
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae54a2a54bd587bb0800000000000000
+      internalID: -4938093962223532566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_11
+      rect:
+        serializedVersion: 2
+        x: 4026
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9d3b0bb14ecde30800000000000000
+      internalID: 4529746132807702971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_12
+      rect:
+        serializedVersion: 2
+        x: 4392
+        y: 1465.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea60cb68875aaaa50800000000000000
+      internalID: 6533216146529453742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed308b4f14441f4f0800000000000000
+      internalID: -796780608998603810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_14
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccfa161d06458510800000000000000
+      internalID: 1550722668718390475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_15
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2929110fcbf68d940800000000000000
+      internalID: 5321125817010459282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_16
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bbf7bd42f7232f50800000000000000
+      internalID: 6855366979427498928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_17
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6361d9702d6b51950800000000000000
+      internalID: 6419237857073632822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_18
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4486bc2a1ec5dd90800000000000000
+      internalID: -7073521027900865460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_19
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31237cf92d43900c0800000000000000
+      internalID: -4609094664408583661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_20
+      rect:
+        serializedVersion: 2
+        x: 2562
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5abe2950e7af71d0800000000000000
+      internalID: -3350775015729612196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_21
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c67e3f8c741ce130800000000000000
+      internalID: 3597272727573919430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_22
+      rect:
+        serializedVersion: 2
+        x: 3294
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 099ce4dd4b1e1b530800000000000000
+      internalID: 3869121721811257744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_23
+      rect:
+        serializedVersion: 2
+        x: 3660
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ae7a64cfac46d70800000000000000
+      internalID: 9035569937278036545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_24
+      rect:
+        serializedVersion: 2
+        x: 4026
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae3e4777437260d0800000000000000
+      internalID: -3431053215321407833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_25
+      rect:
+        serializedVersion: 2
+        x: 4392
+        y: 1099.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26971631ddaaa15a0800000000000000
+      internalID: -6549734841567315614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 733.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89148f5e9e76fad0800000000000000
+      internalID: -2668806510498014837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_27
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 733.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc474fb69fd7f530800000000000000
+      internalID: 3888822641804922053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_28
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 733.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553fb5565b0bffb90800000000000000
+      internalID: -7205846585633410219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_29
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 733.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7af6229da680270800000000000000
+      internalID: 8216935000955660196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_30
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 733.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67dff5467f1d02360800000000000000
+      internalID: 7142939869480746358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_31
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 733.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159f151d27a507ff0800000000000000
+      internalID: -40432947461752495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_32
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 733.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f686c5dca6938540800000000000000
+      internalID: 5009012879631222514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_33
+      rect:
+        serializedVersion: 2
+        x: 2562
+        y: 733.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c09416b60909be740800000000000000
+      internalID: 5182394746171115788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_34
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 733.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653ce9bbd77963780800000000000000
+      internalID: -8703602663572454570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_35
+      rect:
+        serializedVersion: 2
+        x: 3294
+        y: 733.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0d03f9b47bd7aa70800000000000000
+      internalID: 8838274088120290575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6037090bcff576c0800000000000000
+      internalID: -4146126634429763474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_37
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d8565fbe0e34fb0800000000000000
+      internalID: -4664637484986692270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_38
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988c7cb07b85fbb60800000000000000
+      internalID: 7764021825809926281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_39
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda00cc53933b1000800000000000000
+      internalID: 7656532380486367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_40
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558b3bf5daea0bb00800000000000000
+      internalID: 842365189976471637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_41
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704812d2dfde7a920800000000000000
+      internalID: 3001629348305404935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_42
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61d590d0f1558670800000000000000
+      internalID: 8540322363111493998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_43
+      rect:
+        serializedVersion: 2
+        x: 2562
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b556d4c80c49f1500800000000000000
+      internalID: 369177249176184155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_44
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797551ac97c4f42e0800000000000000
+      internalID: -2139407212012546153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_45
+      rect:
+        serializedVersion: 2
+        x: 3294
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de514b610add23c0800000000000000
+      internalID: -4382607162732355884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_46
+      rect:
+        serializedVersion: 2
+        x: 3660
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298409cbc674aa1f0800000000000000
+      internalID: -1032934632182495086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_47
+      rect:
+        serializedVersion: 2
+        x: 4026
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df33de80305331c0800000000000000
+      internalID: -4525185031092355116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_48
+      rect:
+        serializedVersion: 2
+        x: 4392
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865089182f3e64f40800000000000000
+      internalID: 5712503808061867368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_49
+      rect:
+        serializedVersion: 2
+        x: 4758
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bfba898535bead30800000000000000
+      internalID: 4444689123806724022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_50
+      rect:
+        serializedVersion: 2
+        x: 5124
+        y: 367.6
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30f11a4e078be5a0800000000000000
+      internalID: -6490945942482456517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9e6e29278796fe0800000000000000
+      internalID: -1195291792603944495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_52
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c04868258e547dd60800000000000000
+      internalID: 7914871734246212620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_53
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b264c312692f1cba0800000000000000
+      internalID: -6070304096102103509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_54
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3fe4c6352e564740800000000000000
+      internalID: 5135895938988306239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_55
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdac72159e5d1ce80800000000000000
+      internalID: -8160005851752969509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_56
+      rect:
+        serializedVersion: 2
+        x: 1830
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a271db447a7b43d0800000000000000
+      internalID: -3221346468546645335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_57
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642b25c8b3145ed30800000000000000
+      internalID: 4460042729993450054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_58
+      rect:
+        serializedVersion: 2
+        x: 2562
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540157604a95f0530800000000000000
+      internalID: 3823373169678684229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_59
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b7536cdc5f2aff0800000000000000
+      internalID: -26188383668307167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_60
+      rect:
+        serializedVersion: 2
+        x: 3294
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73e8014969617610800000000000000
+      internalID: 1617189641986302846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_61
+      rect:
+        serializedVersion: 2
+        x: 3660
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c98fbdaf3febab0800000000000000
+      internalID: -4990283078322054082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_62
+      rect:
+        serializedVersion: 2
+        x: 4026
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed7d9732a5f6dab0800000000000000
+      internalID: -4983525860572299800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_63
+      rect:
+        serializedVersion: 2
+        x: 4392
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cba1326f35e3d10800000000000000
+      internalID: 2107213992271985763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_64
+      rect:
+        serializedVersion: 2
+        x: 4758
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45f38fd554ef4fe0800000000000000
+      internalID: -1202491518011312820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_65
+      rect:
+        serializedVersion: 2
+        x: 5124
+        y: 1.6000061
+        width: 366.13333
+        height: 366.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a2a437623821d40800000000000000
+      internalID: 5553645491667479122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_0: -599028149266693810
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_1: -7201259524046810828
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_10: -4938093962223532566
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_11: 4529746132807702971
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_12: 6533216146529453742
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_13: -796780608998603810
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_14: 1550722668718390475
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_15: 5321125817010459282
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_16: 6855366979427498928
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_17: 6419237857073632822
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_18: -7073521027900865460
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_19: -4609094664408583661
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_2: 7692312071659994307
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_20: -3350775015729612196
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_21: 3597272727573919430
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_22: 3869121721811257744
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_23: 9035569937278036545
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_24: -3431053215321407833
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_25: -6549734841567315614
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_26: -2668806510498014837
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_27: 3888822641804922053
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_28: -7205846585633410219
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_29: 8216935000955660196
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_3: 2760723987348171120
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_30: 7142939869480746358
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_31: -40432947461752495
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_32: 5009012879631222514
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_33: 5182394746171115788
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_34: -8703602663572454570
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_35: 8838274088120290575
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_36: -4146126634429763474
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_37: -4664637484986692270
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_38: 7764021825809926281
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_39: 7656532380486367
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_4: -7082161151591328550
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_40: 842365189976471637
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_41: 3001629348305404935
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_42: 8540322363111493998
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_43: 369177249176184155
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_44: -2139407212012546153
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_45: -4382607162732355884
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_46: -1032934632182495086
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_47: -4525185031092355116
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_48: 5712503808061867368
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_49: 4444689123806724022
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_5: 4674290147351676391
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_50: -6490945942482456517
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_51: -1195291792603944495
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_52: 7914871734246212620
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_53: -6070304096102103509
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_54: 5135895938988306239
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_55: -8160005851752969509
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_56: -3221346468546645335
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_57: 4460042729993450054
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_58: 3823373169678684229
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_59: -26188383668307167
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_6: 4795885963508809795
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_60: 1617189641986302846
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_61: -4990283078322054082
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_62: -4983525860572299800
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_63: 2107213992271985763
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_64: -1202491518011312820
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_65: 5553645491667479122
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_7: 3988647935406057906
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_8: -5757955868265531629
+      Mobile - Cookie Run - Ninetales Cookie Kumiho Cookie Fox 1_9: 8874662226700991312
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
