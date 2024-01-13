@@ -14,52 +14,43 @@ public class GameManager : MonoBehaviour
     public bool gameStart { get; set; }
     [SerializeField] Player player;
 
-
-    //[Header("- UI Board")]
-    //[SerializeField] protected TextMeshProUGUI scoreText;
-    //[SerializeField] protected TextMeshProUGUI bestScoreText;
-    //[SerializeField] protected TextMeshProUGUI totalScoreText;
-    //[SerializeField] protected GameObject deadUI;
-    //[SerializeField] protected TextMeshProUGUI deadScoreText;
-
-
     [Header("- Player")]
-    /*[SerializeField] */CommandInventory commandInventory;
+    /*[SerializeField] */CommandInventory _CommandInventory;
     [SerializeField] int continueCount;
-    private int remainContinueCount;
     [SerializeField] GameObject continuePopup;
     //[SerializeField] GameObject[] items;
 
     [Header("- Trap")]
     [SerializeField] protected TrapSimulation trapSimulation;
 
-    private bool isTouch = false;
-    private List<string> chainList;
-    private string chainText;
+    private int _RemainContinueCount;
+    private bool _IsTouch = false;
+    private List<string> _ChainList;
+    private string _ChainText;
     public bool isPlay = false;
 
-    float skillEventValue = 0;
-    private float scoreMeter = 0f;
+    float _SkillEventValue = 0;
+    private float _ScoreMeter = 0f;
 
     //Score
-    private float previousMaxScore = 0f;
-    private float totalScore = 0f;
+    private float _PreviousMaxScore = 0f;
+    private float _TotalScore = 0f;
 
     public float weight = 25f;
 
     public float eventValue = 0;
 
     public bool isStop = false;
-    private bool isTutorial = false;
-    private string currentPatten;
-    private string tutorialItemName;
+    private bool _IsTutorial = false;
+    private string _CurrentPatten;
+    private string _TutorialItemName;
 
-    private Action<String> starttutorialLineAction;
-    private Action endLineAction;
+    private Action<String> _StarttutorialLineAction;
+    private Action _EndLineAction;
 
 
-    private float playerStartPosX;
-    Coroutine playerScoreCoroutine = null;
+    private float _PlayerStartPosX;
+    Coroutine _PlayerScoreCoroutine = null;
     private void Awake()
     {
         instance = this;
@@ -68,8 +59,8 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        previousMaxScore = PlayerPrefs.GetFloat("MaxScore", 0f);
-        totalScore = PlayerPrefs.GetFloat("TotalScore", 0f);
+        _PreviousMaxScore = PlayerPrefs.GetFloat("MaxScore", 0f);
+        _TotalScore = PlayerPrefs.GetFloat("TotalScore", 0f);
 
         Init();
         SoundManager.Instance.PlaySound(SoundManager.SoundType.BG_Lobby, true,SoundManager.SoundLayer.BGM);
@@ -78,34 +69,34 @@ public class GameManager : MonoBehaviour
     public void Init()
     {
         var title = MainUI.Instance.title;
-        title.SetBestScore(previousMaxScore);
-        title.SetTotalScore(totalScore);
-        if(this.commandInventory == null)
+        title.SetBestScore(_PreviousMaxScore);
+        title.SetTotalScore(_TotalScore);
+        if(this._CommandInventory == null)
         {
             var obj = new GameObject("CommandInventory");
             var inventory = obj.AddComponent<CommandInventory>();
-            this.commandInventory = inventory;
+            this._CommandInventory = inventory;
         }
-        this.remainContinueCount = this.continueCount;
+        this._RemainContinueCount = this.continueCount;
     }
 
 
     public void TutorialLineAction(Action<String> action, Action action2)
     {
-        starttutorialLineAction = action;
-        endLineAction = action2;
+        _StarttutorialLineAction = action;
+        _EndLineAction = action2;
 
     }
 
     public void SetPatten(string state)
     {
-        var item = this.commandInventory.GetCommandItem(state);
+        var item = this._CommandInventory.GetCommandItem(state);
 
         if (item == null)
             return;
 
-        currentPatten = item.actionName;
-        if (isTutorial && (!tutorialItemName.Equals(currentPatten)))
+        _CurrentPatten = item.actionName;
+        if (_IsTutorial && (!_TutorialItemName.Equals(_CurrentPatten)))
         {
             return;
         }
@@ -151,12 +142,12 @@ public class GameManager : MonoBehaviour
 
         if (useSuccess)
         {
-            this.commandInventory.UseItem(item);
+            this._CommandInventory.UseItem(item);
             if(string.IsNullOrEmpty(item.equipName) == false)
             {
                 this.player.Equip(item.equipName);
                 // 장착아이템 다 쓴 경우
-                if(this.commandInventory.isEnableItem(item) == false)
+                if(this._CommandInventory.isEnableItem(item) == false)
                 {
                     this.player.UnEquipOnAnimEnd(item.equipName);
                 }
@@ -166,7 +157,7 @@ public class GameManager : MonoBehaviour
 
     public bool PlayerCollision(TrapTrigger trap)
     {
-        var findItem = this.commandInventory.GetAutoActiveItem("Collision");
+        var findItem = this._CommandInventory.GetAutoActiveItem("Collision");
         if (findItem == null)
             return false;
 
@@ -174,12 +165,12 @@ public class GameManager : MonoBehaviour
         {
             case "Guard":
                 {
-                    this.commandInventory.UseItem(findItem);
+                    this._CommandInventory.UseItem(findItem);
                     if (string.IsNullOrEmpty(findItem.equipName) == false)
                     {
                         this.player.Equip(findItem.equipName);
                         // 장착아이템 다 쓴 경우
-                        if (this.commandInventory.isEnableItem(findItem) == false)
+                        if (this._CommandInventory.isEnableItem(findItem) == false)
                         {
                             this.player.UnEquip(findItem.equipName);
                         }
@@ -193,7 +184,7 @@ public class GameManager : MonoBehaviour
 
     public void GetCommandItem(NData.Item item,Vector3 worldPos)
     {
-        bool success = this.commandInventory.AddItem(item);
+        bool success = this._CommandInventory.AddItem(item);
         if (success)
         {
             if (string.IsNullOrEmpty(item.equipName) == false)
@@ -213,20 +204,20 @@ public class GameManager : MonoBehaviour
 
     IEnumerator ItemCommandTutorial(NData.Item item)
     {
-        isTutorial = true;
+        _IsTutorial = true;
         Stop();
-        starttutorialLineAction(item.name);
+        _StarttutorialLineAction(item.name);
         trapSimulation.TutorialTrap(item.name);
-        currentPatten = string.Empty;
-        tutorialItemName = item.actionName;
-        while (!tutorialItemName.Equals(currentPatten))
+        _CurrentPatten = string.Empty;
+        _TutorialItemName = item.actionName;
+        while (!_TutorialItemName.Equals(_CurrentPatten))
         {
             yield return new WaitForSeconds(0.1f);
         }
 
-        isTutorial = false;
+        _IsTutorial = false;
         PlayerPrefs.SetInt("Tutorial_" + item.name, 1);
-        endLineAction();
+        _EndLineAction();
         Run();
 
         trapSimulation.SetTrap(item.trapCode.ToArray());
@@ -243,11 +234,11 @@ public class GameManager : MonoBehaviour
         if (PlayOption.PowerOverwhelming == true)
             return;
 #endif
-        StopCoroutine(playerScoreCoroutine);
+        StopCoroutine(_PlayerScoreCoroutine);
         isPlay = false;
         player.Die();
         Stop();
-        MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", scoreMeter), 5, ShowContinuePopup);
+        MainUI.Instance.systemMessage.SetMessage("YOU DIED", string.Format("{0}m", _ScoreMeter), 5, ShowContinuePopup);
         //MainUI.Instance.OnGameEnd();
     }
 
@@ -267,7 +258,7 @@ public class GameManager : MonoBehaviour
     {
         var obj = Instantiate(this.continuePopup);
         var continuePopup = obj.GetComponent<ContinuePopup>();
-        continuePopup.Initialize(this.remainContinueCount);
+        continuePopup.Initialize(this._RemainContinueCount);
         continuePopup.continueButton.onClick.AddListener(() =>
         {
             this.Continue();
@@ -281,9 +272,9 @@ public class GameManager : MonoBehaviour
     }
     public void Continue()
     {
-        if (this.remainContinueCount > 0)
+        if (this._RemainContinueCount > 0)
         {
-            remainContinueCount--;
+            _RemainContinueCount--;
             AdsManager.instance.AdsShow();
         }
     }
@@ -292,7 +283,7 @@ public class GameManager : MonoBehaviour
         isPlay = true;
         this.player.ContinueRun();
         this.Run();
-        this.playerScoreCoroutine = StartCoroutine(ScoreUpdateCoroutine());
+        this._PlayerScoreCoroutine = StartCoroutine(ScoreUpdateCoroutine());
     }
     public void ReStart()
     {
@@ -304,12 +295,12 @@ public class GameManager : MonoBehaviour
 
     public void ScroeTransaction()
     {
-        if(scoreMeter > previousMaxScore)
+        if(_ScoreMeter > _PreviousMaxScore)
         {
-            PlayerPrefs.SetFloat("MaxScore", scoreMeter);
+            PlayerPrefs.SetFloat("MaxScore", _ScoreMeter);
         }
 
-        PlayerPrefs.SetFloat("TotalScore", totalScore + scoreMeter);
+        PlayerPrefs.SetFloat("TotalScore", _TotalScore + _ScoreMeter);
     }
 
     public void GameStart()
@@ -319,8 +310,8 @@ public class GameManager : MonoBehaviour
             isPlay = true;
             player.StartMove();
             trapSimulation.OnSimulation();
-            this.playerStartPosX = player.transform.position.x;
-            this.playerScoreCoroutine = StartCoroutine(ScoreUpdateCoroutine());
+            this._PlayerStartPosX = player.transform.position.x;
+            this._PlayerScoreCoroutine = StartCoroutine(ScoreUpdateCoroutine());
         }
 
     }
@@ -341,26 +332,26 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        scoreMeter = player.transform.position.x - this.playerStartPosX;
+        _ScoreMeter = player.transform.position.x - this._PlayerStartPosX;
         //scoreMeter += Time.deltaTime * player.speed * (1 + eventValue);
         //Sample
-        if(scoreMeter >= 30)
+        if(_ScoreMeter >= 30)
         {
-            weight = scoreMeter;
+            weight = _ScoreMeter;
             float value = 0.05f;
             float speed = 0;
-            for(int i = 0; i < (int)(scoreMeter / 30); i++)
+            for(int i = 0; i < (int)(_ScoreMeter / 30); i++)
             {
                 speed += value;
             }
             player.speed = 1+speed;
         }
-        MainUI.Instance.inGameScore.SetScore(scoreMeter);
+        MainUI.Instance.inGameScore.SetScore(_ScoreMeter);
     }
 
     public float GetMeter()
     {
-        return scoreMeter;
+        return _ScoreMeter;
     }
 
     public Player GetPlayer()

@@ -8,18 +8,14 @@ namespace Patten.Ads
 {
     public class InterstitialAds : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsShowListener, IUnityAdsLoadListener
     {
-        private void Awake()
-        {
-            InitializeAds();
-        }
-        
         public void InitializeAds()
         {
-            Advertisement.Initialize(Config.GameId, false);
+            Advertisement.Initialize(Config.GameId, true);
         }
 
         public void AdsShow()
         {
+            InitializeAds();
             Advertisement.Show(Config.RewardedVideoId, this);
         }
 
