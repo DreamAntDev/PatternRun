@@ -76,5 +76,10 @@ crashlytics-build.properties
 /Assets/StreamingAssets/
 /Assets/PayLibrary/
 /UserSetting/*
+
+[Gg]emfile
+*.lock
+.vsconfig
+.collabignore
 .idea
-gemfile
+.DS_Store
