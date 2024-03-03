@@ -75,7 +75,6 @@ crashlytics-build.properties
 /Assets/Art/Font/
 /Assets/StreamingAssets/
 /Assets/PayLibrary/
-/UserSetting/*
 
 [Gg]emfile
 *.lock
