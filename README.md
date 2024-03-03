@@ -18,18 +18,18 @@ Pattern을 입력하여 장애물을 피하거나, 부수면서 최고 점수에
 ---
 Nammu - [DreamAntDev](https://github.com/DreamAntDev)  
 Email : nammu8395@gmail.com  
-GitHub Issue : https://github.com/mod157/ipp.unity/issues  
+GitHub Issue : https://github.com/DreamAntDev/PatternRun/issues  
 
 ---
 
 ## 기능 목록
 |Icon|설명|
 |---|---|
-|![jump](docs/img/guideicon/jump.png) ![gjump](docs/img/guideicon/guide_jump.png)|캐릭터가 점프합니다.<br>장애물을 뛰어 넘을 수 있습니다.|
-|![dash](docs/img/guideicon/dash.png) ![gdash](docs/img/guideicon/guide_dash.png)|캐릭터가 대쉬합니다.<br>장애물을 빠르게 지나갈 수 있습니다.|
-|![sit](docs/img/guideicon/sit.png) ![gsit](docs/img/guideicon/guide_sit.png)|캐릭터가 앉습니다.<br>장애물을 지나칠 수 있습니다.|
-|![attack](docs/img/guideicon/attack.png) ![gattack](docs/img/guideicon/guide_attack.png)|캐릭터 검을 소지하고 있을 때 공격합니다.<br>공격에 닿은 장애물을 부숩니다.|
-|![bow](docs/img/guideicon/bow.png) ![gbow](docs/img/guideicon/guide_bow.png)|캐릭터가 활을 소지 할 시 화살을 쏩니다.<br> 화살에 닿은 장애물을 부숩니다.|
+|<img src="docs/img/guideicon/jump.png" width="96" height="96"/> <img src="docs/img/guideicon/guide_jump.png" width="96">|캐릭터가 점프합니다.<br>장애물을 뛰어 넘을 수 있습니다.|
+|<img src="docs/img/guideicon/dash.png" width="96" height="96"/> <img src="docs/img/guideicon/guide_dash.png" width="96">|캐릭터가 대쉬합니다.<br>장애물을 빠르게 지나갈 수 있습니다.|
+|<img src="docs/img/guideicon/sit.png" width="96" height="96"/> <img src="docs/img/guideicon/guide_sit.png" width="96">|캐릭터가 앉습니다.<br>장애물을 지나칠 수 있습니다.|
+|<img src="docs/img/guideicon/attack.png" width="96" height="96"/> <img src="docs/img/guideicon/guide_attack.png" width="96">|캐릭터 검을 소지하고 있을 때 공격합니다.<br>공격에 닿은 장애물을 부숩니다.|
+|<img src="docs/img/guideicon/bow.png" width="96" height="96"/> <img src="docs/img/guideicon/guide_bow.png" width="96">|캐릭터가 활을 소지 할 시 화살을 쏩니다.<br> 화살에 닿은 장애물을 부숩니다.|
 
 ## 라이선스
 
