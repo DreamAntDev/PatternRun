@@ -25,12 +25,12 @@ GitHub Issue : https://github.com/mod157/ipp.unity/issues
 ## 기능 목록
 |Icon|설명|
 |---|---|
-|![jump](docs/img/guideicon/jump.png){: width="36" height="36"} ![gjump](docs/img/guideicon/guide_jump.png){: width="36" height="36"}|캐릭터가 점프합니다.<br>장애물을 뛰어 넘을 수 있습니다.|
-|![dash](docs/img/guideicon/dash.png){: width="36" height="36"} ![gdash](docs/img/guideicon/guide_dash.png){: width="36" height="36"}|캐릭터가 대쉬합니다.<br>장애물을 빠르게 지나갈 수 있습니다.|
-|![sit](docs/img/guideicon/sit.png){: width="36" height="36"} ![gsit](docs/img/guideicon/guide_sit.png){: width="36" height="36"}|캐릭터가 앉습니다.<br>장애물을 지나칠 수 있습니다.|
-|![attack](docs/img/guideicon/attack.png){: width="36" height="36"} ![gattack](docs/img/guideicon/guide_attack.png){: width="36" height="36"}|캐릭터 검을 소지하고 있을 때 공격합니다.<br>공격에 닿은 장애물을 부숩니다.|
-|![bow](docs/img/guideicon/bow.png){: width="36" height="36"} ![gbow](docs/img/guideicon/guide_bow.png){: width="36" height="36"}|캐릭터가 활을 소지 할 시 화살을 쏩니다.<br> 화살에 닿은 장애물을 부숩니다.|
+|![jump](docs/img/guideicon/jump.png) ![gjump](docs/img/guideicon/guide_jump.png)|캐릭터가 점프합니다.<br>장애물을 뛰어 넘을 수 있습니다.|
+|![dash](docs/img/guideicon/dash.png) ![gdash](docs/img/guideicon/guide_dash.png)|캐릭터가 대쉬합니다.<br>장애물을 빠르게 지나갈 수 있습니다.|
+|![sit](docs/img/guideicon/sit.png) ![gsit](docs/img/guideicon/guide_sit.png)|캐릭터가 앉습니다.<br>장애물을 지나칠 수 있습니다.|
+|![attack](docs/img/guideicon/attack.png) ![gattack](docs/img/guideicon/guide_attack.png)|캐릭터 검을 소지하고 있을 때 공격합니다.<br>공격에 닿은 장애물을 부숩니다.|
+|![bow](docs/img/guideicon/bow.png) ![gbow](docs/img/guideicon/guide_bow.png)|캐릭터가 활을 소지 할 시 화살을 쏩니다.<br> 화살에 닿은 장애물을 부숩니다.|
 
 ## 라이선스
 
-This library is under the [MIT](https://github.com/mod157/DreamAntDev/PatternRun?tab=MIT-1-ov-file) License.
+This library is under the [MIT](https://github.com/DreamAntDev/PatternRun?tab=MIT-1-ov-file) License.
